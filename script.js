@@ -67,6 +67,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ── GENERIC COLLAPSIBLES (LONG-FORM CONTENT) ── */
+  document.querySelectorAll('.collapsible-trigger').forEach(trigger => {
+    const key = trigger.getAttribute('data-collapsible-toggle');
+    const body = document.querySelector(`.collapsible-body[data-collapsible="${key}"]`);
+    if (!body) return;
+
+    const open = () => {
+      trigger.classList.add('is-open');
+      body.classList.add('is-open');
+    };
+    const close = () => {
+      trigger.classList.remove('is-open');
+      body.classList.remove('is-open');
+    };
+
+    // Start collapsed on load
+    close();
+
+    trigger.addEventListener('click', () => {
+      const isOpen = trigger.classList.contains('is-open');
+      if (isOpen) {
+        close();
+      } else {
+        open();
+      }
+    });
+  });
+
   /* ── SMOOTH SCROLL ── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {

@@ -724,6 +724,65 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
 .faq-item.open .faq-a { display: block; }
 
 /* ============================================================
+   GENERIC COLLAPSIBLE BLOCKS
+   ============================================================ */
+.collapsible-trigger {
+  margin: 12px auto 0;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--light-gray);
+  background: var(--white);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .74rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--charcoal);
+  cursor: pointer;
+  transition: border-color .2s, background .2s, color .2s, transform .2s, box-shadow .2s;
+}
+.collapsible-trigger:hover {
+  border-color: var(--red);
+  color: var(--red);
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+  transform: translateY(-1px);
+}
+.collapsible-label { white-space: nowrap; }
+.collapsible-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  border: 1px solid var(--mid-gray);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8rem;
+  color: var(--red);
+  transition: transform .3s, background .3s, border-color .3s, color .3s;
+}
+.collapsible-trigger.is-open .collapsible-icon {
+  transform: rotate(45deg);
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--white);
+}
+
+.collapsible-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: max-height .6s cubic-bezier(.22,1,.36,1), opacity .35s ease, transform .35s ease;
+}
+.collapsible-body.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 2000px;
+}
+
+/* ============================================================
    FRANCHISE BANNER
    ============================================================ */
 .franchise-banner {
