@@ -381,6 +381,13 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
    SHARED LAYOUT
    ============================================================ */
 .sec          { padding: 100px 60px; }
+
+/* Generic content container for consistent width */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
 .sec-white    { background: var(--white); }
 .sec-off      { background: var(--off-white); }
 .sec-light    { background: var(--light-gray); }

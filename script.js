@@ -8,18 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const burger     = document.getElementById('burgerBtn');
   const mobileMenu = document.getElementById('mobileMenu');
 
+  const closeMobileMenu = () => {
+    mobileMenu.classList.remove('open');
+    burger.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
   burger.addEventListener('click', () => {
     const isOpen = mobileMenu.classList.toggle('open');
     burger.classList.toggle('open', isOpen);
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
+  // Close mobile menu when a link is clicked
   mobileMenu.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      burger.classList.remove('open');
-      document.body.style.overflow = '';
+      closeMobileMenu();
     });
+  });
+
+  // Accessibility: allow closing the mobile menu with the Escape key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      closeMobileMenu();
+    }
   });
 
   /* ── NAV SCROLL SHADOW ── */
