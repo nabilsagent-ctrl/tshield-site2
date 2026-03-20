@@ -110,7 +110,23 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── SMOOTH SCROLL ── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
-      const target = document.querySelector(anchor.getAttribute('href'));
+      const href = anchor.getAttribute('href');
+
+      // Handle "back to top" links (e.g. href="#") safely
+      if (!href || href === '#') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        return;
+      }
+
+      let target;
+      try {
+        target = document.querySelector(href);
+      } catch {
+        // Invalid selector (e.g. malformed ID) – fail silently
+        return;
+      }
+
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
