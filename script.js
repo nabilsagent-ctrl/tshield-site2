@@ -189,4 +189,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   statNums.forEach(el => counterObserver.observe(el));
 
+  /* ── CONTACT FORM: IMPROVE SELECT READABILITY ── */
+  const propertySelect = document.querySelector('#contact select.inp');
+  if (propertySelect) {
+    const updateSelectColor = () => {
+      propertySelect.style.color = propertySelect.value ? 'var(--charcoal)' : 'var(--mid-gray)';
+    };
+
+    // Initialise on load
+    updateSelectColor();
+
+    // Update when the user chooses a property type
+    propertySelect.addEventListener('change', updateSelectColor);
+  }
+
 });
