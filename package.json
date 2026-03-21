@@ -1,0 +1,9 @@
+{
+  "name": "tshield-site2",
+  "version": "1.0.0",
+  "description": "Static marketing site for T-Shield interior surface protection.",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static site – no build step required.'"
+  }
+}
