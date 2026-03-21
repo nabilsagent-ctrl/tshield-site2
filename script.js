@@ -196,8 +196,12 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── CONTACT FORM: IMPROVE SELECT READABILITY ── */
   const propertySelect = document.querySelector('#contact select.inp');
   if (propertySelect) {
+    const rootStyles = getComputedStyle(document.documentElement);
+    const colorSelected = rootStyles.getPropertyValue('--charcoal').trim() || '#2A2A2A';
+    const colorPlaceholder = rootStyles.getPropertyValue('--mid-gray').trim() || '#CCCCCC';
+
     const updateSelectColor = () => {
-      propertySelect.style.color = propertySelect.value ? 'var(--charcoal)' : 'var(--mid-gray)';
+      propertySelect.style.color = propertySelect.value ? colorSelected : colorPlaceholder;
     };
 
     // Initialise on load
