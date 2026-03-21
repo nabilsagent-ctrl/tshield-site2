@@ -921,3 +921,59 @@ footer {
 
   .surfaces-head { flex-direction: column; gap: 16px; }
 }
+
+/* Extra small screens (phones) */
+@media (max-width: 640px) {
+  .hero {
+    align-items: flex-start;
+    min-height: 88vh;
+  }
+  .hero-content {
+    padding: 80px 20px 120px;
+    max-width: 100%;
+  }
+  .hero-eyebrow {
+    margin-bottom: 18px;
+    font-size: .62rem;
+    letter-spacing: .22em;
+  }
+  .hero-h1 {
+    font-size: clamp(2.3rem, 10vw, 3rem);
+  }
+  .hero-sub {
+    max-width: 100%;
+    font-size: .94rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-btns .btn-red,
+  .hero-btns .btn-outline-dark {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .stats-bar,
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row2 {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    padding: 40px 20px 28px;
+  }
+  .foot-top {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .foot-bottom {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+}
