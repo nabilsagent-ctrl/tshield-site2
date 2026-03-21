@@ -75,11 +75,51 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ── FAQ ACCORDION ── */
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.querySelector('.faq-q').addEventListener('click', () => {
+  document.querySelectorAll('.faq-item').forEach((item, index) => {
+    const question = item.querySelector('.faq-q');
+    const answer   = item.querySelector('.faq-a');
+
+    if (!question) return;
+
+    // Make questions keyboard-focusable and announce state to assistive tech
+    question.setAttribute('role', 'button');
+    question.setAttribute('tabindex', '0');
+
+    if (answer) {
+      const id = answer.id || `faq-answer-${index + 1}`;
+      answer.id = id;
+      question.setAttribute('aria-controls', id);
+    }
+
+    const setExpanded = (isExpanded) => {
+      question.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+    };
+
+    const toggle = () => {
       const isOpen = item.classList.contains('open');
+
+      // Close all items and reset aria-expanded
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
+      document.querySelectorAll('.faq-item .faq-q').forEach(q => q.setAttribute('aria-expanded', 'false'));
+
+      // Re-open clicked/activated item if it was previously closed
+      if (!isOpen) {
+        item.classList.add('open');
+        setExpanded(true);
+      }
+    };
+
+    // Initialise aria-expanded based on existing open state
+    setExpanded(item.classList.contains('open'));
+
+    question.addEventListener('click', toggle);
+
+    // Keyboard support (Enter / Space)
+    question.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggle();
+      }
     });
   });
 
