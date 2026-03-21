@@ -11,12 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeMobileMenu = () => {
     mobileMenu.classList.remove('open');
     burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   };
 
   burger.addEventListener('click', () => {
     const isOpen = mobileMenu.classList.toggle('open');
     burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
     document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
