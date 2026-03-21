@@ -92,10 +92,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const open = () => {
       trigger.classList.add('is-open');
       body.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+      body.setAttribute('aria-hidden', 'false');
     };
     const close = () => {
       trigger.classList.remove('is-open');
       body.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+      body.setAttribute('aria-hidden', 'true');
     };
 
     // Start collapsed on load
