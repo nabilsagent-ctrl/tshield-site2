@@ -22,7 +22,7 @@
   <!-- ══════════════════════════════════════════
        MOBILE MENU (full-screen overlay)
   ══════════════════════════════════════════ -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Main menu" aria-hidden="true">
     <nav class="mobile-menu-links">
       <a href="#about">About <span>→</span></a>
       <a href="#surfaces">Surfaces <span>→</span></a>
@@ -67,7 +67,7 @@
     <div class="nav-right">
       <a href="#franchise" class="nav-franchise">Franchise Enquiry</a>
       <a href="#contact" class="nav-cta">Get a Quote</a>
-      <button class="burger" id="burgerBtn" aria-label="Toggle menu">
+      <button class="burger" id="burgerBtn" type="button" aria-label="Toggle menu" aria-controls="mobileMenu" aria-expanded="false">
         <div class="burger-line"></div>
         <div class="burger-line"></div>
         <div class="burger-line"></div>

@@ -977,3 +977,38 @@ footer {
     align-items: flex-start;
   }
 }
+
+/* ============================================================
+   REDUCED MOTION ACCESSIBILITY
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Disable large-scale hero zoom animation */
+  .hero-img {
+    transition: none;
+    transform: none;
+  }
+
+  /* Stop continuous marquee scrolling */
+  .marquee .mtrack {
+    animation: none;
+  }
+
+  /* Make scroll-reveal content static */
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  /* Keep collapsible transitions snappy but minimal */
+  .collapsible-body {
+    transition: none;
+  }
+}
