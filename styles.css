@@ -104,12 +104,18 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
   font-weight: 400;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
-  transition: color .2s, border-color .2s;
+  transition: color .2s, border-color .2s, box-shadow .2s;
 }
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--red);
   border-bottom-color: var(--red);
+}
+.nav-links a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(200,16,46,.55);
+  border-bottom-color: var(--red);
+  color: var(--red);
 }
 
 .nav-right {
