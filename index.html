@@ -412,16 +412,15 @@ html, body {
     min-height: 0;
   }
   .panel-bg {
-    transform: scale(1.02);
-    animation: panelDrift 20s ease-in-out infinite;
+    transform: scale(1.0);
   }
   .panel:active .panel-bg {
-    transform: scale(1.12) translateY(-8px);
-    filter: brightness(.4) saturate(.9);
+    transform: scale(1.2) translateY(-20px);
+    filter: brightness(.3) saturate(1.0);
   }
   .panel:active .panel-cta,
   .panel:active .panel-cta-ghost {
-    transform: translateY(-2px);
+    transform: translateY(-4px);
   }
   .panel:hover { flex: none !important; }
   .panel::before { bottom: auto; top: 0; transform: scaleX(1); }
