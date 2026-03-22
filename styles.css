@@ -1066,3 +1066,10 @@ footer {
   outline: 2px solid var(--red);
   outline-offset: 2px;
 }
+
+/* Global focus ring for interactive elements to aid keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
