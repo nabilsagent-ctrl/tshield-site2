@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── SMOOTH SCROLL ── */
+  /* ── SMOOTH SCROLL (ACCOUNT FOR STICKY NAV) ── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
       const href = anchor.getAttribute('href');
@@ -197,7 +197,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
+
+        // Compensate for the sticky nav + top bar so headings are not hidden
+        const nav = document.getElementById('navbar');
+        const topbar = document.querySelector('.topbar');
+        const navHeight = nav ? nav.offsetHeight : 0;
+        const topbarHeight = topbar ? topbar.offsetHeight : 0;
+        const offset = navHeight + topbarHeight + 16; // small breathing room
+
+        const targetTop = target.getBoundingClientRect().top + window.scrollY;
+        const scrollTo = Math.max(targetTop - offset, 0);
+
+        window.scrollTo({ top: scrollTo, behavior: 'smooth' });
       }
     });
   });
