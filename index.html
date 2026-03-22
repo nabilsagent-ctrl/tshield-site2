@@ -390,9 +390,9 @@ html, body {
 
 /* Subtle background drift animation for mobile */
 @keyframes panelDrift {
-  0% { transform: scale(1.08) translateY(0); }
-  50% { transform: scale(1.12) translateY(-4px); }
-  100% { transform: scale(1.08) translateY(0); }
+  0% { transform: scale(1.06) translateY(0); }
+  50% { transform: scale(1.12) translateY(-6px); }
+  100% { transform: scale(1.06) translateY(0); }
 }
 
 /* ── MOBILE ── */
@@ -410,15 +410,16 @@ html, body {
     min-height: 0;
   }
   .panel-bg {
-    transform: scale(1.08);
+    transform: scale(1.06);
+    animation: panelDrift 18s ease-in-out infinite;
   }
   .panel:active .panel-bg {
-    transform: scale(1.03);
-    filter: brightness(.4) saturate(.85);
+    transform: scale(1.12) translateY(-8px);
+    filter: brightness(.4) saturate(.9);
   }
   .panel:active .panel-cta,
   .panel:active .panel-cta-ghost {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
   }
   .panel:hover { flex: none !important; }
   .panel::before { bottom: auto; top: 0; transform: scaleX(1); }
