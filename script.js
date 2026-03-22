@@ -44,10 +44,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Accessibility: allow closing the mobile menu with the Escape key
+  // Accessibility: allow closing the mobile menu with the Escape key and trap focus inside the menu when open
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && mobileMenu.classList.contains('open')) {
       closeMobileMenu();
+      return;
+    }
+
+    // Basic focus trap for the mobile menu when it is open
+    if (event.key === 'Tab' && mobileMenu.classList.contains('open')) {
+      const focusableSelectors = [
+        'a[href]',
+        'button:not([disabled])',
+        'input:not([disabled])',
+        'select:not([disabled])',
+        'textarea:not([disabled])',
+        '[tabindex]:not([tabindex="-1"])'
+      ].join(',');
+
+      const focusable = Array.from(mobileMenu.querySelectorAll(focusableSelectors))
+        .filter(el => !el.hasAttribute('disabled') && el.getAttribute('aria-hidden') !== 'true');
+
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const active = document.activeElement;
+
+      if (event.shiftKey && active === first) {
+        // Shift+Tab on first element → wrap to last
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && active === last) {
+        // Tab on last element → wrap to first
+        event.preventDefault();
+        first.focus();
+      }
     }
   });
 
