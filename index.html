@@ -388,6 +388,13 @@ html, body {
   transform: translateY(0);
 }
 
+/* Subtle background drift animation for mobile */
+@keyframes panelDrift {
+  0% { transform: scale(1.08) translateY(0); }
+  50% { transform: scale(1.12) translateY(-4px); }
+  100% { transform: scale(1.08) translateY(0); }
+}
+
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   html, body { overflow: auto; }
@@ -401,6 +408,10 @@ html, body {
     flex: none !important;
     height: auto;
     min-height: 0;
+  }
+  .panel-bg {
+    transform: scale(1.08);
+    animation: panelDrift 20s ease-in-out infinite;
   }
   .panel:hover { flex: none !important; }
   .panel::before { bottom: auto; top: 0; transform: scaleX(1); }
