@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── BURGER MENU ── */
   const burger     = document.getElementById('burgerBtn');
   const mobileMenu = document.getElementById('mobileMenu');
+  let lastFocusedBeforeMenu = null;
 
   const closeMobileMenu = () => {
     mobileMenu.classList.remove('open');
@@ -14,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.setAttribute('aria-expanded', 'false');
     mobileMenu.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+
+    // Restore focus to the element that opened the menu, if still in the DOM
+    if (lastFocusedBeforeMenu && document.contains(lastFocusedBeforeMenu)) {
+      lastFocusedBeforeMenu.focus();
+    }
   };
 
   burger.addEventListener('click', () => {
@@ -22,6 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
     document.body.style.overflow = isOpen ? 'hidden' : '';
+
+    if (isOpen) {
+      // Remember what was focused before opening, then move focus into the menu
+      lastFocusedBeforeMenu = document.activeElement;
+      const firstLink = mobileMenu.querySelector('a');
+      if (firstLink) firstLink.focus();
+    }
   });
 
   // Close mobile menu when a link is clicked
