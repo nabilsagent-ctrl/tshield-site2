@@ -411,7 +411,14 @@ html, body {
   }
   .panel-bg {
     transform: scale(1.08);
-    animation: panelDrift 20s ease-in-out infinite;
+  }
+  .panel:active .panel-bg {
+    transform: scale(1.03);
+    filter: brightness(.4) saturate(.85);
+  }
+  .panel:active .panel-cta,
+  .panel:active .panel-cta-ghost {
+    transform: translateY(-1px);
   }
   .panel:hover { flex: none !important; }
   .panel::before { bottom: auto; top: 0; transform: scaleX(1); }
