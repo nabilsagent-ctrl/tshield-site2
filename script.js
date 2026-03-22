@@ -202,19 +202,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── ACTIVE NAV LINK ON SCROLL ── */
+  /* ── ACTIVE NAV LINK HIGHLIGHT (ON LOAD + SCROLL) ── */
   const sectionIds = ['about', 'surfaces', 'technology', 'applications', 'franchise', 'contact'];
 
-  window.addEventListener('scroll', () => {
+  const updateActiveNav = () => {
     let current = '';
-    sectionIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (el && window.scrollY >= el.offsetTop - 120) current = id;
-    });
+
+    // If the URL already contains a hash (e.g. /index.html#contact),
+    // prefer that as the initial active section.
+    const hash = window.location.hash && window.location.hash.replace('#', '');
+
+    if (hash && sectionIds.includes(hash)) {
+      current = hash;
+    } else {
+      sectionIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 120) current = id;
+      });
+    }
+
     document.querySelectorAll('.nav-links a').forEach(a => {
       a.classList.toggle('active', a.getAttribute('href') === '#' + current);
     });
-  });
+  };
+
+  // Run once on load (handles deep links) and then on scroll
+  updateActiveNav();
+  window.addEventListener('scroll', updateActiveNav);
 
   /* ── STAT COUNTER ANIMATION ── */
   const statNums = document.querySelectorAll('.snum');
