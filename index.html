@@ -397,7 +397,11 @@ html, body {
     min-height: 100vh;
     padding-top: 48px;
   }
-  .panel { flex: none !important; height: 50vh; min-height: 320px; }
+  .panel {
+    flex: none !important;
+    height: auto;
+    min-height: 0;
+  }
   .panel:hover { flex: none !important; }
   .panel::before { bottom: auto; top: 0; transform: scaleX(1); }
   .panel-eyebrow, .panel-desc, .panel-features {
@@ -415,8 +419,8 @@ html, body {
   }
   .divider-dot { display: none; }
   .choose-hint { display: none; }
-  .topaz-badge { bottom: 8px; padding: 6px 12px; }
-  .panel-content { padding: 32px 28px; }
+  .topaz-badge { display: none; }
+  .panel-content { padding: 24px 20px; }
   .panel-cta, .panel-cta-ghost { padding: 12px 24px; }
 }
 </style>
