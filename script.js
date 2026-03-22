@@ -44,6 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   });
 
+  /* ── RESPONSIVE SAFETY: CLOSE MOBILE MENU ON DESKTOP RESIZE ── */
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1024 && mobileMenu.classList.contains('open')) {
+      closeMobileMenu();
+    }
+  });
+
   /* ── HERO IMAGE ZOOM ── */
   const heroImg = document.getElementById('heroImg');
   if (heroImg) {
