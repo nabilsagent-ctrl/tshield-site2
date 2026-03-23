@@ -584,6 +584,19 @@ panelRight.addEventListener('mouseenter', () => {
   });
 });
 
+// Keyboard activation for panels
+function bindPanelKeyboard(panel, target) {
+  panel.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      window.location.href = target;
+    }
+  });
+}
+
+bindPanelKeyboard(panelLeft, 'tshield-automotive.html');
+bindPanelKeyboard(panelRight, 'surface-protection.html');
+
 // Keyboard navigation
 document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft') window.location.href = 'tshield-automotive.html';
