@@ -397,7 +397,11 @@ html, body {
     min-height: 100vh;
     padding-top: 48px;
   }
-  .panel { flex: none !important; height: 50vh; min-height: 320px; }
+  .panel {
+    flex: none !important;
+    height: auto;
+    min-height: 0;
+  }
   .panel:hover { flex: none !important; }
   .panel::before { bottom: auto; top: 0; transform: scaleX(1); }
   .panel-eyebrow, .panel-desc, .panel-features {
