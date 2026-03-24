@@ -446,6 +446,26 @@ html, body {
   .panel-content { padding: 24px 20px; }
   .panel-cta, .panel-cta-ghost { padding: 12px 24px; }
 }
+
+/* ============================================================
+   REDUCED MOTION ACCESSIBILITY
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable large-scale hover and flex animations for users who prefer less motion */
+  .panel,
+  .panel-bg,
+  .panel-content,
+  .divider,
+  .choose-hint,
+  .panel-icon {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  /* Keep panels balanced instead of aggressively expanding on hover */
+  .panel:hover { flex: 1 !important; }
+  .split:has(.panel:hover) .panel:not(:hover) { flex: 1 !important; }
+}
 </style>
 </head>
 <body>
