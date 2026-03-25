@@ -623,6 +623,14 @@ function bindPanelKeyboard(panel, target) {
 bindPanelKeyboard(panelLeft, 'tshield-automotive.html');
 bindPanelKeyboard(panelRight, 'surface-protection.html');
 
+// Make entire panels clickable for mouse users
+panelLeft.addEventListener('click', () => {
+  window.location.href = 'tshield-automotive.html';
+});
+panelRight.addEventListener('click', () => {
+  window.location.href = 'surface-protection.html';
+});
+
 // Keyboard navigation
 document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft') window.location.href = 'tshield-automotive.html';
