@@ -1,0 +1,7 @@
+# macOS finder metadata
+.DS_Store
+assets/.DS_Store
+
+# Node/npm artifacts (future-proofing)
+node_modules/
+npm-debug.log*
