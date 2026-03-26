@@ -265,7 +265,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.querySelectorAll('.nav-links a').forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      const isActive = a.getAttribute('href') === '#' + current;
+      a.classList.toggle('active', isActive);
+
+      // Improve accessibility: expose the active section to assistive tech
+      if (isActive) {
+        a.setAttribute('aria-current', 'page');
+      } else {
+        a.removeAttribute('aria-current');
+      }
     });
   };
 
