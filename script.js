@@ -207,6 +207,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ── HERO SPLIT PANELS: KEYBOARD ACTIVATION ── */
+  // Allow Enter/Space to activate any element that looks like a custom button
+  // (role="button" + tabindex="0") and already has an onclick handler.
+  document.querySelectorAll('[role="button"][tabindex="0"][onclick]').forEach(el => {
+    el.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        // Delegate to the existing click handler so behaviour stays in one place
+        el.click();
+      }
+    });
+  });
+
   /* ── SMOOTH SCROLL (ACCOUNT FOR STICKY NAV) ── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
