@@ -423,6 +423,23 @@ html, body {
   .panel-content { padding: 32px 28px; }
   .panel-cta, .panel-cta-ghost { padding: 12px 24px; }
 }
+/* ============================================================
+   REDUCED MOTION ACCESSIBILITY
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .panel,
+  .panel-bg,
+  .panel-content,
+  .divider,
+  .choose-hint,
+  .panel-icon {
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .panel:hover { flex: 1 !important; }
+  .split:has(.panel:hover) .panel:not(:hover) { flex: 1 !important; }
+}
 </style>
 </head>
 <body>
