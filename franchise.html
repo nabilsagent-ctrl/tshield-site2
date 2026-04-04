@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T-Shield â Franchise Opportunity</title>
+  <meta name="description" content="Join the T-Shield franchise network. A new category in interior surface protection, developed by Topaz â the world standard in protective film since 2009.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --color-dark: #0d0d0d;
+      --color-dark-alt: #1a1a1a;
+      --color-red: #C8102E;
+      --color-red-accent: #E01530;
+      --color-text-primary: #ffffff;
+      --color-text-secondary: rgba(255, 255, 255, 0.8);
+      --color-text-muted: rgba(255, 255, 255, 0.65);
+      --color-gray-400: #a3a3a3;
+      --color-gray-500: #737373;
+      --color-gray-800: #262626;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background-color: var(--color-dark);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Barlow Condensed', sans-serif;
+      color: var(--color-text-primary);
+      font-weight: 700;
+    }
+
+    .heading-xl {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    .heading-lg {
+      font-size: clamp(1.875rem, 4vw, 2.5rem);
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    .heading-md {
+      font-size: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .heading-sm {
+      font-size: 1.125rem;
+      line-height: 1.3;
+    }
+
+    p {
+      color: var(--color-text-secondary);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      background-color: var(--color-red);
+      color: white;
+      text-decoration: none;
+      border: 2px solid var(--color-red);
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-family: 'Barlow', sans-serif;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-red-accent);
+      border-color: var(--color-red-accent);
+      transform: translateY(-2px);
+    }
+
+    /* Forms */
+    .form-label {
+      display: block;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--color-gray-800);
+      border-radius: 0.5rem;
+      color: var(--color-text-primary);
+      font-family: 'Barlow', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--color-red);
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.1);
+    }
+
+    .form-input::placeholder {
+      color: var(--color-gray-500);
+    }
+
+    /* Progress Bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background-color: var(--color-red);
+      z-index: 1000;
+      width: 0%;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(13, 13, 13, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--color-gray-800);
+      z-index: 999;
+      padding: 1rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 5rem;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--color-text-primary);
+      font-weight: 700;
+      font-size: 1.25rem;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    .nav-logo svg {
+      width: 24px;
+      height: 24px;
+      background-color: var(--color-red);
+      border-radius: 50%;
+      padding: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    .nav-link:hover {
+      color: var(--color-red);
+    }
+
+    .nav-link.active {
+      color: var(--color-red);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background-color: var(--color-text-primary);
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .fade-in-section {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .fade-in-section.visible {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 2rem;
+    }
+
+    section:nth-child(odd) {
+      background-color: var(--color-dark);
+    }
+
+    section:nth-child(even) {
+      background-color: var(--color-dark-alt);
+    }
+
+    .max-w-5xl {
+      max-width: 64rem;
+      margin: 0 auto;
+    }
+
+    .max-w-4xl {
+      max-width: 56rem;
+      margin: 0 auto;
+    }
+
+    .max-w-3xl {
+      max-width: 48rem;
+      margin: 0 auto;
+    }
+
+    .max-w-2xl {
+      max-width: 42rem;
+    }
+
+    /* Hero Section */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 5rem;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .hero-bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--color-red);
+      filter: blur(80px);
+      opacity: 0.05;
+    }
+
+    .hero-bg-circle-1 {
+      width: 384px;
+      height: 384px;
+      top: 0;
+      right: 0;
+      transform: translate(50%, -50%);
+    }
+
+    .hero-bg-circle-2 {
+      width: 384px;
+      height: 384px;
+      bottom: 0;
+      left: 0;
+      transform: translate(-50%, 50%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 56rem;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.375rem 0.75rem;
+      background-color: rgba(200, 16, 46, 0.1);
+      border: 1px solid rgba(200, 16, 46, 0.3);
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-red);
+    }
+
+    .hero-title {
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      margin-bottom: 3rem;
+      color: var(--color-text-secondary);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 4rem;
+    }
+
+    .hero-scroll-hint {
+      font-size: 0.875rem;
+      color: var(--color-gray-500);
+      margin-bottom: 2rem;
+    }
+
+    .hero-arrow {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--color-red);
+      cursor: pointer;
+      transition: color 0.3s ease;
+      z-index: 10;
+    }
+
+    .hero-arrow:hover {
+      color: var(--color-red-accent);
+    }
+
+    .bounce-animation {
+      animation: bounce 2s infinite;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: 1fr;
+    }
+
+    .grid-cols-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Card */
+    .card {
+      background-color: var(--color-dark-alt);
+      border: 1px solid var(--color-gray-800);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(200, 16, 46, 0.3);
+    }
+
+    .card-icon {
+      width: 3rem;
+      height: 3rem;
+      background-color: rgba(200, 16, 46, 0.2);
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--color-red);
+    }
+
+    /* Stat Counter */
+    .stat-counter {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--color-red);
+      font-family: 'Barlow Condensed', sans-serif;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--color-gray-500);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: linear-gradient(to right, rgba(200, 16, 46, 0.2), transparent);
+      border-left: 4px solid var(--color-red);
+      border-radius: 0.5rem;
+      padding: 2rem 2.5rem;
+    }
+
+    .quote-text {
+      font-size: 1.375rem;
+      font-style: italic;
+      color: var(--color-text-primary);
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+
+    .timeline-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 3.25rem;
+      top: 4rem;
+      width: 2px;
+      height: 5rem;
+      background: linear-gradient(to bottom, var(--color-red), transparent);
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+    .timeline-circle {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4rem;
+      height: 4rem;
+      background-color: var(--color-red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.25rem;
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    .timeline-content {
+      margin-left: 6rem;
+      padding-top: 0.5rem;
+    }
+
+    .timeline-content h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-details {
+      background-color: var(--color-dark);
+      padding: 1rem;
+      border: 1px solid var(--color-gray-800);
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--color-gray-400);
+    }
+
+    /* Utility Classes */
+    .text-center {
+      text-align: center;
+    }
+
+    .text-white {
+      color: var(--color-text-primary);
+    }
+
+    .text-gray-300 {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .text-gray-400 {
+      color: var(--color-gray-400);
+    }
+
+    .text-gray-500 {
+      color: var(--color-gray-500);
+    }
+
+    .text-tshield-red {
+      color: var(--color-red);
+    }
+
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mb-12 { margin-bottom: 3rem; }
+    .mb-16 { margin-bottom: 4rem; }
+
+    .mt-1 { margin-top: 0.25rem; }
+    .mt-2 { margin-bottom: 0.5rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mt-6 { margin-top: 1.5rem; }
+    .mt-8 { margin-top: 2rem; }
+    .mt-12 { margin-top: 3rem; }
+
+    .pt-2 { padding-top: 0.5rem; }
+    .pt-4 { padding-top: 1rem; }
+    .pt-8 { padding-top: 2rem; }
+
+    .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .px-8 { padding-left: 2rem; padding-right: 2rem; }
+
+    .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+
+    .gap-2 { gap: 0.5rem; }
+    .gap-3 { gap: 0.75rem; }
+    .gap-4 { gap: 1rem; }
+    .gap-6 { gap: 1.5rem; }
+    .gap-8 { gap: 2rem; }
+    .gap-12 { gap: 3rem; }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .flex-row {
+      flex-direction: row;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .items-start {
+      align-items: flex-start;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .flex-shrink-0 {
+      flex-shrink: 0;
+    }
+
+    .space-y-2 > * + * { margin-top: 0.5rem; }
+    .space-y-3 > * + * { margin-top: 0.75rem; }
+    .space-y-4 > * + * { margin-top: 1rem; }
+    .space-y-6 > * + * { margin-top: 1.5rem; }
+    .space-y-8 > * + * { margin-top: 2rem; }
+    .space-y-12 > * + * { margin-top: 3rem; }
+
+    .bg-gradient-to-r {
+      background-image: linear-gradient(to right, var(--start), var(--end));
+      --start: rgba(200, 16, 46, 0.2);
+      --end: transparent;
+    }
+
+    .border {
+      border: 1px solid var(--color-gray-800);
+    }
+
+    .border-t {
+      border-top: 1px solid var(--color-gray-800);
+    }
+
+    .border-l-4 {
+      border-left: 4px solid var(--color-red);
+    }
+
+    .rounded {
+      border-radius: 0.5rem;
+    }
+
+    .rounded-lg {
+      border-radius: 0.75rem;
+    }
+
+    .rounded-full {
+      border-radius: 9999px;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .h-full {
+      height: 100%;
+    }
+
+    .leading-relaxed {
+      line-height: 1.75;
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .bg-tshield-dark {
+      background-color: var(--color-dark);
+    }
+
+    .bg-tshield-dark-alt {
+      background-color: var(--color-dark-alt);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--color-gray-800);
+    }
+
+    footer svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .footer-link {
+      color: var(--color-gray-400);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'Barlow', sans-serif;
+      font-size: inherit;
+    }
+
+    .footer-link:hover {
+      color: var(--color-red);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem;
+      }
+
+      .nav-container {
+        max-width: 100%;
+      }
+
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(13, 13, 13, 0.98);
+        flex-direction: column;
+        gap: 1rem;
+        padding: 2rem;
+        border-bottom: 1px solid var(--color-gray-800);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .grid-cols-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-cols-3 {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      .heading-xl {
+        font-size: 2rem;
+      }
+
+      .heading-lg {
+        font-size: 1.5rem;
+      }
+
+      .quote-text {
+        font-size: 1.25rem;
+      }
+
+      .timeline-item {
+        padding-left: 0;
+      }
+
+      .timeline-circle {
+        position: relative;
+        left: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .timeline-content {
+        margin-left: 0;
+      }
+
+      .timeline-item:not(:last-child)::after {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .heading-xl {
+        font-size: 1.5rem;
+      }
+
+      .heading-lg {
+        font-size: 1.25rem;
+      }
+
+      .stat-value {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <text x="3" y="18" font-size="20" font-weight="bold" fill="white">T</text>
+        </svg>
+        â T-Shield Home
+      </a>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><button class="nav-link" onclick="scrollToSection('hero')">Home</button></li>
+        <li><button class="nav-link" onclick="scrollToSection('opportunity')">Opportunity</button></li>
+        <li><button class="nav-link" onclick="scrollToSection('model')">Business Model</button></li>
+        <li><button class="nav-link" onclick="scrollToSection('contact')">Contact</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="hero-bg-circle hero-bg-circle-1"></div>
+      <div class="hero-bg-circle hero-bg-circle-2"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">By Topaz</div>
+      <h1 class="heading-xl hero-title">The Next Major Opportunity in Protective Film Technology</h1>
+      <p class="hero-subtitle">T-Shield Surface Protection â a new category in interior protection. Developed by Topaz, the world standard in protective film since 2009.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary">Enquire About Franchising</a>
+      </div>
+      <div class="hero-scroll-hint">Scroll to explore the opportunity</div>
+    </div>
+
+    <button class="hero-arrow" onclick="scrollToSection('opportunity')" aria-label="Scroll to next section">
+      <svg class="bounce-animation" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+  </section>
+
+  <!-- Opportunity Section -->
+  <section id="opportunity">
+    <div class="max-w-5xl">
+      <h2 class="heading-lg text-white mb-8 text-center">The Opportunity</h2>
+
+      <div class="grid grid-cols-3 mb-16">
+        <div class="stat-counter fade-in-section">
+          <div class="stat-value" data-target="27">27</div>
+          <div class="stat-label">M UK Residential Homes</div>
+        </div>
+        <div class="stat-counter fade-in-section">
+          <div class="stat-value" data-target="170">170</div>
+          <div class="stat-label">K+ UK Hospitality Businesses</div>
+        </div>
+        <div class="stat-counter fade-in-section">
+          <div class="stat-value" data-target-infinity="true">â</div>
+          <div class="stat-label">Recurring Revenue Potential</div>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <div class="fade-in-section">
+          <p class="text-lg text-gray-300 leading-relaxed">
+            Over the past decade, Paint Protection Film has transformed the automotive industry. What began as a specialist service has grown into a global industry worth billions. Now imagine applying that same concept to something far bigger.
+          </p>
+        </div>
+
+        <div class="fade-in-section">
+          <p class="text-lg text-gray-300 leading-relaxed">
+            The number of interior surfaces in the world dwarfs the number of cars on the road. Stone countertops, wooden flooring, marble features, glass surfacesâevery premium property has them. And every single one is vulnerable to damage.
+          </p>
+        </div>
+
+        <div class="fade-in-section">
+          <p class="text-lg text-gray-300 leading-relaxed">
+            That's where T-Shield comes in. We've created a category. A completely new way to protect and preserve interior surfaces. And we're looking for franchisees to help us scale this opportunity across the UK and beyond.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Began Section -->
+  <section id="howItBegan">
+    <div class="max-w-4xl">
+      <h2 class="heading-lg text-white mb-12 text-center">How It Began</h2>
+
+      <div class="space-y-12">
+        <div class="fade-in-section">
+          <div class="flex gap-6 items-start">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-red-900 bg-opacity-20 flex items-center justify-center mt-1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-red);">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 16 16 12 12 8 8 12 12 16"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h3 class="heading-md text-white mb-4">A Simple Question</h3>
+              <p class="text-lg text-gray-300 leading-relaxed">
+                For years, Topaz has been the world leader in protective film technology. We've protected countless cars, preserving their value and appearance. Then, in 2009, something changed. Customers started asking us the same question over and over:
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-section quote-box">
+          <p class="quote-text">"If this film can protect my car so effectively, why isn't there something like this for my home?"</p>
+        </div>
+
+        <div class="fade-in-section">
+          <div class="grid grid-cols-3 gap-8 pt-8">
+            <div class="text-center">
+              <div class="heading-md text-tshield-red mb-2">2009</div>
+              <p class="text-gray-400">Topaz Founded</p>
+              <p class="text-sm text-gray-500 mt-2">15+ years of expertise in protective film</p>
+            </div>
+
+            <div class="text-center">
+              <div class="heading-md text-tshield-red mb-2">2024</div>
+              <p class="text-gray-400">T-Shield Created</p>
+              <p class="text-sm text-gray-500 mt-2">Born from customer demand and expertise</p>
+            </div>
+
+            <div class="text-center">
+              <div class="heading-md text-tshield-red mb-2">Global</div>
+              <p class="text-gray-400">Presence</p>
+              <p class="text-sm text-gray-500 mt-2">Topaz operates across multiple countries</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-section">
+          <p class="text-lg text-gray-300 leading-relaxed text-center">
+            We didn't just listen to our customers. We invested in research, development, and innovation. The result? T-Shieldâa complete system for protecting interior surfaces. Today, we're ready to expand. We're looking for franchisees who understand the value of a proven brand and want to build a business in a completely new category.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Category Section -->
+  <section id="newCategory">
+    <div class="max-w-5xl">
+      <h2 class="heading-lg text-white mb-4 text-center">A New Category</h2>
+      <p class="fade-in-section text-lg text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+        Interior Surface Protection powered by sacrificial layer technology
+      </p>
+
+      <div class="mb-16">
+        <div class="fade-in-section bg-gradient-to-r border border-tshield-red border-opacity-30 rounded-lg p-10 mb-12" style="--start: rgba(200, 16, 46, 0.1); --end: transparent;">
+          <p class="text-lg text-gray-300 leading-relaxed">
+            T-Shield creates an invisible, protective layer over your most valuable interior surfaces. Using advanced sacrificial layer technologyâthe same principles that revolutionized automotive protectionâwe preserve stone countertops, marble features, wooden floors, glass surfaces, and more. The protection layer absorbs damage, keeping your surfaces pristine. And when it's time to refresh, the layer simply peels away, ready to be renewed.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 mb-12">
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Invisible Protection</h3>
+          <p class="text-gray-400">A clear, microscopic layer that preserves the original appearance of surfaces while defending them against scratches, stains, and damage.</p>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Sacrificial Layer Technology</h3>
+          <p class="text-gray-400">The protective film takes the impact and absorbs the damage, keeping your stone, marble, wood, and glass unharmed.</p>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Premium Aesthetic</h3>
+          <p class="text-gray-400">Enhances the natural beauty of materials. No visible protection means complete design freedom for architects and interior designers.</p>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 4v6h-6M1 20v-6h6"></path>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36M20.49 15a9 9 0 0 1-14.85 3.36"></path>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Renewable</h3>
+          <p class="text-gray-400">When needed, the protective layer peels away cleanly, revealing untouched surfaces beneath. Reapply whenever you choose.</p>
+        </div>
+      </div>
+
+      <div class="fade-in-section">
+        <h3 class="heading-md text-white mb-8 text-center">Applications & Markets</h3>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-tshield-dark rounded-lg p-6 border">
+            <h4 class="heading-sm text-tshield-red mb-4">Residential</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-start gap-3">
+                <span class="text-tshield-red mt-1">â¢</span>
+                <span>Kitchen countertops and islands</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-tshield-red mt-1">â¢</span>
+                <span>Marble and stone features</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-tshield-red mt-1">â¢</span>
+                <span>Hardwood and engineered flooring</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-tshield-red mt-1">â¢</span>
+                <span>Glass and glazing surfaces</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-tshield-dark rounded-lg p-6 border">
+            <h4 class="heading-sm text-tshield-red mb-4">Commercial & Hospitality</h4>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-start gap-3">
+                <span class="text-tshield-red mt-1">â¢</span>
+                <span>Hotel and restaurant surfaces</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-tshield-red mt-1">â¢</span>
+                <span>Office and corporate interiors</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-tshield-red mt-1">â¢</span>
+                <span>Retail showrooms and displays</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-tshield-red mt-1">â¢</span>
+                <span>Luxury residential developments</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Topaz Section -->
+  <section id="whyTopaz">
+    <div class="max-w-5xl">
+      <h2 class="heading-lg text-white mb-12 text-center">Why Partner With Topaz</h2>
+
+      <div class="fade-in-section mb-16">
+        <p class="text-lg text-gray-300 text-center max-w-3xl mx-auto leading-relaxed">
+          Topaz isn't just a brand. We're an industry standard. For over 15 years, we've defined what protective film technology means across the globe. When you partner with us, you're partnering with expertise, credibility, and a proven track record.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 mb-12">
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8 14 12 18 16 14"></polyline>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Industry Leadership</h3>
+          <p class="text-gray-400">Topaz has shaped the protective film industry since 2009. We don't follow trendsâwe set them. Your franchise benefits from a brand that's synonymous with quality and innovation.</p>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 6v6l4 2"></path>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Global Presence & Resources</h3>
+          <p class="text-gray-400">Our international infrastructure, supply chains, and expertise are yours to leverage. From training to support, you're backed by a global organization.</p>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Network Advantage</h3>
+          <p class="text-gray-400">Access to Topaz's established relationships, partnerships, and customer base. You're not starting from zeroâyou're building on a foundation.</p>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+              <polyline points="13 2 13 9 20 9"></polyline>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Cross-Selling Opportunities</h3>
+          <p class="text-gray-400">Your customers are also potential automotive clients. Our established automotive protection film service creates natural upselling and cross-promotion opportunities.</p>
+        </div>
+      </div>
+
+      <div class="fade-in-section bg-gradient-to-r border border-tshield-red border-opacity-30 rounded-lg p-10" style="--start: rgba(200, 16, 46, 0.2); --end: transparent;">
+        <h3 class="heading-md text-white mb-6">What You Get</h3>
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <h4 class="heading-sm text-white mb-4 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-tshield-red flex items-center justify-center text-sm text-white font-bold">â</span>
+              Proven Systems
+            </h4>
+            <p class="text-gray-300">
+              Access to T-Shield's complete operating system, developed with Topaz's expertise and tested in market.
+            </p>
+          </div>
+          <div>
+            <h4 class="heading-sm text-white mb-4 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-tshield-red flex items-center justify-center text-sm text-white font-bold">â</span>
+              Established Brand
+            </h4>
+            <p class="text-gray-300">
+              You're not building a brand from scratch. T-Shield benefits from Topaz's reputation and recognition.
+            </p>
+          </div>
+          <div>
+            <h4 class="heading-sm text-white mb-4 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-tshield-red flex items-center justify-center text-sm text-white font-bold">â</span>
+              First-Mover Advantage
+            </h4>
+            <p class="text-gray-300">
+              You're entering a category with virtually no competition. Establish yourself as the expert in your territory.
+            </p>
+          </div>
+          <div>
+            <h4 class="heading-sm text-white mb-4 flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-tshield-red flex items-center justify-center text-sm text-white font-bold">â</span>
+              Scalable Model
+            </h4>
+            <p class="text-gray-300">
+              From a single operator to a full team, the business model grows with you. No retail overhead needed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Model Section -->
+  <section id="model">
+    <div class="max-w-5xl">
+      <h2 class="heading-lg text-white mb-12 text-center">The Business Model</h2>
+
+      <div class="fade-in-section mb-16">
+        <p class="text-lg text-gray-300 text-center max-w-3xl mx-auto leading-relaxed">
+          T-Shield is designed for franchisees who want to build a scalable, management-focused business with minimal overhead and maximum flexibility.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 mb-12">
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Scalable Operations</h3>
+          <p class="text-gray-400">Start with a mobile van and flexible scheduling. Scale your business as demand grows. No retail premises required. No inventory management overhead.</p>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Defined Territories</h3>
+          <p class="text-gray-400">Your exclusive territory protects your market. Focus on serving your area thoroughly. Build deep relationships with property managers, interior designers, and builders.</p>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 17"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Market Opportunity</h3>
+          <p class="text-gray-400">With 27M UK residential homes and 170K+ hospitality businesses, the addressable market is enormous. A new category means first-mover advantage in your territory.</p>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 4v6h-6M1 20v-6h6"></path>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36M20.49 15a9 9 0 0 1-14.85 3.36"></path>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Recurring Revenue</h3>
+          <p class="text-gray-400">Surface protection is renewable. Each protected surface represents an ongoing relationship. Renewal services, additional surfaces, and maintenance create steady revenue.</p>
+        </div>
+      </div>
+
+      <div class="fade-in-section bg-gradient-to-r border border-tshield-red border-opacity-30 rounded-lg p-10" style="--start: rgba(200, 16, 46, 0.1); --end: transparent;">
+        <h3 class="heading-md text-white mb-8 text-center">How It Works</h3>
+
+        <div class="space-y-6 timeline">
+          <div class="timeline-item fade-in-section">
+            <div class="timeline-circle">1</div>
+            <div class="timeline-content">
+              <h4 class="heading-sm text-white mb-2">Acquire Customers</h4>
+              <p class="text-gray-300">
+                Identify prospects in your territory: property owners, property managers, interior designers, builders, hospitality businesses. Use T-Shield's marketing support and your own network.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-section">
+            <div class="timeline-circle">2</div>
+            <div class="timeline-content">
+              <h4 class="heading-sm text-white mb-2">Conduct Surveys</h4>
+              <p class="text-gray-300">
+                Visit properties, assess surfaces, identify protection opportunities. Document the scope of work. Build trust with potential customers.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-section">
+            <div class="timeline-circle">3</div>
+            <div class="timeline-content">
+              <h4 class="heading-sm text-white mb-2">Deliver Service</h4>
+              <p class="text-gray-300">
+                Apply T-Shield surface protection using our proven systems and techniques. Ensure customer satisfaction and premium results.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in-section">
+            <div class="timeline-circle">4</div>
+            <div class="timeline-content">
+              <h4 class="heading-sm text-white mb-2">Build Recurring Revenue</h4>
+              <p class="text-gray-300">
+                Maintain customer relationships. Offer maintenance, renewals, and additional surface protection. Referrals from satisfied customers drive growth.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included Section -->
+  <section id="whatsIncluded">
+    <div class="max-w-5xl">
+      <h2 class="heading-lg text-white mb-12 text-center">What's Included</h2>
+
+      <div class="grid grid-cols-2 gap-6 mb-12">
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-6">Comprehensive Training</h3>
+          <ul class="space-y-3">
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Technical training on T-Shield application systems</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Sales and customer engagement techniques</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Business operations and management</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Ongoing support and certification programs</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Access to online training resources</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-6">Marketing & Brand Support</h3>
+          <ul class="space-y-3">
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Established brand identity and marketing materials</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Digital marketing templates and resources</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Website and online presence support</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Social media content and strategy guidance</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Local market launch assistance</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-6">Initial Investment Package</h3>
+          <ul class="space-y-3">
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Franchise license and territory exclusivity</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Van with professional branding and setup</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Complete tooling and equipment kit</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Initial product supply and materials</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Training program (2-4 weeks)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-6">Ongoing Support</h3>
+          <ul class="space-y-3">
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Dedicated franchise support team</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Regular check-ins and business reviews</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Access to franchisee network and community</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Product updates and continuous improvement</span>
+            </li>
+            <li class="flex gap-3 text-gray-300">
+              <span class="text-tshield-red font-bold flex-shrink-0">â</span>
+              <span>Lead generation and customer referrals</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fade-in-section bg-gradient-to-r border border-tshield-red border-opacity-30 rounded-lg p-10" style="--start: rgba(200, 16, 46, 0.2); --end: transparent;">
+        <h3 class="heading-md text-white mb-6">Investment Overview</h3>
+        <p class="text-gray-300 mb-8 leading-relaxed">
+          The initial franchise investment is structured to be accessible while providing you with everything needed to launch professionally and succeed quickly. Your investment includes your franchise licence, fully equipped van, complete tooling and product package, and comprehensive training program.
+        </p>
+        <div class="grid grid-cols-3 gap-8">
+          <div class="text-center p-4">
+            <div class="heading-md text-tshield-red mb-2">Franchise Licence</div>
+            <p class="text-gray-400 text-sm">Territory exclusivity + brand rights</p>
+          </div>
+          <div class="text-center p-4">
+            <div class="heading-md text-tshield-red mb-2">Equipment & Van</div>
+            <p class="text-gray-400 text-sm">Branded van + tools + setup</p>
+          </div>
+          <div class="text-center p-4">
+            <div class="heading-md text-tshield-red mb-2">Training & Support</div>
+            <p class="text-gray-400 text-sm">4-week program + ongoing</p>
+          </div>
+        </div>
+        <p class="text-gray-400 text-center text-sm mt-8 pt-8 border-t border-gray-700">
+          For detailed investment figures and financing options, complete your enquiry and we'll discuss the specifics with you directly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Is This For Section -->
+  <section id="whoIsThisFor">
+    <div class="max-w-5xl">
+      <h2 class="heading-lg text-white mb-12 text-center">Who Is This For?</h2>
+
+      <div class="fade-in-section mb-16 bg-gradient-to-r border border-tshield-red border-opacity-30 rounded-lg p-10" style="--start: rgba(200, 16, 46, 0.2); --end: transparent;">
+        <p class="text-lg text-gray-300 leading-relaxed text-center">
+          T-Shield franchises suit ambitious entrepreneurs, business professionals, and relationship builders who want to build a scalable business with minimal overhead. No prior experience in protective films is requiredâjust the right mindset and work ethic.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 mb-12">
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Relationship Builders</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">You excel at connecting with people and building trust. You can identify opportunities and nurture relationships with property owners, managers, and design professionals.</p>
+          <div class="space-y-2">
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Strong interpersonal skills</span>
+            </div>
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Natural networker</span>
+            </div>
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Good at identifying customer pain points</span>
+            </div>
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Enthusiastic about solving problems</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Business Professionals</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">You have previous business experience and understand operations, scaling, and profitability. You want a proven system you can grow within.</p>
+          <div class="space-y-2">
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Track record of business success</span>
+            </div>
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Strong management skills</span>
+            </div>
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Understanding of profit and loss</span>
+            </div>
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Ability to build and manage a team</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Entrepreneurs</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">You're hungry for independence and want to build something of your own. You see the opportunity in a new category and want to be first to market.</p>
+          <div class="space-y-2">
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Driven to succeed</span>
+            </div>
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Comfortable with uncertainty</span>
+            </div>
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Willing to invest in growth</span>
+            </div>
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Passionate about building value</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-section card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+              <polyline points="13 2 13 9 20 9"></polyline>
+            </svg>
+          </div>
+          <h3 class="heading-md text-white mb-3">Hands-On Leaders</h3>
+          <p class="text-gray-300 mb-6 leading-relaxed">You're willing to roll up your sleeves, manage your territory directly, and eventually scale with a team. You understand that success comes from dedication.</p>
+          <div class="space-y-2">
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Work ethic and commitment</span>
+            </div>
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Attention to detail</span>
+            </div>
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Customer-focused mindset</span>
+            </div>
+            <div class="flex gap-2 text-gray-400 text-sm">
+              <span class="text-tshield-red">â¢</span>
+              <span>Continuous learning orientation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in-section">
+        <h3 class="heading-md text-white mb-8 text-center">What We're Looking For</h3>
+        <div class="grid grid-cols-2 gap-8">
+          <div class="bg-tshield-dark-alt rounded-lg p-8 border">
+            <h4 class="heading-sm text-tshield-red mb-4">Essential Qualities</h4>
+            <ul class="space-y-3 text-gray-300">
+              <li class="flex gap-3">
+                <span class="text-tshield-red font-bold">â</span>
+                <span>Genuine enthusiasm for the T-Shield opportunity</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tshield-red font-bold">â</span>
+                <span>Strong work ethic and dedication to customer success</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tshield-red font-bold">â</span>
+                <span>Ability to follow systems and processes</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tshield-red font-bold">â</span>
+                <span>Financial stability and investment readiness</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tshield-red font-bold">â</span>
+                <span>Commitment to ongoing training and development</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-tshield-dark-alt rounded-lg p-8 border">
+            <h4 class="heading-sm text-tshield-red mb-4">Preferred Background</h4>
+            <ul class="space-y-3 text-gray-300">
+              <li class="flex gap-3">
+                <span class="text-tshield-red font-bold">â</span>
+                <span>Sales or customer service experience (helpful but not required)</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tshield-red font-bold">â</span>
+                <span>Understanding of UK property market or hospitality industry</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tshield-red font-bold">â</span>
+                <span>Existing network in your target territory</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tshield-red font-bold">â</span>
+                <span>Experience with service-based businesses</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-tshield-red font-bold">â</span>
+                <span>Digital marketing and social media proficiency</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in-section mt-12">
+        <div class="text-center bg-gradient-to-r via-red-900 via-opacity-10 border border-tshield-red border-opacity-20 rounded-lg p-8" style="--start: transparent; --end: transparent;">
+          <p class="text-lg text-gray-300">
+            <span class="text-tshield-red font-semibold">No prior experience required.</span> If you have the right mindset, work ethic, and commitment to excellence, we'll provide the training and support you need to succeed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Process Section -->
+  <section id="process">
+    <div class="max-w-4xl">
+      <h2 class="heading-lg text-white mb-4 text-center">Application Process</h2>
+      <p class="fade-in-section text-lg text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+        Getting from interest to launched franchise typically takes 4-8 weeks
+      </p>
+
+      <div class="space-y-8 md:space-y-12">
+        <!-- Process Step 1 -->
+        <div class="fade-in-section">
+          <div class="relative">
+            <div class="flex gap-8">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-tshield-red text-white font-bold text-xl">
+                  1
+                </div>
+              </div>
+              <div class="flex-grow pt-2">
+                <div class="flex items-start gap-3 mb-2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-red); flex-shrink: 0; margin-top: 4px;">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  <h3 class="heading-md text-white">Enquiry</h3>
+                </div>
+                <p class="text-gray-300 mb-4 leading-relaxed">Start here. Tell us about yourself, your background, and your interest in the T-Shield franchise opportunity.</p>
+                <div class="bg-tshield-dark rounded-lg p-4 border">
+                  <p class="text-gray-400 text-sm">Complete the online form at the bottom of this page. Share your contact information, location of interest, and a bit about your experience.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Process Step 2 -->
+        <div class="fade-in-section">
+          <div class="relative">
+            <div class="flex gap-8">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-tshield-red text-white font-bold text-xl">
+                  2
+                </div>
+              </div>
+              <div class="flex-grow pt-2">
+                <div class="flex items-start gap-3 mb-2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-red); flex-shrink: 0; margin-top: 4px;">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  <h3 class="heading-md text-white">Initial Discussion</h3>
+                </div>
+                <p class="text-gray-300 mb-4 leading-relaxed">A member of our franchising team will contact you to discuss the opportunity in detail.</p>
+                <div class="bg-tshield-dark rounded-lg p-4 border">
+                  <p class="text-gray-400 text-sm">This 30-45 minute conversation explores your motivation, answers your questions, and determines if there's a good fit. No obligations.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Process Step 3 -->
+        <div class="fade-in-section">
+          <div class="relative">
+            <div class="flex gap-8">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-tshield-red text-white font-bold text-xl">
+                  3
+                </div>
+              </div>
+              <div class="flex-grow pt-2">
+                <div class="flex items-start gap-3 mb-2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-red); flex-shrink: 0; margin-top: 4px;">
+                    <path d="M9 11l3 3L22 4"></path>
+                    <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  <h3 class="heading-md text-white">Full Review</h3>
+                </div>
+                <p class="text-gray-300 mb-4 leading-relaxed">If both parties are interested, we'll provide comprehensive franchise documentation and conduct a thorough assessment.</p>
+                <div class="bg-tshield-dark rounded-lg p-4 border">
+                  <p class="text-gray-400 text-sm">Review franchise agreement details, territory specifics, financials, and support systems. We'll also check references and verify your capability to succeed.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Process Step 4 -->
+        <div class="fade-in-section">
+          <div class="relative">
+            <div class="flex gap-8">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-tshield-red text-white font-bold text-xl">
+                  4
+                </div>
+              </div>
+              <div class="flex-grow pt-2">
+                <div class="flex items-start gap-3 mb-2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-red); flex-shrink: 0; margin-top: 4px;">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <h3 class="heading-md text-white">Agreement & Preparation</h3>
+                </div>
+                <p class="text-gray-300 mb-4 leading-relaxed">Finalize the franchise agreement and begin preparation for launch.</p>
+                <div class="bg-tshield-dark rounded-lg p-4 border">
+                  <p class="text-gray-400 text-sm">Complete legal agreements, confirm territory, arrange financing, and schedule your training program. We'll also begin van and equipment setup.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Process Step 5 -->
+        <div class="fade-in-section">
+          <div class="relative">
+            <div class="flex gap-8">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-16 w-16 rounded-full bg-tshield-red text-white font-bold text-xl">
+                  5
+                </div>
+              </div>
+              <div class="flex-grow pt-2">
+                <div class="flex items-start gap-3 mb-2">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-red); flex-shrink: 0; margin-top: 4px;">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <h3 class="heading-md text-white">Training & Launch</h3>
+                </div>
+                <p class="text-gray-300 mb-4 leading-relaxed">Begin your comprehensive training program and officially launch your T-Shield franchise.</p>
+                <div class="bg-tshield-dark rounded-lg p-4 border">
+                  <p class="text-gray-400 text-sm">4-week training covering technical skills, sales, operations, and marketing. Launch support includes territory activation, first customer acquisition, and operational setup.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in-section mt-16 bg-gradient-to-r border border-tshield-red border-opacity-30 rounded-lg p-10" style="--start: rgba(200, 16, 46, 0.2); --end: transparent;">
+        <h3 class="heading-md text-white mb-6 text-center">Next Steps</h3>
+        <div class="grid grid-cols-3 gap-6 text-center">
+          <div>
+            <div class="heading-sm text-tshield-red mb-2">Complete Enquiry</div>
+            <p class="text-gray-400 text-sm">Submit the form below with your details and location of interest</p>
+          </div>
+          <div>
+            <div class="heading-sm text-tshield-red mb-2">We'll Be In Touch</div>
+            <p class="text-gray-400 text-sm">Within 48 hours to discuss the opportunity and answer your questions</p>
+          </div>
+          <div>
+            <div class="heading-sm text-tshield-red mb-2">Move Forward</div>
+            <p class="text-gray-400 text-sm">If interested, we'll guide you through the process to launch</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="max-w-5xl">
+      <h2 class="heading-lg text-white mb-4 text-center">Interested? Get In Touch</h2>
+      <p class="text-lg text-gray-400 text-center mb-16 max-w-2xl mx-auto">
+        Complete your enquiry and let's discuss the T-Shield franchise opportunity. We'll be in touch within 48 hours.
+      </p>
+
+      <div class="grid grid-cols-2 gap-12">
+        <div class="fade-in-section">
+          <div class="space-y-8">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-red-900 bg-opacity-20 rounded-lg flex items-center justify-center">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-red);">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="heading-sm text-white mb-1">Phone</h3>
+                <a href="tel:02089619951" class="text-gray-400 hover:text-tshield-red transition-colors duration-200 cursor-pointer">
+                  020 8961 9951
+                </a>
+                <p class="text-sm text-gray-500 mt-1">Monday - Friday, 9am - 5pm</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-red-900 bg-opacity-20 rounded-lg flex items-center justify-center">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-red);">
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="heading-sm text-white mb-1">Email</h3>
+                <a href="mailto:franchise@t-shield.co" class="text-gray-400 hover:text-tshield-red transition-colors duration-200 cursor-pointer">
+                  franchise@t-shield.co
+                </a>
+                <p class="text-sm text-gray-500 mt-1">We respond within 24 hours</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-red-900 bg-opacity-20 rounded-lg flex items-center justify-center">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-red);">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="heading-sm text-white mb-1">Website</h3>
+                <a href="https://www.t-shield.co" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-tshield-red transition-colors duration-200 cursor-pointer">
+                  www.t-shield.co
+                </a>
+                <p class="text-sm text-gray-500 mt-1">Learn more about T-Shield</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-section">
+          <form id="enquiryForm" class="space-y-5">
+            <div>
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required class="form-input">
+            </div>
+
+            <div>
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required class="form-input">
+            </div>
+
+            <div>
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Your phone number" class="form-input">
+            </div>
+
+            <div>
+              <label for="location" class="form-label">Location / Territory of Interest</label>
+              <input type="text" id="location" name="location" placeholder="e.g., London, South East, Yorkshire" class="form-input">
+            </div>
+
+            <div>
+              <label for="propertyType" class="form-label">Property Type Interest</label>
+              <select id="propertyType" name="propertyType" class="form-input">
+                <option value="residential">Residential Only</option>
+                <option value="commercial">Commercial Only</option>
+                <option value="hospitality">Hospitality Only</option>
+                <option value="mixed">Mixed / All Markets</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="form-label">Tell Us About Yourself</label>
+              <textarea id="message" name="message" placeholder="Share a bit about your background and why you're interested in T-Shield..." rows="4" class="form-input"></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn" class="w-full btn-primary text-base flex items-center justify-center gap-2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M22 4l-10 10"></path>
+                <path d="M22 4l-10 10"></path>
+              </svg>
+              <span id="submitText">Submit Enquiry</span>
+            </button>
+
+            <div id="successMessage" class="hidden bg-red-900 bg-opacity-20 border border-tshield-red border-opacity-50 rounded-lg p-4">
+              <p class="text-tshield-red text-sm font-medium">
+                Thank you! We'll be in touch within 48 hours.
+              </p>
+            </div>
+
+            <p class="text-xs text-gray-500 text-center">
+              We respect your privacy. Your information will only be used to contact you about the franchise opportunity.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-tshield-dark-alt border-t border-gray-800 px-6 lg:px-8 py-12 md:py-16">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-tshield-red rounded-full flex items-center justify-center">
+              <span class="text-white font-bold text-lg">T</span>
+            </div>
+            <span class="font-bold text-xl text-white">T-Shield</span>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Interior surface protection powered by sacrificial layer technology. Developed by Topaz, the world standard in protective film since 2009.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="heading-sm text-white mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li>
+              <button onclick="scrollToSection('hero')" class="footer-link text-sm">
+                Home
+              </button>
+            </li>
+            <li>
+              <button onclick="scrollToSection('opportunity')" class="footer-link text-sm">
+                The Opportunity
+              </button>
+            </li>
+            <li>
+              <button onclick="scrollToSection('model')" class="footer-link text-sm">
+                Business Model
+              </button>
+            </li>
+            <li>
+              <button onclick="scrollToSection('contact')" class="footer-link text-sm">
+                Contact
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="heading-sm text-white mb-4">Topaz Family</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="https://www.t-shield.co" target="_blank" rel="noopener noreferrer" class="footer-link text-sm inline-flex items-center gap-1">
+                T-Shield.co
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.thetopazshop.com" target="_blank" rel="noopener noreferrer" class="footer-link text-sm inline-flex items-center gap-1">
+                Topaz Shop
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.topazdetailing.com" target="_blank" rel="noopener noreferrer" class="footer-link text-sm inline-flex items-center gap-1">
+                Topaz Detailing
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div class="text-gray-500 text-sm">
+            <p>Â© 2026 T-Shield. All rights reserved. Part of the Topaz Group.</p>
+          </div>
+          <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="text-tshield-red hover:text-tshield-red-accent transition-colors duration-200 font-semibold text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-tshield-red rounded px-2 py-1">
+            Back to Top
+          </button>
+        </div>
+
+        <div class="mt-6 pt-6 border-t border-gray-800">
+          <p class="text-gray-600 text-xs leading-relaxed">
+            T-Shield is a franchise opportunity developed and operated by T-Shield Limited, part of the Topaz Group. All information provided on this website is for general information purposes only. This is not an offer to sell or a solicitation to buy a franchise. The availability and terms of franchise opportunities may vary by location. Prospective franchisees should conduct thorough due diligence and seek legal and financial advice before making any investment decisions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll Progress Bar
+    function updateScrollProgress() {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollProgress = (window.scrollY / scrollHeight) * 100;
+      document.getElementById('scrollProgress').style.width = scrollProgress + '%';
+    }
+
+    window.addEventListener('scroll', updateScrollProgress);
+
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+
+    // Scroll to section function
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    }
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in-section').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Stat Counter Animation
+    function animateCounter(element, target) {
+      const duration = 2000;
+      const start = Date.now();
+      const numericTarget = parseInt(target);
+
+      const animate = () => {
+        const now = Date.now();
+        const progress = Math.min((now - start) / duration, 1);
+        const value = Math.floor(progress * numericTarget);
+        element.textContent = value;
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+
+      animate();
+    }
+
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const target = entry.target.getAttribute('data-target');
+          const isInfinity = entry.target.getAttribute('data-target-infinity');
+
+          if (isInfinity) {
+            entry.target.textContent = 'â';
+          } else if (target) {
+            animateCounter(entry.target, target);
+          }
+
+          statObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.stat-value').forEach(el => {
+      statObserver.observe(el);
+    });
+
+    // Form Submission
+    document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const submitBtn = document.getElementById('submitBtn');
+      const submitText = document.getElementById('submitText');
+      const successMessage = document.getElementById('successMessage');
+
+      submitBtn.disabled = true;
+      submitText.textContent = 'Submitting...';
+
+      // Simulate form submission
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitText.textContent = 'Submit Enquiry';
+
+        successMessage.classList.remove('hidden');
+        this.reset();
+
+        setTimeout(() => {
+          successMessage.classList.add('hidden');
+        }, 5000);
+      }, 1000);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          e.preventDefault();
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
