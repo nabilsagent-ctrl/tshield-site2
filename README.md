@@ -59,8 +59,8 @@ Then visit: `http://localhost:3000`
 | `--gray`        | `#888888` | Body text, descriptions        |
 | `--dark-gray`   | `#444444` | Secondary text                 |
 | `--charcoal`    | `#2A2A2A` | Headers, nav, footer, dark sections |
-| `--red`         | `#C8102E` | Primary brand accent           |
-| `--red-h`       | `#E01530` | Red hover state                |
+| `--red`         | `#EC1D24` | Primary brand accent           |
+| `--red-h`       | `#FF2230` | Red hover state                |
 
 ---
 

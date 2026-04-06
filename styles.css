@@ -1,6 +1,6 @@
 /* ============================================================
    T-Shield — styles.css
-   Brand: White / Light Gray / Dark Gray / Red (#C8102E)
+   Brand: White / Light Gray / Dark Gray / Red (#EC1D24)
    Part of the Topaz brand family
    ============================================================ */
 
@@ -14,8 +14,8 @@
   --dark-gray:  #444444;
   --charcoal:   #2A2A2A;
   --black:      #111111;
-  --red:        #C8102E;
-  --red-h:      #E01530;
+  --red:        #EC1D24;
+  --red-h:      #FF2230;
   --red-dark:   #A00D24;
 }
 
