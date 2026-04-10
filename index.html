@@ -449,15 +449,24 @@ html, body {
   }
   /* Slightly tighten feature spacing on small screens so panels feel less tall */
   .panel-features {
-    margin-bottom: 14px;
+    margin-bottom: 16px;
+    gap: 6px;
+  }
+  .panel-feature {
+    font-size: .7rem;
+  }
+  .panel-desc {
+    margin-bottom: 18px;
+    line-height: 1.6;
   }
   .panel-cta,
   .panel-cta-ghost {
     padding: 8px 18px;
   }
-  /* Make headings slightly more compact on small screens to reduce perceived panel height */
+  /* Make headings and spacing more compact on small screens to reduce perceived panel height */
   .panel-title {
-    font-size: clamp(2rem, 6.5vw, 2.8rem);
+    font-size: clamp(2rem, 6.5vw, 2.6rem);
+    margin-bottom: 12px;
   }
 }
 
