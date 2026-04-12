@@ -411,7 +411,7 @@ html, body {
     flex-direction: column;
     height: auto;
     min-height: 0;
-    padding-top: 48px;
+    padding-top: 40px;
   }
   .panel {
     flex: none !important;
@@ -423,7 +423,7 @@ html, body {
     transition: transform 0.6s ease, filter 0.6s ease;
   }
   .panel-active .panel-bg {
-    transform: scale(1.08) translateY(-8px);
+    transform: scale(1.06) translateY(-6px);
     filter: brightness(.4) saturate(.9);
   }
   .panel:hover { flex: none !important; }
@@ -445,19 +445,19 @@ html, body {
   .choose-hint { display: none; }
   .topaz-badge { display: none; }
   .panel-content {
-    padding: 6px 14px 10px;
+    padding: 10px 18px 14px;
   }
   /* Slightly tighten feature spacing on small screens so panels feel less tall */
   .panel-features {
-    margin-bottom: 12px;
-    gap: 4px;
+    margin-bottom: 10px;
+    gap: 3px;
   }
   .panel-feature {
-    font-size: .68rem;
+    font-size: .66rem;
   }
   .panel-desc {
-    margin-bottom: 14px;
-    line-height: 1.55;
+    margin-bottom: 10px;
+    line-height: 1.5;
   }
   .panel-cta,
   .panel-cta-ghost {
@@ -465,8 +465,8 @@ html, body {
   }
   /* Make headings and spacing more compact on small screens to reduce perceived panel height */
   .panel-title {
-    font-size: clamp(1.9rem, 6vw, 2.4rem);
-    margin-bottom: 10px;
+    font-size: clamp(1.8rem, 5.6vw, 2.3rem);
+    margin-bottom: 8px;
   }
 }
 
