@@ -972,8 +972,12 @@ footer {
     min-height: 88vh;
   }
   .hero-content {
-    padding: 80px 20px 120px;
+    padding: 72px 20px 80px;
     max-width: 100%;
+  }
+  /* Slightly tighten hero CTA spacing so panels feel less tall on small screens */
+  .hero-btns {
+    margin-bottom: 40px;
   }
   .hero-eyebrow {
     margin-bottom: 18px;
