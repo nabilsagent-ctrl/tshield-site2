@@ -1,0 +1,9 @@
+# www.t-shield.co
+# T-Shield — Topaz interior & automotive surface protection
+
+User-agent: *
+Allow: /
+
+# No crawl restrictions — marketing site, everything is public.
+
+Sitemap: https://www.t-shield.co/sitemap.xml
