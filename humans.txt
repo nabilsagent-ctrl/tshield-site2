@@ -1,0 +1,15 @@
+/* TEAM */
+    T-Shield, by Topaz Detailing.
+    Site:     www.t-shield.co
+    Parent:   www.topazdetailing.com
+    Contact:  (see www.t-shield.co)
+    Location: United Kingdom
+
+/* STACK */
+    Hosting:  Vercel (static)
+    Fonts:    Barlow, Barlow Condensed (Google Fonts)
+
+/* THANKS */
+    To the homeowners, hoteliers, and partners who chose T-Shield.
+    To every installer who carried the standard onto the surface.
+
