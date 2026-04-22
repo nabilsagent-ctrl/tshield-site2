@@ -1,0 +1,28 @@
+{
+  "name": "T-Shield",
+  "short_name": "T-Shield",
+  "description": "T-Shield by Topaz — Advanced protective film technology for automotive and interior surfaces.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d0d0d",
+  "theme_color": "#1a1a1a",
+  "lang": "en-GB",
+  "dir": "ltr",
+  "categories": ["business", "lifestyle"],
+  "icons": [
+    {
+      "src": "/assets/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
