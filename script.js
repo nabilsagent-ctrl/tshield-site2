@@ -2,6 +2,24 @@
    T-Shield — script.js
    ============================================================ */
 
+/* ──────────────────────────────────────────────────────────────
+   HubSpot tracking loader (NAB-215 — Snippet 1)
+   Guarded on window.TOPAZ_HS_PORTAL_ID (set by /config.js at build
+   time). When unset → no script injected, zero page weight.
+   ────────────────────────────────────────────────────────────── */
+(function installHubSpot() {
+  if (typeof window === 'undefined') return;
+  if (!window.TOPAZ_HS_PORTAL_ID) return;
+  if (document.getElementById('hs-script-loader')) return;
+  var s = document.createElement('script');
+  s.id = 'hs-script-loader';
+  s.async = true;
+  s.defer = true;
+  s.type = 'text/javascript';
+  s.src = '//js.hs-scripts.com/' + window.TOPAZ_HS_PORTAL_ID + '.js';
+  (document.head || document.documentElement).appendChild(s);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ── BURGER MENU ── */
