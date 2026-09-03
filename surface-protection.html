@@ -123,7 +123,7 @@
   .img-tag-title{font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--white)}
   .img-tag-sub{font-size:.7rem;color:rgba(255,255,255,.8);margin-top:2px}
   .h3{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--charcoal);margin-bottom:10px}
-  .tech-img-caption{background:var(--charcoal);padding:16px 20px;border-top:3px solid var(--red)}
+  .tech-img-caption{background:var(--beige);padding:16px 20px;border-top:3px solid var(--red)}
   .tic-title{font-family:'Barlow Condensed',sans-serif;font-size:.92rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--white)}
   .tic-sub{font-size:.72rem;color:var(--gray);margin-top:3px}
   /* Accordion */
@@ -141,24 +141,28 @@
   .acc-body ul li{font-size:.82rem;color:var(--dark-gray);display:flex;align-items:center;gap:9px}
   .acc-body ul li::before{content:'';width:14px;height:1px;background:var(--red);flex-shrink:0}
   /* Dark accordion */
-  .acc-dark .acc-item{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1)}
+  .acc-dark .acc-item{background:rgba(43,33,27,.04);border-color:rgba(43,33,27,.12)}
   .acc-dark .acc-item.open,.acc-dark .acc-item:hover{border-left-color:var(--red)}
-  .acc-dark .acc-q{color:var(--white)}
-  .acc-dark .acc-icon{border-color:rgba(255,255,255,.25);color:var(--red)}
-  .acc-dark .acc-body p{color:rgba(255,255,255,.88)}
-  .acc-dark .acc-body ul li{color:rgba(255,255,255,.90)}
+  .acc-dark .acc-q{color:var(--charcoal)}
+  .acc-dark .acc-icon{border-color:rgba(43,33,27,.28);color:var(--red)}
+  .acc-dark .acc-body p{color:var(--dark-gray)}
+  .acc-dark .acc-body ul li{color:var(--dark-gray)}
   /* Franchise full */
-  .franchise-full{background:#1c1c1e;color:var(--white);padding:96px 60px}
+  .franchise-full{background:var(--beige);color:var(--charcoal);padding:96px 60px}
   .franchise-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:64px}
   .franchise-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:56px}
   .fr-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:48px}
-  .fstat{background:rgba(255,255,255,.04);padding:28px 24px;border-top:2px solid var(--red);text-align:center}
-  .fstat-num{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;font-weight:700;color:var(--red);display:block;line-height:1}
-  .fstat-label{font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mid-gray);margin-top:6px}
+  .fstat{background:rgba(43,33,27,.05);padding:28px 24px;border-top:2px solid var(--red);text-align:center}
+  .fstat-num,.fstat-n{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;font-weight:700;color:var(--red);display:block;line-height:1}
+  .fstat-label,.fstat-l{font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-top:6px}
   .red-line{width:40px;height:3px;background:var(--red)}
+  .h2-w{color:var(--charcoal)}
+  .imgf{position:relative;overflow:hidden}
+  .imgf img{display:block;width:100%;height:100%;object-fit:cover}
+  .imgf-45{aspect-ratio:4/5}
   @media(max-width:1060px){
     .two-col,.two-col-top,.franchise-intro-grid{grid-template-columns:1fr;gap:44px}
-    .franchise-stats{grid-template-columns:1fr}
+    .franchise-stats,.fr-stats{grid-template-columns:1fr}
     .franchise-full{padding:60px 22px}
   }
   
@@ -170,18 +174,34 @@
 
 /* ── CSS VARIABLES ── */
 :root {
-  --white:      #FFFFFF;
-  --off-white:  #F7F7F7;
-  --light-gray: #EEEEEE;
-  --mid-gray:   #CCCCCC;
-  --gray:       #888888;
-  --dark-gray:  #444444;
-  --charcoal:   #2A2A2A;
-  --black:      #111111;
+  /* Warm palette (TOPAZ-953, 2026-09-03): cream/linen grounds, espresso darks, beige for former dark blocks */
+  --white:      #FBF6EF;
+  --off-white:  #F3EBE0;
+  --light-gray: #E7DDCF;
+  --mid-gray:   #BFB1A0;
+  --gray:       #857767;
+  --dark-gray:  #4A3D33;
+  --charcoal:   #2B211B;
+  --black:      #1A140F;
+  --beige:      #EFE7DA;
+  --beige-2:    #E7DCCB;
   --red:        #EC1D24;
   --red-h:      #FF2230;
   --red-dark:   #A00D24;
 }
+
+/* Skip link: visually hidden until a keyboard user focuses it */
+.skip-link {
+  position: absolute; left: 50%; transform: translateX(-50%); top: 8px;
+  padding: 10px 16px; background: var(--charcoal); color: #fff; text-decoration: none;
+  font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600;
+  z-index: 999; border-radius: 999px; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+.skip-link:focus-visible { clip: auto; clip-path: none; }
+
+/* Photography in warm light; logos and decorative marks stay true */
+.hero-img,
+img:not([alt="T-Shield"]):not([alt="Topaz"]):not([alt=""]) { filter: sepia(.16) saturate(1.08) brightness(1.03); }
 
 /* ── RESET ── */
 *, *::before, *::after {
@@ -203,14 +223,14 @@ body {
    TOPBAR
    ============================================================ */
 .topbar {
-  background: var(--charcoal);
+  background: var(--beige);
   text-align: center;
   padding: 9px 20px;
   font-size: .68rem;
   letter-spacing: .22em;
   text-transform: uppercase;
   font-weight: 500;
-  color: var(--mid-gray);
+  color: var(--gray);
 }
 .topbar span { color: var(--red); }
 
@@ -221,7 +241,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 200;
-  background: rgba(255,255,255,.97);
+  background: rgba(251,246,239,.97);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--light-gray);
   display: flex;
@@ -404,7 +424,7 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(105deg, rgba(255,255,255,.94) 0%, rgba(255,255,255,.7) 45%, rgba(255,255,255,.1) 100%);
+  background: linear-gradient(105deg, rgba(251,246,239,.93) 0%, rgba(247,236,222,.72) 45%, rgba(240,220,195,.14) 100%);
 }
 .hero-overlay-bottom {
   position: absolute;
@@ -491,14 +511,14 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
    STATS BAR
    ============================================================ */
 .stats-bar {
-  background: var(--charcoal);
+  background: var(--beige);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 3px solid var(--red);
 }
 .sbar-item {
   padding: 26px 32px;
-  border-right: 1px solid rgba(255,255,255,.08);
+  border-right: 1px solid rgba(43,33,27,.1);
 }
 .sbar-item:last-child { border-right: none; }
 .sbar-num {
@@ -513,7 +533,7 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
   font-size: .67rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--mid-gray);
+  color: var(--gray);
   margin-top: 4px;
 }
 
@@ -590,7 +610,7 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
 .sec-red  .body-text { color: rgba(255,255,255,.8); }
 
 /* Buttons */
-.btn-red {
+.btn-red, .btn-r {
   background: var(--red);
   color: var(--white);
   padding: 13px 38px;
@@ -605,9 +625,9 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
   cursor: pointer;
   font-family: 'Barlow', sans-serif;
 }
-.btn-red:hover { background: var(--red-h); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(236,29,36,.3); }
+.btn-red:hover, .btn-r:hover { background: var(--red-h); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(236,29,36,.3); }
 
-.btn-outline-dark {
+.btn-outline-dark, .btn-w {
   background: transparent;
   border: 1.5px solid var(--charcoal);
   color: var(--charcoal);
@@ -621,7 +641,7 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
   transition: all .2s;
   font-family: 'Barlow', sans-serif;
 }
-.btn-outline-dark:hover { background: var(--charcoal); color: var(--white); }
+.btn-outline-dark:hover, .btn-w:hover { background: var(--charcoal); color: var(--white); }
 
 .btn-outline-white {
   background: transparent;
@@ -766,8 +786,8 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
 .tech-img-wrap { position: relative; overflow: hidden; }
 .tech-img-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; transition: transform .8s; }
 .tech-img-wrap:hover img { transform: scale(1.04); }
-.tech-img-caption { background: var(--charcoal); padding: 18px 22px; border-top: 3px solid var(--red); }
-.tic-title { font-family: 'Barlow Condensed', sans-serif; font-size: .95rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--white); }
+.tech-img-caption { background: var(--beige); padding: 18px 22px; border-top: 3px solid var(--red); }
+.tic-title { font-family: 'Barlow Condensed', sans-serif; font-size: .95rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--charcoal); }
 .tic-sub   { font-size: .75rem; color: var(--gray); margin-top: 3px; }
 
 /* ============================================================
@@ -939,8 +959,8 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
    FOOTER
    ============================================================ */
 footer {
-  background: var(--charcoal);
-  color: var(--white);
+  background: var(--beige-2);
+  color: var(--charcoal);
   padding: 60px 60px 36px;
   border-top: 3px solid var(--red);
 }
@@ -949,22 +969,22 @@ footer {
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 60px;
   padding-bottom: 48px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(43,33,27,.12);
   margin-bottom: 32px;
 }
 .foot-brand      { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
-.foot-brand img  { height: 36px; width: auto; filter: brightness(0) invert(1); }
-.foot-brand-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--white); }
-.foot-desc       { font-size: .83rem; line-height: 1.72; color: rgba(255,255,255,.45); max-width: 260px; }
+.foot-brand img  { height: 36px; width: auto; }
+.foot-brand-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--charcoal); }
+.foot-desc       { font-size: .83rem; line-height: 1.72; color: var(--gray); max-width: 260px; }
 
-.foot-col-title { font-family: 'Barlow Condensed', sans-serif; font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--white); font-weight: 700; margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--red); display: inline-block; }
+.foot-col-title { font-family: 'Barlow Condensed', sans-serif; font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--charcoal); font-weight: 700; margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--red); display: inline-block; }
 .foot-links      { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.foot-links a    { font-size: .83rem; color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s, padding-left .2s; }
-.foot-links a:hover { color: var(--white); padding-left: 4px; }
+.foot-links a    { font-size: .83rem; color: var(--gray); text-decoration: none; transition: color .2s, padding-left .2s; }
+.foot-links a:hover { color: var(--red); padding-left: 4px; }
 
 .foot-bottom  { display: flex; justify-content: space-between; align-items: center; }
-.foot-copy    { font-size: .71rem; color: rgba(255,255,255,.3); }
-.foot-family  { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.3); }
+.foot-copy    { font-size: .71rem; color: var(--gray); }
+.foot-family  { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gray); }
 .foot-family a { color: var(--red); text-decoration: none; }
 
 /* ============================================================
@@ -1537,11 +1557,11 @@ footer {
     <div class="reveal-l">
       <div class="eyebrow">Franchise Opportunity</div>
       <h2 class="h2 h2-w">The Next Major Opportunity in<br/><span class="red">Protective Film Technology</span></h2>
-      <p class="lead" style="color:rgba(255,255,255,0.90)">Over the past decade, Paint Protection Film has transformed the automotive industry. What began as a specialist service has grown into a global industry worth billions.</p>
-      <p class="body-text" style="color:rgba(255,255,255,.90)">Now imagine applying that same concept to something far bigger. Every home contains kitchens, worktops, tables and furniture that experience constant daily use. Every office contains desks and meeting tables. Every hotel, restaurant and retail environment depends on maintaining pristine surfaces despite heavy traffic.</p>
-      <p class="body-text" style="color:rgba(255,255,255,.90)">The number of interior surfaces in the world dwarfs the number of cars on the road. T-Shield Surface Protection was created to bring the proven concept of protective film to this vastly larger market.</p>
-      <p class="body-text" style="color:rgba(255,255,255,.90)">Developed by the team behind Topaz, one of the world's most recognised Paint Protection Film specialists, T-Shield combines proven technology with a new application that has the potential to reshape how surfaces for homes, commercial environments and high-traffic interiors are protected.</p>
-      <p class="body-text" style="color:rgba(255,255,255,.90)"><strong style="color:#fff">For the right franchise partners, this represents the opportunity to enter an emerging industry at the very beginning of its growth.</strong></p>
+      <p class="lead">Over the past decade, Paint Protection Film has transformed the automotive industry. What began as a specialist service has grown into a global industry worth billions.</p>
+      <p class="body-text">Now imagine applying that same concept to something far bigger. Every home contains kitchens, worktops, tables and furniture that experience constant daily use. Every office contains desks and meeting tables. Every hotel, restaurant and retail environment depends on maintaining pristine surfaces despite heavy traffic.</p>
+      <p class="body-text">The number of interior surfaces in the world dwarfs the number of cars on the road. T-Shield Surface Protection was created to bring the proven concept of protective film to this vastly larger market.</p>
+      <p class="body-text">Developed by the team behind Topaz, one of the world's most recognised Paint Protection Film specialists, T-Shield combines proven technology with a new application that has the potential to reshape how surfaces for homes, commercial environments and high-traffic interiors are protected.</p>
+      <p class="body-text"><strong>For the right franchise partners, this represents the opportunity to enter an emerging industry at the very beginning of its growth.</strong></p>
       <div style="margin-top:24px"><a href="#contact" class="btn-w">Enquire About Franchising</a></div>
     </div>
     <div class="imgf imgf-45 reveal-r">
@@ -1566,7 +1586,7 @@ footer {
       <p>The idea emerged naturally from more than fifteen years of experience working at the very forefront of the Paint Protection Film industry.</p>
       <p>At Topaz, we have spent over a decade protecting some of the world's most valuable vehicles using advanced film technology. Every year thousands of car owners trust us to preserve the appearance of their vehicles by applying Paint Protection Film that shields the paintwork from everyday wear.</p>
       <p>Over the years, a surprising pattern began to emerge. Many of our customers — particularly those who invest heavily in protecting their vehicles — began asking a very similar question.</p>
-      <p style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-style:italic;color:#fff;border-left:3px solid #EC1D24;padding-left:16px;margin:16px 0">"If this film can protect my car so effectively, why isn't there something like this for my home?"</p>
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-style:italic;color:var(--charcoal);border-left:3px solid #EC1D24;padding-left:16px;margin:16px 0">"If this film can protect my car so effectively, why isn't there something like this for my home?"</p>
       <p>Customers would point to marble kitchen worktops, dining tables, bathroom surfaces or furniture that had been carefully chosen and often very expensive, yet vulnerable to scratches, marks and daily use.</p>
       <p>Recognising this opportunity, the Topaz team began working on developing a specialised protective film designed specifically for interior surfaces. By adapting the proven principles of Paint Protection Film for use on materials such as marble, granite, wood, glass and other interior finishes, T-Shield allows homeowners and businesses to protect the surfaces they use every day in the same way vehicle owners protect their cars.</p>
       <p>What began as a simple question from customers has now evolved into an entirely new category of surface protection — and the foundation of the T-Shield franchise opportunity.</p>
@@ -1609,12 +1629,12 @@ footer {
           <div class="acc-body">
       <p>T-Shield is not being launched by a startup experimenting with a new idea. It is being introduced by Topaz, one of the most recognised and respected companies in the global Paint Protection Film industry. For more than 15 years, Topaz has been at the forefront of surface protection technology, building an international reputation for innovation, technical excellence and uncompromising standards.</p>
       <p>By becoming a T-Shield franchise partner, you are not simply starting a business — you are joining a company that has already established itself as a global leader in its field. This partnership provides franchise partners with a powerful advantage from day one.</p>
-      <p><strong style="color:#fff">People Trust Topaz.</strong> Founded in 2009, the company has grown from a specialist detailing studio into an internationally recognised leader in surface protection technology. The company has built its reputation by working with some of the most valuable and prestigious vehicles in the world. The credibility of Topaz helps open doors, build trust and accelerate the growth of new franchise territories.</p>
-      <p><strong style="color:#fff">Leadership That Shapes the Industry.</strong> Topaz continues to be led by its founding management team, who remain deeply involved in the development and growth of the business. Rather than simply following industry trends, the company has consistently been responsible for setting them. As a T-Shield franchise partner, you are not joining a company that follows the market — you are partnering with one that helps lead it.</p>
-      <p><strong style="color:#fff">The Topaz Network Advantage.</strong> Topaz operates a growing international presence with studios across multiple countries, protecting thousands of vehicles every year. This global presence reinforces brand credibility, provides access to shared knowledge and experience, and creates opportunities for collaboration. Being part of the Topaz network means T-Shield franchise partners are not building their business alone.</p>
-      <p><strong style="color:#fff">Access to Proven Expertise and Resources.</strong> Franchise partners benefit from the infrastructure of an established global business, including:</p>
+      <p><strong>People Trust Topaz.</strong> Founded in 2009, the company has grown from a specialist detailing studio into an internationally recognised leader in surface protection technology. The company has built its reputation by working with some of the most valuable and prestigious vehicles in the world. The credibility of Topaz helps open doors, build trust and accelerate the growth of new franchise territories.</p>
+      <p><strong>Leadership That Shapes the Industry.</strong> Topaz continues to be led by its founding management team, who remain deeply involved in the development and growth of the business. Rather than simply following industry trends, the company has consistently been responsible for setting them. As a T-Shield franchise partner, you are not joining a company that follows the market — you are partnering with one that helps lead it.</p>
+      <p><strong>The Topaz Network Advantage.</strong> Topaz operates a growing international presence with studios across multiple countries, protecting thousands of vehicles every year. This global presence reinforces brand credibility, provides access to shared knowledge and experience, and creates opportunities for collaboration. Being part of the Topaz network means T-Shield franchise partners are not building their business alone.</p>
+      <p><strong>Access to Proven Expertise and Resources.</strong> Franchise partners benefit from the infrastructure of an established global business, including:</p>
       <ul><li>Proven operational systems</li><li>Installation methodologies developed through years of experience</li><li>Business processes refined across multiple markets</li><li>Technical guidance and expertise</li><li>Ongoing product development</li></ul>
-      <p><strong style="color:#fff">Opportunities Beyond Surface Protection.</strong> Many customers who invest in protecting their homes are also owners of high-value vehicles. Through the wider Topaz network, franchise partners may have opportunities to introduce customers to automotive Paint Protection Film and related services — creating a powerful cross-selling opportunity that few competitors can offer.</p>
+      <p><strong>Opportunities Beyond Surface Protection.</strong> Many customers who invest in protecting their homes are also owners of high-value vehicles. Through the wider Topaz network, franchise partners may have opportunities to introduce customers to automotive Paint Protection Film and related services — creating a powerful cross-selling opportunity that few competitors can offer.</p>
     </div>
         </div>
 
@@ -1622,29 +1642,29 @@ footer {
           <div class="acc-q">The Business Model &amp; Market Size<div class="acc-icon">+</div></div>
           <div class="acc-body">
       <p>T-Shield operates through a network of carefully selected franchise partners across the United Kingdom. Each partner operates within a defined territory, providing Surface Protection services to residential and commercial clients. The business is designed to be scalable and management-focused. Franchise partners can build a team of trained installers while focusing their own time on developing relationships with customers and commercial partners. For early franchise partners, this presents a significant advantage: the opportunity to secure prime territories while the network is still in its early stages of development.</p>
-      <p><strong style="color:#fff">Why This Business Is Easier to Start Than Many Others.</strong> A T-Shield franchise does not require expensive retail premises or a large physical footprint. The service can be delivered directly at customers' homes or commercial premises. Because the service is delivered on-site, the business naturally lends itself to a mobile operating model, enabling franchise partners to cover their territory efficiently while keeping operating costs under control. This combination of manageable startup requirements and strong growth potential makes the T-Shield model particularly attractive.</p>
-      <p><strong style="color:#fff">A Vast and Untapped Market — The Numbers:</strong></p>
-      <p><strong style="color:#fff">Homes</strong> — Across the United Kingdom there are around 27 million residential homes. Typical surfaces that can benefit from protection include:</p>
+      <p><strong>Why This Business Is Easier to Start Than Many Others.</strong> A T-Shield franchise does not require expensive retail premises or a large physical footprint. The service can be delivered directly at customers' homes or commercial premises. Because the service is delivered on-site, the business naturally lends itself to a mobile operating model, enabling franchise partners to cover their territory efficiently while keeping operating costs under control. This combination of manageable startup requirements and strong growth potential makes the T-Shield model particularly attractive.</p>
+      <p><strong>A Vast and Untapped Market — The Numbers:</strong></p>
+      <p><strong>Homes</strong> — Across the United Kingdom there are around 27 million residential homes. Typical surfaces that can benefit from protection include:</p>
       <ul><li>Kitchen worktops</li><li>Dining tables</li><li>Coffee tables</li><li>Bedside furniture</li><li>Bathroom surfaces</li><li>Wardrobes and cabinetry</li><li>Glass shower screens</li></ul>
-      <p><strong style="color:#fff">Hospitality Businesses</strong> — The UK hospitality sector includes more than 170,000 businesses including hotels, restaurants, cafés and pubs. Within these venues are thousands of surfaces that experience heavy daily usage:</p>
+      <p><strong>Hospitality Businesses</strong> — The UK hospitality sector includes more than 170,000 businesses including hotels, restaurants, cafés and pubs. Within these venues are thousands of surfaces that experience heavy daily usage:</p>
       <ul><li>Restaurant tables</li><li>Bar counters</li><li>Hotel reception desks</li><li>Bedroom furniture</li><li>Meeting room tables</li><li>Communal surfaces</li></ul>
-      <p><strong style="color:#fff">Offices and Commercial Spaces</strong> — The UK contains millions of square metres of office and commercial space with countless surfaces that experience daily use:</p>
+      <p><strong>Offices and Commercial Spaces</strong> — The UK contains millions of square metres of office and commercial space with countless surfaces that experience daily use:</p>
       <ul><li>Desks</li><li>Meeting tables</li><li>Reception areas</li><li>Communal kitchen surfaces</li><li>Shared workspaces</li></ul>
-      <p><strong style="color:#fff">Property Development</strong> — Every year hundreds of thousands of homes are built, renovated or fitted with new kitchens. This is why partnerships with kitchen installers, furniture retailers, interior designers, architects and property developers can become powerful long-term sources of work.</p>
-      <p><strong style="color:#fff">Recurring Revenue.</strong> One of the attractive aspects of Surface Protection is that it does not represent a one-time opportunity. Over time the protective film will naturally reach the end of its lifespan and require replacement, creating repeat business opportunities with existing customers.</p>
+      <p><strong>Property Development</strong> — Every year hundreds of thousands of homes are built, renovated or fitted with new kitchens. This is why partnerships with kitchen installers, furniture retailers, interior designers, architects and property developers can become powerful long-term sources of work.</p>
+      <p><strong>Recurring Revenue.</strong> One of the attractive aspects of Surface Protection is that it does not represent a one-time opportunity. Over time the protective film will naturally reach the end of its lifespan and require replacement, creating repeat business opportunities with existing customers.</p>
     </div>
         </div>
 
     <div class="acc-item">
           <div class="acc-q">Training, Support &amp; What's Included<div class="acc-icon">+</div></div>
           <div class="acc-body">
-      <p><strong style="color:#fff">Comprehensive Training and Ongoing Support.</strong> Every T-Shield franchise partner receives structured training and ongoing support designed to help them launch and grow their business successfully. Training includes:</p>
+      <p><strong>Comprehensive Training and Ongoing Support.</strong> Every T-Shield franchise partner receives structured training and ongoing support designed to help them launch and grow their business successfully. Training includes:</p>
       <ul><li>Specialist installation training for Surface Protection film</li><li>Operational procedures and installation standards</li><li>Guidance on managing installers and building a team</li><li>Sales training and customer consultation techniques</li><li>Marketing strategy guidance</li></ul>
       <p>Support does not stop after the initial training. Franchise partners continue to receive ongoing guidance, updates on new technologies and access to the wider Topaz knowledge base as the business develops.</p>
-      <p><strong style="color:#fff">Marketing Expertise and Brand Support.</strong> As part of the Topaz network, T-Shield franchise partners benefit from marketing support including:</p>
+      <p><strong>Marketing Expertise and Brand Support.</strong> As part of the Topaz network, T-Shield franchise partners benefit from marketing support including:</p>
       <ul><li>Brand identity and positioning</li><li>Digital marketing strategy</li><li>Performance marketing campaigns</li><li>Social media content and brand assets</li><li>Guidance on building local marketing plans</li></ul>
       <p>This support helps franchise partners establish credibility quickly while developing a consistent brand presence across their territory.</p>
-      <p><strong style="color:#fff">Investment.</strong> The investment typically includes:</p>
+      <p><strong>Investment.</strong> The investment typically includes:</p>
       <ul><li>Franchise licence and territory rights</li><li>Van and livery</li><li>Technical training and installation certification</li><li>Specialist installation tools and equipment</li><li>Marketing and brand setup</li><li>Initial support and onboarding</li></ul>
       <p>Full investment details are available following an initial discussion with the Topaz team.</p>
     </div>
@@ -1653,13 +1673,13 @@ footer {
     <div class="acc-item">
           <div class="acc-q">A Day in the Life &amp; How Partners Generate Business<div class="acc-icon">+</div></div>
           <div class="acc-body">
-      <p><strong style="color:#fff">A Day in the Life of a T-Shield Franchise Partner.</strong> Running a T-Shield franchise combines business development, relationship building and overseeing professional installations. While every day will be different, a typical week for a franchise partner may include meeting potential clients, building relationships with local businesses and managing installation projects carried out by trained technicians.</p>
+      <p><strong>A Day in the Life of a T-Shield Franchise Partner.</strong> Running a T-Shield franchise combines business development, relationship building and overseeing professional installations. While every day will be different, a typical week for a franchise partner may include meeting potential clients, building relationships with local businesses and managing installation projects carried out by trained technicians.</p>
       <p>A franchise partner may begin the day meeting with a kitchen installation company or interior designer who regularly introduces new projects. Later in the day they may visit a homeowner who has recently installed a new kitchen and wishes to protect their worktops and furniture. Commercial opportunities may include visiting a hotel to discuss protecting reception desks and room furniture, or meeting with a property developer looking to protect surfaces in newly completed apartments.</p>
       <p>Once projects are scheduled, trained installers carry out the installations while the franchise partner focuses on managing the business, developing partnerships and generating new opportunities. Over time, many franchise partners build a team of installers and spend the majority of their time growing the business rather than carrying out the installations themselves.</p>
-      <p><strong style="color:#fff">How Franchise Partners Generate Business.</strong> Some work comes directly from homeowners who want to protect their kitchens, furniture and interior surfaces. However, a large proportion of business often comes through professional relationships and partnerships:</p>
+      <p><strong>How Franchise Partners Generate Business.</strong> Some work comes directly from homeowners who want to protect their kitchens, furniture and interior surfaces. However, a large proportion of business often comes through professional relationships and partnerships:</p>
       <ul><li>Interior designers who wish to protect high-value furniture and surfaces for their clients</li><li>Architects who want to incorporate long-term protection into their projects</li><li>Kitchen installers who can introduce T-Shield as an additional service when fitting new kitchens</li><li>Furniture retailers and manufacturers looking to offer customers an option to protect their purchases</li><li>Property developers seeking to preserve newly finished interiors</li><li>Hotels, offices and hospitality businesses where surfaces experience constant daily use</li></ul>
       <p>By building strong relationships with these types of businesses, franchise partners can create a steady pipeline of new opportunities.</p>
-      <p><strong style="color:#fff">Typical Customer Projects.</strong> T-Shield installations can range from small residential projects to large commercial environments. Residential projects may involve protecting kitchen worktops, dining tables, coffee tables or bathroom surfaces within a single home. Commercial projects may include protecting reception desks in hotels, restaurant tables, office meeting tables or surfaces in newly developed residential buildings. In some cases, property developers may choose to install Surface Protection across multiple apartments or communal areas within a development. The versatility of the technology means the service can be adapted to a wide variety of environments.</p>
+      <p><strong>Typical Customer Projects.</strong> T-Shield installations can range from small residential projects to large commercial environments. Residential projects may involve protecting kitchen worktops, dining tables, coffee tables or bathroom surfaces within a single home. Commercial projects may include protecting reception desks in hotels, restaurant tables, office meeting tables or surfaces in newly developed residential buildings. In some cases, property developers may choose to install Surface Protection across multiple apartments or communal areas within a development. The versatility of the technology means the service can be adapted to a wide variety of environments.</p>
     </div>
         </div>
 
@@ -1667,7 +1687,7 @@ footer {
           <div class="acc-q">The T-Shield Installation Process<div class="acc-icon">+</div></div>
           <div class="acc-body">
       <p>The process of installing T-Shield Surface Protection is designed to be efficient and professional while delivering a precise finish.</p>
-      <ul><li><strong style="color:#fff">Consultation</strong> — The surfaces to be protected are assessed and measurements are taken</li><li><strong style="color:#fff">Preparation</strong> — Templates are prepared to ensure the film fits perfectly to the surface</li><li><strong style="color:#fff">Installation</strong> — Trained installers carefully apply the protective film using specialist techniques developed by Topaz</li><li><strong style="color:#fff">Completion</strong> — The result is a transparent protective layer that is virtually invisible while shielding the surface from scratches, marks and everyday wear</li><li><strong style="color:#fff">Aftercare</strong> — Customers are provided with simple guidance on how to maintain the surface for the best long-term results</li></ul>
+      <ul><li><strong>Consultation</strong> — The surfaces to be protected are assessed and measurements are taken</li><li><strong>Preparation</strong> — Templates are prepared to ensure the film fits perfectly to the surface</li><li><strong>Installation</strong> — Trained installers carefully apply the protective film using specialist techniques developed by Topaz</li><li><strong>Completion</strong> — The result is a transparent protective layer that is virtually invisible while shielding the surface from scratches, marks and everyday wear</li><li><strong>Aftercare</strong> — Customers are provided with simple guidance on how to maintain the surface for the best long-term results</li></ul>
     </div>
         </div>
 
@@ -1675,23 +1695,23 @@ footer {
           <div class="acc-q">Who Is This Opportunity Perfect For?<div class="acc-icon">+</div></div>
           <div class="acc-body">
       <p>The T-Shield franchise opportunity is designed for individuals who are motivated to build a successful business within a growing and largely untapped market. You do not need prior experience in surface protection or Paint Protection Film installation to succeed. What matters most is the right mindset, a strong work ethic and a commitment to building relationships with customers and commercial partners.</p>
-      <p><strong style="color:#fff">Entrepreneurs Looking to Build a Scalable Business.</strong> Entrepreneurs who understand the scale of the potential market — and who are excited about building something early in its development — are particularly well suited. The model allows franchise partners to develop a team of installers and focus on growing the business through partnerships, marketing and customer relationships.</p>
-      <p><strong style="color:#fff">Business Professionals Seeking a New Opportunity.</strong> Many people with experience in sales, management, construction, property or hospitality find the T-Shield opportunity particularly attractive. Their existing networks and understanding of customer service can translate naturally into building relationships with homeowners, developers, interior designers and commercial clients.</p>
-      <p><strong style="color:#fff">Individuals with Strong Relationship Skills.</strong> Much of the opportunity in Surface Protection comes from building relationships with businesses such as interior designers, architects, kitchen installers, furniture retailers, property developers and hospitality businesses. Franchise partners who enjoy networking and developing long-term relationships often find significant opportunities within these channels.</p>
-      <p><strong style="color:#fff">Individuals Who Want the Backing of an Established Brand.</strong> With T-Shield, franchise partners benefit from the credibility, expertise and resources of Topaz while still building and owning their own local business. This combination of independence and support creates a powerful platform for growth.</p>
+      <p><strong>Entrepreneurs Looking to Build a Scalable Business.</strong> Entrepreneurs who understand the scale of the potential market — and who are excited about building something early in its development — are particularly well suited. The model allows franchise partners to develop a team of installers and focus on growing the business through partnerships, marketing and customer relationships.</p>
+      <p><strong>Business Professionals Seeking a New Opportunity.</strong> Many people with experience in sales, management, construction, property or hospitality find the T-Shield opportunity particularly attractive. Their existing networks and understanding of customer service can translate naturally into building relationships with homeowners, developers, interior designers and commercial clients.</p>
+      <p><strong>Individuals with Strong Relationship Skills.</strong> Much of the opportunity in Surface Protection comes from building relationships with businesses such as interior designers, architects, kitchen installers, furniture retailers, property developers and hospitality businesses. Franchise partners who enjoy networking and developing long-term relationships often find significant opportunities within these channels.</p>
+      <p><strong>Individuals Who Want the Backing of an Established Brand.</strong> With T-Shield, franchise partners benefit from the credibility, expertise and resources of Topaz while still building and owning their own local business. This combination of independence and support creates a powerful platform for growth.</p>
     </div>
         </div>
 
     <div class="acc-item">
           <div class="acc-q">Frequently Asked Questions<div class="acc-icon">+</div></div>
           <div class="acc-body">
-      <p><strong style="color:#fff">Do I need prior experience in Surface Protection or Paint Protection Film?</strong><br/>No. All franchise partners receive comprehensive training covering installation techniques, operational procedures and business development strategies. The most important qualities are motivation, professionalism and a desire to build a successful business.</p>
-      <p><strong style="color:#fff">Do I need to carry out the installations myself?</strong><br/>Not necessarily. Some franchise partners choose to learn the installation process themselves, while others prefer to focus on developing the business and managing a team of trained installers. The T-Shield model is designed to allow the owner to operate the business as a management-led operation as the company grows.</p>
-      <p><strong style="color:#fff">Who are the typical customers?</strong><br/>T-Shield serves a broad customer base including homeowners, hotels, restaurants, offices, property developers, interior designers, architects, kitchen installers and furniture retailers. Because the service protects surfaces in both residential and commercial environments, the potential customer base is extremely large.</p>
-      <p><strong style="color:#fff">Is the market already competitive?</strong><br/>One of the reasons we are excited about the T-Shield opportunity is that the market for interior Surface Protection is still largely undeveloped. While the automotive Paint Protection Film industry has grown rapidly, applying this technology to interior surfaces is still a new concept. This creates an opportunity for franchise partners to establish themselves early within their territories.</p>
-      <p><strong style="color:#fff">How long does training take?</strong><br/>Training typically includes both technical installation training and business development guidance. Our goal is to ensure franchise partners feel confident launching their business and delivering a high standard of service from the beginning.</p>
-      <p><strong style="color:#fff">What territories are available?</strong><br/>T-Shield territories are allocated based on population density and commercial potential. We are currently identifying suitable franchise partners across the United Kingdom and allocating territories accordingly. Availability of territories may change as the network develops.</p>
-      <p><strong style="color:#fff">Is there an investment required?</strong><br/>Starting any business requires an investment, and T-Shield is no different. However, compared with many franchise opportunities, the investment required to establish a T-Shield business is designed to be relatively accessible. The investment typically includes:</p>
+      <p><strong>Do I need prior experience in Surface Protection or Paint Protection Film?</strong><br/>No. All franchise partners receive comprehensive training covering installation techniques, operational procedures and business development strategies. The most important qualities are motivation, professionalism and a desire to build a successful business.</p>
+      <p><strong>Do I need to carry out the installations myself?</strong><br/>Not necessarily. Some franchise partners choose to learn the installation process themselves, while others prefer to focus on developing the business and managing a team of trained installers. The T-Shield model is designed to allow the owner to operate the business as a management-led operation as the company grows.</p>
+      <p><strong>Who are the typical customers?</strong><br/>T-Shield serves a broad customer base including homeowners, hotels, restaurants, offices, property developers, interior designers, architects, kitchen installers and furniture retailers. Because the service protects surfaces in both residential and commercial environments, the potential customer base is extremely large.</p>
+      <p><strong>Is the market already competitive?</strong><br/>One of the reasons we are excited about the T-Shield opportunity is that the market for interior Surface Protection is still largely undeveloped. While the automotive Paint Protection Film industry has grown rapidly, applying this technology to interior surfaces is still a new concept. This creates an opportunity for franchise partners to establish themselves early within their territories.</p>
+      <p><strong>How long does training take?</strong><br/>Training typically includes both technical installation training and business development guidance. Our goal is to ensure franchise partners feel confident launching their business and delivering a high standard of service from the beginning.</p>
+      <p><strong>What territories are available?</strong><br/>T-Shield territories are allocated based on population density and commercial potential. We are currently identifying suitable franchise partners across the United Kingdom and allocating territories accordingly. Availability of territories may change as the network develops.</p>
+      <p><strong>Is there an investment required?</strong><br/>Starting any business requires an investment, and T-Shield is no different. However, compared with many franchise opportunities, the investment required to establish a T-Shield business is designed to be relatively accessible. The investment typically includes:</p>
       <ul><li>Franchise licence and territory rights</li><li>Van and livery</li><li>Technical training and installation certification</li><li>Specialist installation tools and equipment</li><li>Marketing and brand setup</li><li>Initial support and onboarding</li></ul>
       <p>Full investment details are available following an initial discussion with the Topaz team.</p>
     </div>
@@ -1701,8 +1721,8 @@ footer {
           <div class="acc-q">The Application Process &amp; Next Steps<div class="acc-icon">+</div></div>
           <div class="acc-body">
       <p>We take great care in selecting franchise partners because the long-term success of the T-Shield network depends on working with individuals who share our commitment to quality and professionalism. The process typically follows several stages:</p>
-      <ul><li><strong style="color:#fff">Initial Enquiry</strong> — Contact the T-Shield team to express interest. We provide further information about the business model and answer any initial questions</li><li><strong style="color:#fff">Introductory Discussion</strong> — This conversation allows both sides to explore whether the opportunity is a good fit. We discuss the territory, the structure of the business and what would be required to launch successfully</li><li><strong style="color:#fff">Detailed Opportunity Review</strong> — If there is mutual interest, we provide more detailed information about the franchise model, investment structure and support available from Topaz</li><li><strong style="color:#fff">Territory Agreement</strong> — Once both parties are comfortable moving forward, a territory is agreed and the franchise process begins</li><li><strong style="color:#fff">Training and Launch</strong> — Franchise partners complete the required training and preparation before launching their T-Shield business. Our team remains closely involved during the early stages to ensure a strong and successful launch</li></ul>
-      <p><strong style="color:#fff">Next Steps.</strong> If you are interested in exploring the T-Shield franchise opportunity, please contact the Topaz team for further information about territories, the business model and the process of becoming a franchise partner.</p>
+      <ul><li><strong>Initial Enquiry</strong> — Contact the T-Shield team to express interest. We provide further information about the business model and answer any initial questions</li><li><strong>Introductory Discussion</strong> — This conversation allows both sides to explore whether the opportunity is a good fit. We discuss the territory, the structure of the business and what would be required to launch successfully</li><li><strong>Detailed Opportunity Review</strong> — If there is mutual interest, we provide more detailed information about the franchise model, investment structure and support available from Topaz</li><li><strong>Territory Agreement</strong> — Once both parties are comfortable moving forward, a territory is agreed and the franchise process begins</li><li><strong>Training and Launch</strong> — Franchise partners complete the required training and preparation before launching their T-Shield business. Our team remains closely involved during the early stages to ensure a strong and successful launch</li></ul>
+      <p><strong>Next Steps.</strong> If you are interested in exploring the T-Shield franchise opportunity, please contact the Topaz team for further information about territories, the business model and the process of becoming a franchise partner.</p>
       <div style="margin-top:20px"><a href="#contact" class="btn-r">Contact the Franchise Team</a></div>
     </div>
         </div>
@@ -1741,10 +1761,10 @@ footer {
     <div class="eyebrow">Franchise Enquiries</div>
     <h2 class="h2">Join the<br/><span class="red">T-Shield</span> Network</h2>
     <p class="body-text" style="margin-top:10px">If you are interested in exploring the T-Shield franchise opportunity, please contact the Topaz team for further information about territories, the business model and the process of becoming a franchise partner.</p>
-    <div style="margin-top:24px;margin-bottom:36px"><a href="/cdn-cgi/l/email-protection#a3c5d1c2cdc0cbcad0c6e3d78ed0cbcac6cfc78dc0cc" class="btn-red">Contact Franchise Team</a></div>
+    <div style="margin-top:24px;margin-bottom:36px"><a href="#contact" class="btn-red">Contact Franchise Team</a></div>
     <div class="c-info">
       <div class="c-item"><div class="c-icon">🌐</div><div><div class="c-label">Website</div><div class="c-val">www.t-shield.co</div></div></div>
-      <div class="c-item"><div class="c-icon">✉</div><div><div class="c-label">Email</div><div class="c-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d04030b022d19401e0504080109430e02">[email&#160;protected]</a></div></div></div>
+      <div class="c-item"><div class="c-icon">✉</div><div><div class="c-label">Email</div><div class="c-val"><a href="mailto:info@t-shield.co">info@t-shield.co</a></div></div></div>
       <div class="c-item"><div class="c-icon">◈</div><div><div class="c-label">Part of the Topaz Family</div><div class="c-val">thetopazshop.com</div></div></div>
     </div>
   </div>
@@ -1810,9 +1830,7 @@ footer {
     <div class="foot-copy">© 2026 T-Shield. All rights reserved. Part of the Topaz Group.</div>
     <div class="foot-family">A <a href="https://www.thetopazshop.com">Topaz</a> brand</div>
   </div>
-</footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+</footer><script>
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.getElementById('burgerBtn');
   const menu   = document.getElementById('mobileMenu');
