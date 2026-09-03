@@ -2036,14 +2036,14 @@ if (mmClose) mmClose.addEventListener('click', function() {
                 pct += (50 - pct) * 0.1; setPos(pct);
                 if (Math.abs(pct - 50) < 0.5) { setPos(50); clearInterval(iv); }
               }, 16);
-
-              });
+              return;
             }
+            requestAnimationFrame(tick);
           }
-        };
-        setTimeout(function() { requestAnimationFrame(tick); }, 600);
-      }
-    });
+          setTimeout(function() { requestAnimationFrame(tick); }, 600);
+        }
+      });
+    }, { threshold: 0.4 }).observe(container);
   }
 })();
 </script>
