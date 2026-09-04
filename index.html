@@ -398,9 +398,11 @@ html, body {
 /* ── HOVER TEXT (centre) ── */
 .choose-hint {
   position: absolute;
-  top: 50%;
+  top: auto;
+  bottom: 118px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  animation: hintFade .8s ease 4s forwards;
   z-index: 5;
   text-align: center;
   pointer-events: none;
@@ -418,6 +420,8 @@ html, body {
 .split:has(.panel:hover) .choose-hint {
   opacity: 0;
 }
+
+@keyframes hintFade { to { opacity: 0; } }
 
 /* ── TOPAZ BADGE ── */
 .topaz-badge {
@@ -638,12 +642,6 @@ html, body {
 
   <!-- CENTRE HINT -->
   <div class="choose-hint">
-    <div class="divider-dot" style="margin:0 auto;width:48px;height:48px">
-      <div class="divider-arrow">
-        <div class="arr-left"></div>
-        <div class="arr-right"></div>
-      </div>
-    </div>
     <span class="choose-hint-text">Hover, tap or use arrow keys to choose</span>
   </div>
 

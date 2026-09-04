@@ -562,13 +562,13 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
    ============================================================ */
 .sec          { padding: 100px 60px; }
 .sec-white    { background: var(--white); }
-.sec-off      { background: var(--off-white); }
+.sec-off, .so { background: var(--off-white); }
 .sec-light    { background: var(--light-gray); }
 .sec-dark     { background: var(--charcoal); color: var(--white); }
 .sec-red      { background: var(--red); color: var(--white); }
 
 /* Section Labels */
-.eyebrow {
+.eyebrow, .ey {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -579,7 +579,7 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
   color: var(--red);
   margin-bottom: 14px;
 }
-.eyebrow::before { content: ''; width: 18px; height: 2px; background: var(--red); flex-shrink: 0; }
+.eyebrow::before, .ey::before { content: ''; width: 18px; height: 2px; background: var(--red); flex-shrink: 0; }
 .sec-dark .eyebrow { color: rgba(255,255,255,.7); }
 .sec-dark .eyebrow::before { background: rgba(255,255,255,.7); }
 
@@ -1069,7 +1069,6 @@ footer {
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <a href="#franchise" class="nav-franchise">Franchise Enquiry</a>
     <a href="#contact" class="nav-cta">Get a Quote</a>
     <button class="burger" id="burgerBtn" aria-label="Toggle menu">
       <div class="burger-line"></div>
@@ -1109,32 +1108,7 @@ footer {
   <div class="sbar-item"><span class="sbar-num">∞</span><div class="sbar-label">Renewable Protection</div></div>
 </div>
 
-<!-- MARQUEE -->
-<div class="marquee">
-  <div class="mtrack">
-    <div class="mitem">Stone &amp; Marble</div><div class="mitem">Hardwood Surfaces</div><div class="mitem">Glass &amp; Mirrors</div><div class="mitem">Luxury Homes</div><div class="mitem">Hotels &amp; Restaurants</div><div class="mitem">Commercial Offices</div><div class="mitem">Self-Healing Film</div><div class="mitem">Invisible Protection</div><div class="mitem">By Topaz</div>
-    <div class="mitem">Stone &amp; Marble</div><div class="mitem">Hardwood Surfaces</div><div class="mitem">Glass &amp; Mirrors</div><div class="mitem">Luxury Homes</div><div class="mitem">Hotels &amp; Restaurants</div><div class="mitem">Commercial Offices</div><div class="mitem">Self-Healing Film</div><div class="mitem">Invisible Protection</div><div class="mitem">By Topaz</div>
-  </div>
-</div>
 
-
-<!-- TRUST STRIP -->
-<div style="background:#fff;border-bottom:1px solid #eee;padding:26px 60px">
-  <div style="display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;max-width:1200px;margin:0 auto">
-    <div style="font-family:'Barlow Condensed',sans-serif;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:#888;white-space:nowrap;font-weight:600">Trusted by</div>
-    <div style="flex:1;display:flex;align-items:center;justify-content:space-around;gap:20px;flex-wrap:wrap">
-      <div style="display:flex;align-items:center;gap:10px"><div style="width:34px;height:34px;background:#EC1D24;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><rect x="2" y="8" width="14" height="9" rx="1" stroke="white" stroke-width="1.5"/><path d="M5 8V5.5a4 4 0 018 0V8" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><div style="font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;color:#2A2A2A">Founded 2009</div><div style="font-size:.68rem;color:#888">Topaz Detailing</div></div></div>
-      <div style="width:1px;height:30px;background:#eee"></div>
-      <div style="display:flex;align-items:center;gap:10px"><div style="width:34px;height:34px;background:#EC1D24;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="white" stroke-width="1.5"/><path d="M9 2c0 0-3 2.5-3 7s3 7 3 7M9 2c0 0 3 2.5 3 7s-3 7-3 7M2 9h14" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><div style="font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;color:#2A2A2A">Global Presence</div><div style="font-size:.68rem;color:#888">UK, Europe &amp; Beyond</div></div></div>
-      <div style="width:1px;height:30px;background:#eee"></div>
-      <div style="display:flex;align-items:center;gap:10px"><div style="width:34px;height:34px;background:#EC1D24;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M9 2l1.8 4.2L16 7l-3.5 3.2.8 4.8L9 13l-4.3 2 .8-4.8L2 7l5.2-.8L9 2z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg></div><div><div style="font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;color:#2A2A2A">15+ Years PPF</div><div style="font-size:.68rem;color:#888">World-Class Expertise</div></div></div>
-      <div style="width:1px;height:30px;background:#eee"></div>
-      <div style="display:flex;align-items:center;gap:10px"><div style="width:34px;height:34px;background:#EC1D24;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M3 11l2-5h8l2 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="11" width="14" height="4" rx="1" stroke="white" stroke-width="1.5"/><circle cx="5.5" cy="15.5" r="1" fill="white"/><circle cx="12.5" cy="15.5" r="1" fill="white"/></svg></div><div><div style="font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;color:#2A2A2A">1000s of Vehicles</div><div style="font-size:.68rem;color:#888">Protected Every Year</div></div></div>
-      <div style="width:1px;height:30px;background:#eee"></div>
-      <div style="display:flex;align-items:center;gap:10px"><div style="width:34px;height:34px;background:#EC1D24;display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><rect x="2" y="3" width="14" height="12" rx="1.5" stroke="white" stroke-width="1.5"/><path d="M6 3v12M2 8h4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><div><div style="font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;color:#2A2A2A">New Category</div><div style="font-size:.68rem;color:#888">Interior Surface Protection</div></div></div>
-    </div>
-  </div>
-</div>
 
 <!-- ABOUT -->
 <section class="sec sec-white" id="about">
@@ -1148,7 +1122,7 @@ footer {
       <p class="body-text">Until now, the only solution was repair, restoration or replacement once the damage occurred. T-Shield introduces a different approach. Instead of repairing surfaces after damage happens, an invisible protective film absorbs the wear before it reaches the material beneath.</p>
       <div class="tagline">Replaceable Protection. Permanent Surfaces.</div>
       <div class="btn-pair">
-        <a href="#technology" class="btn-red">See the Technology</a>
+        <a href="#technology" class="btn-outline-dark">See the Technology</a>
         <a href="#contact" class="btn-outline-dark">Book a Consultation</a>
       </div>
     </div>
@@ -1518,7 +1492,7 @@ footer {
       <div class="eyebrow">Questions</div>
       <h2 class="h2">Frequently <span class="red">Asked</span></h2>
       <p class="body-text">Everything you need to know about T-Shield surface protection.</p>
-      <div style="margin-top:24px"><a href="#contact" class="btn-red">Contact Our Team</a></div>
+      <div style="margin-top:24px"><a href="#contact" class="btn-outline-dark">Contact Our Team</a></div>
     </div>
     <div class="accordion reveal-r">
       <div class="acc-item open">
@@ -1759,9 +1733,9 @@ footer {
     <p class="body-text" style="margin-top:10px">If you are interested in exploring the T-Shield franchise opportunity, please contact the Topaz team for further information about territories, the business model and the process of becoming a franchise partner.</p>
     <div style="margin-top:24px;margin-bottom:36px"><a href="#contact" class="btn-red">Contact Franchise Team</a></div>
     <div class="c-info">
-      <div class="c-item"><div class="c-icon">🌐</div><div><div class="c-label">Website</div><div class="c-val">www.t-shield.co</div></div></div>
-      <div class="c-item"><div class="c-icon">✉</div><div><div class="c-label">Email</div><div class="c-val"><a href="mailto:info@t-shield.co">info@t-shield.co</a></div></div></div>
-      <div class="c-item"><div class="c-icon">◈</div><div><div class="c-label">Part of the Topaz Family</div><div class="c-val">thetopazshop.com</div></div></div>
+      <div class="c-item"><div class="c-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#fff" stroke-width="1.3"/><ellipse cx="7" cy="7" rx="2.6" ry="6" stroke="#fff" stroke-width="1.3"/><line x1="1" y1="7" x2="13" y2="7" stroke="#fff" stroke-width="1.3"/></svg></div><div><div class="c-label">Website</div><div class="c-val">www.t-shield.co</div></div></div>
+      <div class="c-item"><div class="c-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="1" y="3" width="12" height="8" rx="1" stroke="#fff" stroke-width="1.3"/><path d="M1.5 3.5 7 8l5.5-4.5" stroke="#fff" stroke-width="1.3" stroke-linejoin="round"/></svg></div><div><div class="c-label">Email</div><div class="c-val"><a href="mailto:info@t-shield.co">info@t-shield.co</a></div></div></div>
+      <div class="c-item"><div class="c-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1.2 12.6 7 7 12.8 1.4 7Z" stroke="#fff" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.4 7h5.2" stroke="#fff" stroke-width="1.3"/></svg></div><div><div class="c-label">Part of the Topaz Family</div><div class="c-val">thetopazshop.com</div></div></div>
     </div>
   </div>
 </div>
