@@ -377,6 +377,29 @@ footer{background:var(--charcoal);color:#fff;padding:56px 60px 32px;border-top:3
   #areaDetail{grid-template-columns:1fr}
   #areaIllustration{padding:24px;min-height:200px}
 }
+/* ── Polish round 1 (2026-09-04): graphite hero, styled coverage tabs, one-line nav labels ── */
+.hero{background:#0f1114}
+.hero-ov{background:linear-gradient(105deg,rgba(12,14,18,.92) 0%,rgba(12,14,18,.58) 45%,rgba(18,24,34,.12) 100%)}
+.hero-ov2{background:linear-gradient(to top,#0f1114,transparent)}
+.hero-bg{filter:brightness(.85) saturate(.9)}
+.hero-h1{color:#fff}
+.hero-h1 .o{-webkit-text-stroke:2px rgba(255,255,255,.85)}
+.hero-sub{color:rgba(255,255,255,.76)}
+.hero-feat{color:rgba(255,255,255,.72)}
+.hero .btn-o{border-color:rgba(255,255,255,.55);color:#fff}
+.hero .btn-o:hover{background:#fff;border-color:#fff;color:var(--charcoal)}
+.nav-links a{white-space:nowrap}
+html,body{overflow-x:hidden}
+.mmenu{position:fixed}
+#areaTabs{border:1px solid var(--lgray);background:var(--white)}
+.area-tab{flex:1 1 auto;background:transparent;border:none;border-right:1px solid var(--lgray);padding:15px 18px;font-family:'Barlow Condensed',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gray);cursor:pointer;transition:background .2s,color .2s}
+.area-tab:last-child{border-right:none}
+.area-tab:hover{background:var(--off);color:var(--charcoal)}
+.area-tab.active{background:var(--charcoal);color:#fff}
+.cov-photo{position:relative;width:100%;max-width:560px;aspect-ratio:3/2;overflow:hidden}
+.cov-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.cov-hl{position:absolute;border:2px solid var(--red);background:rgba(236,29,36,.22);border-radius:6px;box-shadow:0 0 0 4px rgba(236,29,36,.14)}
+@media(max-width:1060px){.area-tab{border-right:none;border-bottom:1px solid var(--lgray)}.area-tab:last-child{border-bottom:none}}
 </style>
   <!-- HubSpot tracking config (NAB-215) -->
   <script src="/config.js" defer></script>
@@ -431,10 +454,6 @@ footer{background:var(--charcoal);color:#fff;padding:56px 60px 32px;border-top:3
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <a href="tshield-landing.html" class="nav-back">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      All Services
-    </a>
     <a href="#contact" class="nav-cta">Book a Consultation</a>
     <button class="burger" id="burgerBtn" aria-label="Menu">
       <div class="bline"></div><div class="bline"></div><div class="bline"></div>
@@ -482,12 +501,6 @@ footer{background:var(--charcoal);color:#fff;padding:56px 60px 32px;border-top:3
 </div>
 
 <!-- MARQUEE -->
-<div class="marquee">
-  <div class="mtrack">
-    <span class="mitem">Paint Protection Film</span><span class="mitem">Stone Chip Protection</span><span class="mitem">Self-Healing Technology</span><span class="mitem">Invisible Film</span><span class="mitem">All Vehicle Types</span><span class="mitem">5-Year Warranty</span><span class="mitem">Topaz Expertise</span><span class="mitem">Digital Precision Cut</span><span class="mitem">Real-World Driving</span>
-    <span class="mitem">Paint Protection Film</span><span class="mitem">Stone Chip Protection</span><span class="mitem">Self-Healing Technology</span><span class="mitem">Invisible Film</span><span class="mitem">All Vehicle Types</span><span class="mitem">5-Year Warranty</span><span class="mitem">Topaz Expertise</span><span class="mitem">Digital Precision Cut</span><span class="mitem">Real-World Driving</span>
-  </div>
-</div>
 
 <!-- ABOUT — A Technology Once Reserved for the Few -->
 <section class="sec sw reveal" id="about">
@@ -505,7 +518,7 @@ footer{background:var(--charcoal);color:#fff;padding:56px 60px 32px;border-top:3
       <p class="body">Today, more drivers want to preserve the condition of their vehicles. Not just for occasional use. But for everyday driving. <strong>T-Shield represents that shift.</strong></p>
       <p class="body">Developed by Topaz Detailing, T-Shield brings Paint Protection Film to a wider audience, making it possible to protect vehicles of all types — not just those at the very top of the market.</p>
       <div class="btn-pair">
-        <a href="#film" class="btn-r">See How It Works</a>
+        <a href="#film" class="btn-o">See How It Works</a>
         <a href="#contact" class="btn-o">Book a Consultation</a>
       </div>
     </div>
@@ -645,51 +658,17 @@ footer{background:var(--charcoal);color:#fff;padding:56px 60px 32px;border-top:3
   <!-- Detail panel -->
   <div style="border:1px solid var(--lgray);border-top:none;display:grid;grid-template-columns:1fr 1fr" id="areaDetail">
     <!-- Left: illustration -->
-    <div style="padding:36px;border-right:1px solid var(--lgray);display:flex;align-items:center;justify-content:center;min-height:280px;background:var(--off)" id="areaIllustration">
-      <!-- Car SVG with highlighted zone - clean flat illustration -->
-      <svg viewBox="0 0 320 180" style="width:100%;max-width:320px" fill="none" xmlns="http://www.w3.org/2000/svg" id="carDiagram">
-        <!-- Ground shadow -->
-        <ellipse cx="160" cy="168" rx="120" ry="6" fill="rgba(0,0,0,.06)"/>
-        <!-- Car body lower -->
-        <path d="M28 128 L28 118 L48 100 L80 86 L120 78 L200 78 L240 86 L272 100 L292 118 L292 128 Z" fill="#E8E8E8" stroke="#CCCCCC" stroke-width="1.5"/>
-        <!-- Car roof -->
-        <path d="M108 78 L122 50 L152 36 L208 36 L242 46 L258 62 L255 78 Z" fill="#DDDDE0" stroke="#CCCCCC" stroke-width="1.5"/>
-        <!-- Windscreen -->
-        <path d="M120 76 L134 50 L165 38 L205 38 L230 50 L240 70 L236 76 Z" fill="#C8D8EC" stroke="#AABBC8" stroke-width="1" opacity=".85"/>
-        <!-- Rear window -->
-        <path d="M243 76 L245 62 L262 68 L265 76 Z" fill="#C8D8EC" stroke="#AABBC8" stroke-width="1" opacity=".85"/>
-        <!-- Door line -->
-        <line x1="178" y1="78" x2="178" y2="128" stroke="#BBBBBB" stroke-width="1"/>
-        <!-- Wheel arches -->
-        <path d="M80 128 Q80 152 100 155 Q120 158 120 134" stroke="#BBBBBB" stroke-width="1.5" fill="#E0E0E0"/>
-        <path d="M220 128 Q220 152 240 155 Q260 158 260 134" stroke="#BBBBBB" stroke-width="1.5" fill="#E0E0E0"/>
-        <!-- Wheels -->
-        <circle cx="100" cy="148" r="20" fill="#444" stroke="#333" stroke-width="1.5"/>
-        <circle cx="100" cy="148" r="10" fill="#888" stroke="#666" stroke-width="1"/>
-        <circle cx="240" cy="148" r="20" fill="#444" stroke="#333" stroke-width="1.5"/>
-        <circle cx="240" cy="148" r="10" fill="#888" stroke="#666" stroke-width="1"/>
-        <!-- Headlight -->
-        <path d="M28 108 L44 104 L44 118 L28 118 Z" fill="#F5F5DC" stroke="#CCCCCC" stroke-width="1"/>
-        <!-- Tail light -->
-        <path d="M292 108 L278 104 L278 118 L292 118 Z" fill="#FFAAAA" stroke="#CCAAAA" stroke-width="1"/>
-        <!-- Grille -->
-        <path d="M28 118 L28 128 L50 128 L48 110 Z" fill="#CCCCCC" stroke="#BBBBBB" stroke-width="1"/>
-
-        <!-- HIGHLIGHT OVERLAYS — shown/hidden by JS -->
-        <!-- Front bumper -->
-        <path id="hl-bumper" d="M28 110 L28 130 L68 130 L66 108 L48 100 Z" fill="rgba(236,29,36,.3)" stroke="#EC1D24" stroke-width="2" stroke-linejoin="round"/>
-        <!-- Bonnet -->
-        <path id="hl-bonnet" d="M66 100 L80 88 L120 80 L200 80 L240 88 L255 80 L230 62 L200 80" fill="rgba(236,29,36,.25)" stroke="#EC1D24" stroke-width="2" stroke-linejoin="round" style="display:none"/>
-        <!-- Mirrors -->
-        <ellipse id="hl-mirrors" cx="108" cy="90" rx="12" ry="7" fill="rgba(236,29,36,.4)" stroke="#EC1D24" stroke-width="2" style="display:none"/>
-        <!-- Door edges -->
-        <rect id="hl-doors" x="175" y="80" width="7" height="48" rx="2" fill="rgba(236,29,36,.5)" stroke="#EC1D24" stroke-width="1.5" style="display:none"/>
-        <rect id="hl-doors2" x="118" y="80" width="7" height="48" rx="2" fill="rgba(236,29,36,.5)" stroke="#EC1D24" stroke-width="1.5" style="display:none"/>
-        <!-- Rear loading -->
-        <path id="hl-rear" d="M268 100 L292 118 L292 130 L270 130 L265 110 Z" fill="rgba(236,29,36,.3)" stroke="#EC1D24" stroke-width="2" stroke-linejoin="round" style="display:none"/>
-        <!-- Full vehicle -->
-        <rect id="hl-full" x="28" y="36" width="264" height="92" rx="4" fill="rgba(236,29,36,.12)" stroke="#EC1D24" stroke-width="2" stroke-dasharray="6 3" style="display:none"/>
-      </svg>
+    <div style="padding:24px;border-right:1px solid var(--lgray);display:flex;align-items:center;justify-content:center;min-height:280px;background:var(--off)" id="areaIllustration">
+      <div class="cov-photo">
+        <img src="assets/photos/a09-coverage-profile.jpg" alt="T-Shield concept GT in profile — coverage areas" loading="lazy" decoding="async"/>
+        <div class="cov-hl" id="hl-bumper"  style="left:11.5%;top:49%;width:9%;height:15%"></div>
+        <div class="cov-hl" id="hl-bonnet"  style="left:14%;top:44%;width:24%;height:8%;display:none"></div>
+        <div class="cov-hl" id="hl-mirrors" style="left:38.5%;top:42%;width:4.5%;height:5.5%;display:none"></div>
+        <div class="cov-hl" id="hl-doors"   style="left:37%;top:40%;width:11%;height:23%;display:none"></div>
+        <div class="cov-hl" id="hl-doors2"  style="left:48%;top:40%;width:10%;height:23%;display:none"></div>
+        <div class="cov-hl" id="hl-rear"    style="left:75%;top:44%;width:13%;height:19%;display:none"></div>
+        <div class="cov-hl" id="hl-full"    style="left:11.5%;top:33%;width:77%;height:34%;display:none"></div>
+      </div>
     </div>
     <!-- Right: description -->
     <div style="padding:36px;display:flex;flex-direction:column;justify-content:center">
@@ -856,7 +835,7 @@ footer{background:var(--charcoal);color:#fff;padding:56px 60px 32px;border-top:3
         <div style="padding:22px 18px"><span style="font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:700;color:var(--charcoal);line-height:1;display:block">All</span><div style="font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);margin-top:5px">Vehicle Types</div></div>
       </div>
       <div class="btn-pair">
-        <a href="#contact" class="btn-r">Book a Consultation</a>
+        <a href="#contact" class="btn-o">Book a Consultation</a>
         <a href="#warranty" class="btn-o">Our Warranty</a>
       </div>
     </div>
