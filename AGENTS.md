@@ -61,3 +61,6 @@ Full no-AI detail in `HUMAN_RUNBOOK.md`. In short:
 
 - **A photo and its caption band are one unit.** Put both inside one wrapper and put any size constraint (`max-width`) on the wrapper. **Never** set `max-height` on a frame that has `aspect-ratio` — the cap transfers into the frame's width and a sibling caption band will overhang it at some viewport (TOPAZ-958, TOPAZ-961). Regression probe: `design/qa/probe.mjs` in the Drive T-Shield folder — run it at 320…1920 before shipping a layout change.
 - **Replaced a file under `/assets/`? Change its URL.** Assets are served `Cache-Control: immutable, max-age=1y`; a same-name replacement never reaches a returning browser. Bump `?v=N` in every reference or use a new filename (TOPAZ-959).
+- **No layout in inline styles.** An inline `grid-template-columns` (or width/aspect) can never be collapsed by a media query, so it breaks on phones (TOPAZ-965 found four). Use a class (`.g-2`, `.g-3`, `.fig-col`) with its breakpoint in the page's `<style>`.
+- **Anything revealed on `:hover` needs a touch path.** Wrap the always-visible fallback in `@media (hover: none)`; never write copy that says "hover".
+- **One copy of each script.** Two copies of the slider/progress code ran on the Interior page for months (double listeners). Grep for a function name before pasting a block.

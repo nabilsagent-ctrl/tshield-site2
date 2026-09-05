@@ -163,7 +163,7 @@
   @media(max-width:1060px){
     .two-col,.two-col-top,.franchise-intro-grid{grid-template-columns:1fr;gap:44px}
     .franchise-stats,.fr-stats{grid-template-columns:1fr}
-    .franchise-full{padding:60px 22px}
+    .franchise-full{padding:60px 24px}
   }
   
 /* ============================================================
@@ -438,7 +438,7 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
 .hero-content {
   position: relative;
   z-index: 2;
-  padding: 0 60px 80px 80px;
+  padding: 0 60px 80px 60px;
   max-width: 760px;
 }
 .hero-eyebrow {
@@ -1021,6 +1021,21 @@ footer {
   .surfaces-head { flex-direction: column; gap: 16px; }
 }
 
+/* TOPAZ-965 (2026-09-05): audit defects */
+.nav-name{white-space:nowrap}.nav-cta{white-space:nowrap}
+@media (max-width: 420px){.nav-cta{padding:8px 12px;font-size:.62rem;letter-spacing:.08em}}
+@media (max-width: 1280px){.nav-name span{display:none}.nav-links a{padding:0 12px}}
+@media (max-width: 640px){.hero{min-height:0;padding-top:48px}.hero-content{padding:0 24px 72px}.topbar{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.foot-top{grid-template-columns:1fr;gap:32px}.br-d{display:none}}
+.surf-desc{max-height:0;overflow:hidden;margin-top:0;transition:opacity .4s ease,transform .4s ease,max-height .45s ease,margin-top .45s ease}
+.surf:hover .surf-desc{max-height:240px;margin-top:10px}
+@media (hover: none){.surf-desc{opacity:1;transform:none;max-height:none;margin-top:10px}.surf-overlay{background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.45) 55%,rgba(0,0,0,.1) 100%)}.surf-arrow{opacity:1;transform:none}.img-tag{transform:none}}
+@media (max-width: 1024px){.surf img{aspect-ratio:4/3}footer{padding:48px 24px 28px}.foot-links a{display:inline-block;padding:4px 0}}
+.foot-brand{white-space:nowrap}
+.c-val a{color:inherit;text-decoration:none;border-bottom:1px solid var(--red)}
+div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255,255,.62)!important;display:inline-block;padding:8px 0}
+@media(max-width:768px){.ba-lbl{font-size:.58rem!important;padding:5px 10px!important;gap:6px!important}.ba-lbl-before{bottom:auto!important;top:12px!important;left:12px!important}.ba-lbl-after{bottom:12px!important;right:12px!important}}
+.g-2{display:grid;grid-template-columns:1fr 1fr}
+@media(max-width:768px){.g-2{grid-template-columns:1fr}#baContainer{aspect-ratio:4/3!important}}
 </style>
   <!-- HubSpot tracking config (NAB-215) -->
   <script src="/config.js" defer></script>
@@ -1169,7 +1184,7 @@ footer {
   </div>
 </section>
 
-<div style="display:flex;align-items:center;background:#F7F7F7;padding:18px 60px">
+<div style="display:flex;align-items:center;background:var(--off-white);padding:18px 60px">
   <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,#CCC)"></div>
   <div style="padding:0 20px"><img src="/assets/logo.png" alt="" style="height:36px;width:auto;opacity:.14" loading="lazy" decoding="async"></div>
   <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#CCC)"></div>
@@ -1181,7 +1196,7 @@ footer {
       <div class="eyebrow">What We Protect</div>
       <h2 class="h2">Surfaces Built to<br/><span class="red">Last Forever</span></h2>
     </div>
-    <p class="body-text" style="max-width:340px;margin:0">T-Shield can be applied to a wide variety of hard surfaces across homes, hotels and workspaces. Hover to explore.</p>
+    <p class="body-text" style="max-width:340px;margin:0">T-Shield can be applied to a wide variety of hard surfaces across homes, hotels and workspaces. Explore each surface below.</p>
   </div>
   <div class="surf-grid">
     <div class="surf reveal-s">
@@ -1239,21 +1254,21 @@ footer {
 
 <!-- BEFORE AFTER -->
 <section class="sec so reveal" id="before-after">
-  <div class="ey">Before &amp; After Protection</div>
-  <h2 class="h2" style="margin-bottom:8px">The Life of Surfaces &mdash;<br/><span class="r">Before and After</span></h2>
-  <p class="body" style="max-width:680px;margin-bottom:44px">Without protection even the finest surfaces gradually lose their original appearance. With T-Shield installed the film absorbs all wear while the surface beneath stays pristine forever.</p>
+  <div class="ey">Drag to Compare</div>
+  <h2 class="h2" style="margin-bottom:8px">The Same Surface &mdash;<br/><span class="r">Protected and Unprotected</span></h2>
+  <p class="body" style="max-width:680px;margin-bottom:44px">Drag the handle to compare an unprotected surface with one carrying T-Shield film. The film takes the wear; the surface beneath does not.</p>
 
-  <div style="position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;cursor:ew-resize;user-select:none;border:1px solid #eee" id="baContainer">
+  <div style="position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;cursor:ew-resize;user-select:none;border:1px solid var(--light-gray)" id="baContainer">
     <div id="baAfter" style="position:absolute;inset:0;z-index:1;overflow:hidden">
       <img src="/assets/photos/i09-after.jpg" alt="After T-Shield" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none" loading="lazy" decoding="async"/>
-      <div style="position:absolute;bottom:16px;right:16px;display:flex;align-items:center;gap:8px;padding:6px 14px;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:rgba(236,29,36,.88);color:#fff;z-index:4;backdrop-filter:blur(4px)"><span style="width:7px;height:7px;border-radius:50%;background:#fff;flex-shrink:0;display:inline-block"></span>AFTER &mdash; T-Shield Protected</div>
+      <div class="ba-lbl ba-lbl-after" style="position:absolute;bottom:16px;right:16px;display:flex;align-items:center;gap:8px;padding:6px 14px;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:rgba(236,29,36,.88);color:#fff;z-index:4;backdrop-filter:blur(4px)"><span style="width:7px;height:7px;border-radius:50%;background:var(--white);flex-shrink:0;display:inline-block"></span>AFTER &mdash; T-Shield Protected</div>
     </div>
     <div id="baBefore" style="position:absolute;inset:0;z-index:2;clip-path:inset(0 50% 0 0);overflow:hidden">
       <img src="/assets/photos/i08-before.jpg" alt="Before T-Shield" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none" loading="lazy" decoding="async"/>
-      <div style="position:absolute;bottom:16px;left:16px;display:flex;align-items:center;gap:8px;padding:6px 14px;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:rgba(0,0,0,.6);color:#fff;z-index:4;backdrop-filter:blur(4px)"><span style="width:7px;height:7px;border-radius:50%;background:rgba(255,120,120,.9);flex-shrink:0;display:inline-block"></span>BEFORE &mdash; Unprotected Surface</div>
+      <div class="ba-lbl ba-lbl-before" style="position:absolute;bottom:16px;left:16px;display:flex;align-items:center;gap:8px;padding:6px 14px;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:rgba(0,0,0,.6);color:#fff;z-index:4;backdrop-filter:blur(4px)"><span style="width:7px;height:7px;border-radius:50%;background:rgba(255,120,120,.9);flex-shrink:0;display:inline-block"></span>BEFORE &mdash; Unprotected Surface</div>
     </div>
     <div id="baDivider" style="position:absolute;top:0;bottom:0;left:50%;z-index:3;transform:translateX(-50%);pointer-events:none">
-      <div style="position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-50%);box-shadow:0 0 12px rgba(0,0,0,.4)"></div>
+      <div style="position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--white);transform:translateX(-50%);box-shadow:0 0 12px rgba(0,0,0,.4)"></div>
       <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;background:#EC1D24;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 16px rgba(0,0,0,.35);border:2.5px solid #fff;pointer-events:auto;cursor:ew-resize">
         <svg width="22" height="14" viewBox="0 0 22 14" fill="none"><path d="M6 7L1 7M1 7L4.5 3.5M1 7L4.5 10.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 7L21 7M21 7L17.5 3.5M21 7L17.5 10.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
@@ -1274,7 +1289,7 @@ footer {
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid #EEEEEE;overflow:hidden">
+    <div class="g-2" style="gap:0;border:1px solid var(--light-gray);overflow:hidden">
 
       <!-- LEFT: Image with overlay -->
       <div style="position:relative;overflow:hidden;min-height:480px">
@@ -1296,34 +1311,34 @@ footer {
       </div>
 
       <!-- RIGHT: Protection list -->
-      <div style="background:#fff;padding:48px 44px;display:flex;flex-direction:column;justify-content:center">
+      <div style="background:var(--white);padding:48px 44px;display:flex;flex-direction:column;justify-content:center">
         <div style="font-family:'Barlow Condensed',sans-serif;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:#EC1D24;margin-bottom:14px;display:flex;align-items:center;gap:9px"><span style="width:14px;height:2px;background:#EC1D24;display:inline-block"></span>Everyday Threats</div>
         <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#2A2A2A;margin-bottom:28px;line-height:1.1">Surfaces face damage<br/>from every direction</h3>
 
         <div style="display:flex;flex-direction:column;gap:0">
 
-          <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid #EEEEEE">
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--light-gray)">
             <div style="width:36px;height:36px;background:#EC1D24;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 14L8 2L14 14" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.5 9.5h7" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
             <div><div style="font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#2A2A2A;margin-bottom:3px">Scratches &amp; Key Marks</div><div style="font-size:.78rem;line-height:1.6;color:#888">From keys, rings, cutlery and everyday objects dragged across the surface.</div></div>
           </div>
 
-          <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid #EEEEEE">
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--light-gray)">
             <div style="width:36px;height:36px;background:#EC1D24;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" stroke="white" stroke-width="1.5"/><circle cx="8" cy="8" r="2" stroke="white" stroke-width="1.5"/></svg>
             </div>
             <div><div style="font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#2A2A2A;margin-bottom:3px">Spiderweb Swirl Marks</div><div style="font-size:.78rem;line-height:1.6;color:#888">Circular micro-scratches caused by cloth wiping on gloss surfaces — invisible until light catches them.</div></div>
           </div>
 
-          <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid #EEEEEE">
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--light-gray)">
             <div style="width:36px;height:36px;background:#EC1D24;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13c1-3 2-5 5-5s4 2 5 5" stroke="white" stroke-width="1.5" stroke-linecap="round"/><path d="M8 3v2M5 4l1 1.5M11 4l-1 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
             <div><div style="font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#2A2A2A;margin-bottom:3px">Chemical Etching</div><div style="font-size:.78rem;line-height:1.6;color:#888">Acidic liquids such as wine, citrus and cleaning products permanently etch and dull stone surfaces.</div></div>
           </div>
 
-          <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid #EEEEEE">
+          <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--light-gray)">
             <div style="width:36px;height:36px;background:#EC1D24;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="6" width="12" height="7" rx="1" stroke="white" stroke-width="1.5"/><path d="M5 6V5a3 3 0 016 0v1" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
@@ -1344,7 +1359,7 @@ footer {
   </div>
 </section>
 
-<div style="display:flex;align-items:center;background:#F7F7F7;padding:18px 60px">
+<div style="display:flex;align-items:center;background:var(--off-white);padding:18px 60px">
   <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,#CCC)"></div>
   <div style="padding:0 20px"><img src="/assets/logo.png" alt="" style="height:36px;width:auto;opacity:.14" loading="lazy" decoding="async"></div>
   <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#CCC)"></div>
@@ -1413,7 +1428,7 @@ footer {
   </div>
 </section>
 
-<div style="display:flex;align-items:center;background:#F7F7F7;padding:18px 60px">
+<div style="display:flex;align-items:center;background:var(--off-white);padding:18px 60px">
   <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,#CCC)"></div>
   <div style="padding:0 20px"><img src="/assets/logo.png" alt="" style="height:36px;width:auto;opacity:.14" loading="lazy" decoding="async"></div>
   <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#CCC)"></div>
@@ -1421,7 +1436,7 @@ footer {
 <!-- APPLICATIONS -->
 <section class="sec sec-white reveal" id="applications">
   <div class="eyebrow">Where We Work</div>
-  <h2 class="h2">Applications Across Homes,<br/><span class="red">Hotels and Workspaces</span></h2>
+  <h2 class="h2">Applications Across Homes, <br class="br-d"/><span class="red">Hotels and Workspaces</span></h2>
   <div class="apps-grid">
     <div class="app-card reveal">
       <div class="app-img-wrap"><img src="/assets/photos/i10-app-residential.jpg" alt="Luxury residential kitchen" class="app-img" loading="lazy" decoding="async"/></div>
@@ -1526,7 +1541,7 @@ footer {
   <div class="franchise-intro-grid">
     <div class="reveal-l">
       <div class="eyebrow">Franchise Opportunity</div>
-      <h2 class="h2 h2-w">The Next Major Opportunity in<br/><span class="red">Protective Film Technology</span></h2>
+      <h2 class="h2 h2-w">The Next Major Opportunity&nbsp;in<br/><span class="red">Protective Film Technology</span></h2>
       <p class="lead">Over the past decade, Paint Protection Film has transformed the automotive industry. What began as a specialist service has grown into a global industry worth billions.</p>
       <p class="body-text">Now imagine applying that same concept to something far bigger. Every home contains kitchens, worktops, tables and furniture that experience constant daily use. Every office contains desks and meeting tables. Every hotel, restaurant and retail environment depends on maintaining pristine surfaces despite heavy traffic.</p>
       <p class="body-text">The number of interior surfaces in the world dwarfs the number of cars on the road. T-Shield Surface Protection was created to bring the proven concept of protective film to this vastly larger market.</p>
@@ -1731,7 +1746,7 @@ footer {
     <div class="eyebrow">Franchise Enquiries</div>
     <h2 class="h2">Join the<br/><span class="red">T-Shield</span> Network</h2>
     <p class="body-text" style="margin-top:10px">If you are interested in exploring the T-Shield franchise opportunity, please contact the Topaz team for further information about territories, the business model and the process of becoming a franchise partner.</p>
-    <div style="margin-top:24px;margin-bottom:36px"><a href="#contact" class="btn-red">Contact Franchise Team</a></div>
+    <div style="margin-top:24px;margin-bottom:36px"><a href="franchise.html" class="btn-red">Contact Franchise Team</a></div>
     <div class="c-info">
       <div class="c-item"><div class="c-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#fff" stroke-width="1.3"/><ellipse cx="7" cy="7" rx="2.6" ry="6" stroke="#fff" stroke-width="1.3"/><line x1="1" y1="7" x2="13" y2="7" stroke="#fff" stroke-width="1.3"/></svg></div><div><div class="c-label">Website</div><div class="c-val">www.t-shield.co</div></div></div>
       <div class="c-item"><div class="c-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="1" y="3" width="12" height="8" rx="1" stroke="#fff" stroke-width="1.3"/><path d="M1.5 3.5 7 8l5.5-4.5" stroke="#fff" stroke-width="1.3" stroke-linejoin="round"/></svg></div><div><div class="c-label">Email</div><div class="c-val"><a href="mailto:info@t-shield.co">info@t-shield.co</a></div></div></div>
@@ -1790,7 +1805,7 @@ footer {
       <div class="foot-col-title">Topaz Family</div>
       <ul class="foot-links">
         <li><a href="https://www.thetopazshop.com" target="_blank" rel="noopener">The Topaz Shop</a></li>
-        <li><a href="https://www.t-shield.co" target="_blank" rel="noopener">T-Shield</a></li>
+        <li><a href="index.html">T-Shield</a></li>
         <li><a href="#franchise">Franchise Opportunity</a></li>
         <li><a href="#contact">Trade Enquiries</a></li>
       </ul>
@@ -1948,72 +1963,6 @@ if(mmCloseBtn)mmCloseBtn.addEventListener('click',function(){
         }
       });
     },{threshold:0.5}).observe(container);
-  }
-})();
-</script>
-<script>
-// Scroll progress
-window.addEventListener('scroll', function() {
-  var h = document.documentElement;
-  var sb = document.getElementById('scrollBar');
-  if (sb) sb.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
-}, {passive: true});
-
-// Mobile close button
-var mmClose = document.getElementById('mmenuClose');
-if (mmClose) mmClose.addEventListener('click', function() {
-  document.getElementById('mmenu').classList.remove('open');
-  var b = document.getElementById('burgerBtn');
-  if (b) b.classList.remove('open');
-  document.body.style.overflow = '';
-});
-
-// Before/After slider
-(function() {
-  var container = document.getElementById('baContainer');
-  var before = document.getElementById('baBefore');
-  var divider = document.getElementById('baDivider');
-  if (!container || !before || !divider) return;
-  function setPos(pct) {
-    pct = Math.max(2, Math.min(98, pct));
-    before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-    divider.style.left = pct + '%';
-  }
-  function getX(e) {
-    var r = container.getBoundingClientRect();
-    var cx = e.touches ? e.touches[0].clientX : e.clientX;
-    return ((cx - r.left) / r.width) * 100;
-  }
-  var drag = false;
-  container.addEventListener('mousedown', function(e) { drag = true; setPos(getX(e)); e.preventDefault(); });
-  container.addEventListener('touchstart', function(e) { drag = true; setPos(getX(e)); }, {passive: true});
-  window.addEventListener('mousemove', function(e) { if (drag) setPos(getX(e)); });
-  window.addEventListener('touchmove', function(e) { if (drag) setPos(getX(e)); }, {passive: true});
-  window.addEventListener('mouseup', function() { drag = false; });
-  window.addEventListener('touchend', function() { drag = false; });
-  var animated = false;
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting && !animated) {
-          animated = true;
-          var pct = 50, dir = -1, steps = 0;
-          function tick() {
-            pct += dir * 0.65; setPos(pct); steps++;
-            if (pct <= 15) dir = 1;
-            if (pct >= 85 && dir === 1) {
-              var iv = setInterval(function() {
-                pct += (50 - pct) * 0.1; setPos(pct);
-                if (Math.abs(pct - 50) < 0.5) { setPos(50); clearInterval(iv); }
-              }, 16);
-              return;
-            }
-            requestAnimationFrame(tick);
-          }
-          setTimeout(function() { requestAnimationFrame(tick); }, 600);
-        }
-      });
-    }, { threshold: 0.4 }).observe(container);
   }
 })();
 </script>

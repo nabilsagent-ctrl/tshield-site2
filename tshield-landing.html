@@ -332,9 +332,7 @@ html, body {
   font-family: 'Barlow', sans-serif;
   text-decoration: none;
   transition: background .2s, gap .3s, transform .2s;
-  border: none;
-  cursor: pointer;
-}
+  border: 1.5px solid transparent; cursor: pointer; }
 .panel-cta:hover {
   background: var(--red-h);
   gap: 20px;
@@ -475,18 +473,9 @@ html, body {
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   html, body { overflow: auto; }
-  .split {
-    flex-direction: column;
-    height: auto;
-    min-height: 100vh;
-    padding-top: 48px;
-  }
-  .panel {
-    flex: none !important;
-    height: auto;
-    min-height: 0;
-  }
-  .panel:hover { flex: none !important; }
+  .split { flex-direction: column; height: auto; min-height: 100vh; min-height: 100dvh; padding-top: 52px; padding-bottom: 64px; }
+  .panel { flex: 1 1 auto !important; height: auto; min-height: 0; }
+  .panel:hover { flex: 1 1 auto !important; }
   .panel::before { bottom: auto; top: 0; transform: scaleX(1); }
   .panel-eyebrow, .panel-desc, .panel-features {
     opacity: 1 !important;
@@ -524,6 +513,14 @@ html, body {
   .panel:hover { flex: 1 !important; }
   .split:has(.panel:hover) .panel:not(:hover) { flex: 1 !important; }
 }
+/* TOPAZ-965 (2026-09-05): audit fixes */
+.panel-cta,.panel-cta-ghost{white-space:nowrap}
+.choose-hint{top:calc(50% + 34px);transform:translateX(-50%)}.choose-hint .divider-dot{display:none}.choose-hint-text{margin-top:0}
+.split:has(.panel:hover) .panel:not(:hover) .panel-title{font-size:clamp(1.6rem,3.1vw,3.4rem)}
+.split:has(.panel:hover) .panel:not(:hover) .panel-cta,.split:has(.panel:hover) .panel:not(:hover) .panel-cta-ghost{padding:12px 18px;font-size:.66rem;gap:10px}
+@media (min-width: 769px){.panel-content{padding-bottom:76px}}
+@media (hover: none) and (min-width: 769px){.panel-eyebrow,.panel-desc,.panel-features{opacity:1}}
+@media (max-width: 768px){html,body{height:auto}.panel-title .outline{-webkit-text-stroke-width:1px}.panel-cta,.panel-cta-ghost{min-height:44px}.topbar-logo{min-height:44px}.topaz-badge{bottom:14px}}
 </style>
   <!-- HubSpot tracking config (NAB-215) -->
   <script src="/config.js" defer></script>
@@ -674,7 +671,7 @@ panelRight.addEventListener('mouseenter', () => {
 
 // Keyboard navigation
 document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowLeft') window.location.href = 'https://www.thetopazshop.com';
+  if (e.key === 'ArrowLeft') window.location.href = 'tshield-automotive.html';
   if (e.key === 'ArrowRight') window.location.href = 'surface-protection.html';
 });
 

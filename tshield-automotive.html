@@ -407,6 +407,17 @@ html,body{overflow-x:hidden}
 .fig-col .imgf img{object-position:50% 38%}
 @media(min-width:1061px){.fig-col .imgf-45{aspect-ratio:1}}
 @media(max-width:1060px){.fig-col{max-width:520px;justify-self:start}}
+/* TOPAZ-965 (2026-09-05): audit defects */
+@media(max-width:768px){.ba-lbl{font-size:.58rem!important;padding:5px 10px!important;gap:6px!important}.ba-lbl-before{bottom:auto!important;top:12px!important;left:12px!important}.ba-lbl-after{bottom:12px!important;right:12px!important}}
+.h2-w .o{-webkit-text-stroke-color:rgba(255,255,255,.85)}
+.g-2{display:grid;grid-template-columns:1fr 1fr}
+.g-3{display:grid;grid-template-columns:repeat(3,1fr)}
+@media(max-width:768px){.g-2,.g-3{grid-template-columns:1fr}.g-3>div{border-right:none!important;border-bottom:1px solid var(--lgray)}.g-3>div:last-child{border-bottom:none}#baContainer{aspect-ratio:4/3!important}}
+/* TOPAZ-965 (2026-09-05): audit fixes — nav fit 1061–1340, footer gutters, hero on phones, tap targets, topbar strap */
+@media(max-width:1340px){nav{padding:0 32px}.nav-links a{padding:0 10px;font-size:.68rem;letter-spacing:.06em}.nav-cta{padding:9px 16px;font-size:.66rem;white-space:nowrap}}
+@media(max-width:1060px){footer{padding:48px 22px 28px}}
+@media(max-width:640px){.ft{grid-template-columns:1fr}.hero{min-height:0;padding-top:48px}.hero-content{padding:0 22px 72px}.topbar{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.topbar a,.fl a{display:inline-block;padding:5px 0}}
+#daily .twot{align-items:center}
 </style>
   <!-- HubSpot tracking config (NAB-215) -->
   <script src="/config.js" defer></script>
@@ -440,7 +451,7 @@ html,body{overflow-x:hidden}
 
 <!-- TOPBAR -->
 <div class="topbar">
-  <a href="tshield-landing.html">← T-Shield Home</a>
+  <a href="index.html">← T-Shield Home</a>
   &nbsp;·&nbsp;
   By <b>Topaz</b> — 15 Years of World-Class Paint Protection Film Expertise
 </div>
@@ -660,7 +671,7 @@ html,body{overflow-x:hidden}
   </div>
 
   <!-- Detail panel -->
-  <div style="border:1px solid var(--lgray);border-top:none;display:grid;grid-template-columns:1fr 1fr" id="areaDetail">
+  <div class="g-2" style="border:1px solid var(--lgray);border-top:none" id="areaDetail">
     <!-- Left: illustration -->
     <div style="padding:24px;border-right:1px solid var(--lgray);display:flex;align-items:center;justify-content:center;min-height:280px;background:var(--off)" id="areaIllustration">
       <div class="cov-photo">
@@ -700,11 +711,11 @@ html,body{overflow-x:hidden}
   <div style="position:relative;width:100%;aspect-ratio:16/7;overflow:hidden;cursor:ew-resize;user-select:none;border:1px solid var(--lgray)" id="baContainer">
     <div id="baAfter" style="position:absolute;inset:0;z-index:1;overflow:hidden">
       <img src="/assets/photos/a06-after-paint.jpg" alt="After T-Shield PPF — pristine protected paint" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none" loading="lazy" decoding="async"/>
-      <div style="position:absolute;bottom:16px;right:16px;display:flex;align-items:center;gap:8px;padding:6px 14px;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:rgba(236,29,36,.9);color:#fff;z-index:4;backdrop-filter:blur(4px)"><span style="width:7px;height:7px;border-radius:50%;background:#fff;flex-shrink:0"></span>AFTER — T-Shield Protected</div>
+      <div class="ba-lbl ba-lbl-after" style="position:absolute;bottom:16px;right:16px;display:flex;align-items:center;gap:8px;padding:6px 14px;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:rgba(236,29,36,.9);color:#fff;z-index:4;backdrop-filter:blur(4px)"><span style="width:7px;height:7px;border-radius:50%;background:#fff;flex-shrink:0"></span>AFTER — T-Shield Protected</div>
     </div>
     <div id="baBefore" style="position:absolute;inset:0;z-index:2;clip-path:inset(0 50% 0 0);overflow:hidden">
       <img src="/assets/photos/a05-before-paint.jpg" alt="Before T-Shield — paint swirls and damage visible" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none" loading="lazy" decoding="async"/>
-      <div style="position:absolute;bottom:16px;left:16px;display:flex;align-items:center;gap:8px;padding:6px 14px;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:rgba(0,0,0,.62);color:#fff;z-index:4;backdrop-filter:blur(4px)"><span style="width:7px;height:7px;border-radius:50%;background:rgba(255,120,120,.9);flex-shrink:0"></span>BEFORE — Unprotected Paint</div>
+      <div class="ba-lbl ba-lbl-before" style="position:absolute;bottom:16px;left:16px;display:flex;align-items:center;gap:8px;padding:6px 14px;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:rgba(0,0,0,.62);color:#fff;z-index:4;backdrop-filter:blur(4px)"><span style="width:7px;height:7px;border-radius:50%;background:rgba(255,120,120,.9);flex-shrink:0"></span>BEFORE — Unprotected Paint</div>
     </div>
     <div id="baDivider" style="position:absolute;top:0;bottom:0;left:50%;z-index:3;transform:translateX(-50%);pointer-events:none">
       <div style="position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;transform:translateX(-50%);box-shadow:0 0 12px rgba(0,0,0,.35)"></div>
@@ -756,7 +767,7 @@ html,body{overflow-x:hidden}
       <h2 class="h2">Minor Scratches<br/><span class="r">Simply Disappear.</span></h2>
       <p class="body">Minor scratches that occur in the film can disappear with warmth from sunlight or hot water. The surface continues to maintain its clarity. The original paint remains preserved beneath.</p>
       <p class="body">This is not a repair process — it is an inherent property of the film itself. The same film that absorbs the scratch also heals it, maintaining a flawless appearance over the long term.</p>
-      <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:2px">
+      <div class="g-2" style="margin-top:28px;gap:2px">
         <div style="background:#fff;padding:20px;border-top:2px solid var(--lgray);transition:border-color .3s" onmouseover="this.style.borderColor='var(--red)'" onmouseout="this.style.borderColor='var(--lgray)'">
           <div style="font-family:'Barlow Condensed',sans-serif;font-size:.9rem;font-weight:700;text-transform:uppercase;color:var(--charcoal);margin-bottom:5px">Sunlight</div>
           <div style="font-size:.76rem;color:var(--gray);line-height:1.6">Natural warmth from sunlight activates the healing process automatically</div>
@@ -822,7 +833,7 @@ html,body{overflow-x:hidden}
 <section class="sec so reveal">
   <div class="two">
     <div class="reveal-l">
-      <div class="imgf imgf-32"> alt="Completed T-Shield PPF installation — pristine vehicle" loading="lazy" decoding="async"/>
+      <div class="imgf imgf-32"><img src="/assets/photos/a11-process-complete.jpg" alt="Completed T-Shield PPF installation — pristine vehicle" loading="lazy" decoding="async"/>
         <div class="corner-tl"></div>
         <div class="corner-br"></div>
       </div>
@@ -832,7 +843,7 @@ html,body{overflow-x:hidden}
       <h2 class="h2">The Same<br/><span class="r">Standards.</span><br/>Every Vehicle.</h2>
       <p class="body">T-Shield is developed by Topaz Detailing. For more than a decade, Topaz has worked with some of the world's most valuable vehicles, applying Paint Protection Film to the highest standards.</p>
       <p class="body">This experience has shaped the way T-Shield is designed and installed. The same principles of precision, consistency and attention to detail are applied throughout.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--lgray);margin-top:28px">
+      <div class="g-3" style="border:1px solid var(--lgray);margin-top:28px">
         <div style="padding:22px 18px;border-right:1px solid var(--lgray)"><span style="font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:700;color:var(--charcoal);line-height:1;display:block">15+</span><div style="font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);margin-top:5px">Years of PPF</div></div>
         <div style="padding:22px 18px;border-right:1px solid var(--lgray)"><span style="font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:700;color:var(--charcoal);line-height:1;display:block">2009</span><div style="font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);margin-top:5px">Founded</div></div>
         <div style="padding:22px 18px"><span style="font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:700;color:var(--charcoal);line-height:1;display:block">All</span><div style="font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);margin-top:5px">Vehicle Types</div></div>
@@ -986,7 +997,7 @@ html,body{overflow-x:hidden}
       <ul class="fl">
         <li><a href="https://www.thetopazshop.com">The Topaz Shop</a></li>
         <li><a href="surface-protection.html">T-Shield Interiors</a></li>
-        <li><a href="tshield-landing.html">T-Shield Home</a></li>
+        <li><a href="index.html">T-Shield Home</a></li>
       </ul>
     </div>
   </div>
@@ -1017,7 +1028,8 @@ document.addEventListener('DOMContentLoaded',function(){
   if(closeBtn)closeBtn.addEventListener('click',closeMenu);
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
   var all=document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s');
-  var ro=new IntersectionObserver(function(entries){
+  if(!window.IntersectionObserver){for(var ri=0;ri<all.length;ri++){all[ri].classList.add("on");}}
+  var ro=window.IntersectionObserver&&new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
         var d=parseFloat(e.target.style.transitionDelay||0)*1000;
