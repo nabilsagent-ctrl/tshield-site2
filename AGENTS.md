@@ -56,3 +56,8 @@ Full no-AI detail in `HUMAN_RUNBOOK.md`. In short:
 - `HUMAN_RUNBOOK.md` — the no-AI build/run/deploy path.
 
 *Part of the AI-portability failsafe — see `🧠 Claude/🆘 If Claude Fails/` in Drive.*
+
+## Layout + asset rules learned in production (added 2026-09-04)
+
+- **A photo and its caption band are one unit.** Put both inside one wrapper and put any size constraint (`max-width`) on the wrapper. **Never** set `max-height` on a frame that has `aspect-ratio` — the cap transfers into the frame's width and a sibling caption band will overhang it at some viewport (TOPAZ-958, TOPAZ-961). Regression probe: `design/qa/probe.mjs` in the Drive T-Shield folder — run it at 320…1920 before shipping a layout change.
+- **Replaced a file under `/assets/`? Change its URL.** Assets are served `Cache-Control: immutable, max-age=1y`; a same-name replacement never reaches a returning browser. Bump `?v=N` in every reference or use a new filename (TOPAZ-959).

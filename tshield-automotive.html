@@ -226,7 +226,7 @@ nav.scrolled{box-shadow:0 2px 30px rgba(0,0,0,.08)}
 .imgf{position:relative;overflow:hidden}
 .imgf img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.22,1,.36,1)}
 .imgf:hover img{transform:scale(1.04)}
-.imgf-45{aspect-ratio:4/5;max-height:560px}
+.imgf-45{aspect-ratio:4/5}
 .imgf-169{aspect-ratio:16/9}
 .imgf-43{aspect-ratio:4/3}.imgf-32{aspect-ratio:3/2}
 .imgf-11{aspect-ratio:1}
@@ -400,6 +400,13 @@ html,body{overflow-x:hidden}
 .cov-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .cov-hl{position:absolute;border:2px solid var(--red);background:rgba(236,29,36,.22);border-radius:6px;box-shadow:0 0 0 4px rgba(236,29,36,.14)}
 @media(max-width:1060px){.area-tab{border-right:none;border-bottom:1px solid var(--lgray)}.area-tab:last-child{border-bottom:none}}
+/* TOPAZ-961 (2026-09-04): a photo and its caption band are ONE unit. Constraints live on the shared wrapper (.fig-col); never put max-height on an aspect-ratio frame — the cap transfers into the width and the band no longer matches. */
+.fig-col{width:100%;max-width:640px;justify-self:end}
+.fig-col .imgf{width:100%}
+.fig-col .tech-cap{width:100%;box-sizing:border-box}
+.fig-col .imgf img{object-position:50% 38%}
+@media(min-width:1061px){.fig-col .imgf-45{aspect-ratio:1}}
+@media(max-width:1060px){.fig-col{max-width:520px;justify-self:start}}
 </style>
   <!-- HubSpot tracking config (NAB-215) -->
   <script src="/config.js" defer></script>
@@ -615,7 +622,7 @@ html,body{overflow-x:hidden}
         <div class="tl"><div class="tl-n">04</div><div><div class="tl-title">Virtually Invisible</div><div class="tl-desc">Once applied, the film is virtually invisible. There is no change to the appearance of your vehicle — only the protection it gains.</div></div></div>
       </div>
     </div>
-    <div class="reveal-r">
+    <div class="reveal-r fig-col">
       <div class="imgf imgf-45">
         <img src="/assets/photos/a04-film-bonnet.jpg?v=2" alt="T-Shield PPF film being applied to vehicle bonnet" loading="lazy" decoding="async"/>
       </div>

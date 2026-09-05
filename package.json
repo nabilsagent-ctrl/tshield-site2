@@ -1,6 +1,6 @@
 {
   "name": "tshield-site2",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Static marketing site for T-Shield interior surface protection.",
   "private": true,
   "scripts": {
