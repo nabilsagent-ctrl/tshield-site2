@@ -1016,7 +1016,7 @@ document.addEventListener('DOMContentLoaded',function(){
     var h=document.documentElement;
     var sb=document.getElementById('scrollBar');
     if(sb)sb.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
-    document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60);
+    var nb=document.getElementById('navbar');if(nb)nb.classList.toggle('scrolled',window.scrollY>60);
     var ids=['about','daily','film','coverage','process','warranty','contact'];
     var cur='';
     ids.forEach(function(id){var el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-120)cur=id;});
