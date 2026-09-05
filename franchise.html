@@ -1023,6 +1023,7 @@ section.stats-bar { padding: 0; }
 .faq-item.active .faq-icon { transform: rotate(45deg); }
 @media (max-width: 640px) { .hero-h1 { font-size: clamp(2.2rem, 9vw, 3.4rem); } .footer-col a { display: inline-block; padding: 5px 0; } .burger { padding: 10px; margin: -10px; } }
 @media (max-width: 360px) { .hero-btns .btn-red, .hero-btns .btn-outline-dark { padding: 13px 20px; font-size: .68rem; } }
+.form-msg{margin:12px 0 0;font-size:.85rem;line-height:1.5;min-height:1em}.form-msg.ok{color:#2E7D32}.form-msg.err{color:var(--red)}.form-msg a{color:inherit}
 </style>
   <!-- HubSpot tracking config (NAB-215) -->
   <script src="/config.js" defer></script>
@@ -1403,7 +1404,7 @@ section.stats-bar { padding: 0; }
                     <h2 class="h2">Let's <span class="red">Talk</span> About Your Franchise</h2>
                 </div>
                 <div class="contact-split reveal">
-                    <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                    <form class="contact-form lead-form" data-page="franchise" method="post" action="/api/lead" novalidate>
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" required>
@@ -1422,9 +1423,11 @@ section.stats-bar { padding: 0; }
                         </div>
                         <div class="form-group">
                             <label for="experience">Background & Experience</label>
-                            <textarea id="experience" name="experience" placeholder="Tell us about your background and why T&#8209;Shield interests you"></textarea>
+                            <textarea id="experience" name="message" placeholder="Tell us about your background and why T&#8209;Shield interests you"></textarea>
                         </div>
-                        <button type="submit" class="btn-red" style="align-self: flex-start;">Submit Application</button>
+                        <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"/>
+<button type="submit" class="btn-red" style="align-self: flex-start;">Submit Application</button>
+<p class="form-msg" role="status" aria-live="polite"></p>
                     </form>
                     <div class="contact-info">
                         <div>
@@ -1546,39 +1549,32 @@ section.stats-bar { padding: 0; }
             const nav = document.querySelector('nav');
             nav.classList.toggle('mobile-open');
         }
-
-        // Form submission
-        function handleFormSubmit(event) {
-            event.preventDefault();
-
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                location: document.getElementById('location').value,
-                experience: document.getElementById('experience').value
-            };
-
-            console.log('Form submitted:', formData);
-
-            // Show confirmation message
-            const form = event.target;
-            const button = form.querySelector('button[type="submit"]');
-            const originalText = button.textContent;
-
-            button.textContent = 'Application Sent!';
-            button.style.background = 'var(--red-dark)';
-
-            form.reset();
-
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.style.background = '';
-            }, 3000);
-        }
-
         // Lucide icons
     </script>
 <script>document.querySelectorAll(".faq-item").forEach(function(f){f.setAttribute("tabindex","0");f.setAttribute("role","button");f.setAttribute("aria-expanded",f.classList.contains("active")?"true":"false");f.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();f.click();}});f.addEventListener("click",function(){f.setAttribute("aria-expanded",f.classList.contains("active")?"true":"false");});});</script>
+<script>
+(function(){
+  var SUCCESS = 'Thank you — your enquiry has been sent. We’ll be in touch within one working day.';
+  var FAIL = 'Sorry, that didn’t send. Please email <a href="mailto:info@t-shield.co">info@t-shield.co</a> and we’ll come straight back to you.';
+  document.querySelectorAll('form.lead-form').forEach(function(form){
+    var btn = form.querySelector('button[type="submit"]'), msg = form.querySelector('.form-msg'), label = btn ? btn.textContent : '';
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var data = {}; new FormData(form).forEach(function(v, k){ data[k] = v; });
+      data.page = form.getAttribute('data-page');
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+      if (msg) { msg.textContent = ''; msg.className = 'form-msg'; }
+      fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+        .then(function(r){ return r.json().catch(function(){ return { ok: false }; }); })
+        .then(function(j){
+          if (j && j.ok) { form.reset(); if (msg) { msg.textContent = SUCCESS; msg.className = 'form-msg ok'; } if (btn) { btn.textContent = 'Sent'; } }
+          else { throw new Error('send'); }
+        })
+        .catch(function(){ if (msg) { msg.innerHTML = FAIL; msg.className = 'form-msg err'; } if (btn) { btn.disabled = false; btn.textContent = label; } });
+    });
+  });
+})();
+</script>
 </body>
 </html>

@@ -1036,6 +1036,7 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
 @media(max-width:768px){.ba-lbl{font-size:.58rem!important;padding:5px 10px!important;gap:6px!important}.ba-lbl-before{bottom:auto!important;top:12px!important;left:12px!important}.ba-lbl-after{bottom:12px!important;right:12px!important}}
 .g-2{display:grid;grid-template-columns:1fr 1fr}
 @media(max-width:768px){.g-2{grid-template-columns:1fr}#baContainer{aspect-ratio:4/3!important}}
+.form-msg{margin:12px 0 0;font-size:.85rem;line-height:1.5;min-height:1em}.form-msg.ok{color:#2E7D32}.form-msg.err{color:var(--red)}.form-msg a{color:inherit}
 </style>
   <!-- HubSpot tracking config (NAB-215) -->
   <script src="/config.js" defer></script>
@@ -1722,14 +1723,15 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
     <div class="eyebrow">Get in Touch</div>
     <h2 class="h2">Arrange a Private<br/><span class="red">Consultation</span></h2>
     <p class="body-text" style="margin-top:10px">We offer a complimentary, no-obligation consultation where we assess the surfaces you wish to protect and provide a tailored proposal. Contact our team to begin the conversation and discover how T-Shield can preserve the beauty of your interiors for years to come.</p>
-    <div class="form-wrap">
-      <div class="form-row2">
-        <input class="inp" type="text" placeholder="First Name"/>
-        <input class="inp" type="text" placeholder="Last Name"/>
-      </div>
-      <input class="inp" type="email" placeholder="Email Address"/>
-      <input class="inp" type="tel" placeholder="Phone Number"/>
-      <select class="inp" style="cursor:pointer;color:var(--mid-gray)">
+    <form class="form-wrap lead-form" data-page="interior" method="post" action="/api/lead" novalidate>
+<div class="form-row2">
+<input class="inp" type="text" name="first_name" placeholder="First Name" aria-label="First name" required autocomplete="given-name"/>
+<input class="inp" type="text" name="last_name" placeholder="Last Name" aria-label="Last name" autocomplete="family-name"/>
+</div>
+<input class="inp" type="email" name="email" placeholder="Email Address" aria-label="Email address" required autocomplete="email"/>
+<input class="inp" type="tel" name="phone" placeholder="Phone Number" aria-label="Phone number" autocomplete="tel"/>
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"/>
+<select class="inp" name="property_type" aria-label="Property type" style="cursor:pointer;color:var(--mid-gray)">
         <option value="" disabled selected>Property Type</option>
         <option style="color:var(--charcoal)">Residential Home</option>
         <option style="color:var(--charcoal)">Luxury Hotel</option>
@@ -1738,9 +1740,10 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
         <option style="color:var(--charcoal)">Property Development</option>
         <option style="color:var(--charcoal)">Other</option>
       </select>
-      <textarea class="inp" rows="4" placeholder="Tell us about your surfaces and what you'd like to protect…" style="resize:vertical"></textarea>
-      <button class="btn-red" style="padding:14px;width:100%;font-size:.78rem">Send Enquiry</button>
-    </div>
+      <textarea class="inp" name="message" rows="4" placeholder="Tell us about your surfaces and what you'd like to protect…" aria-label="Message" style="resize:vertical"></textarea>
+<button type="submit" class="btn-red" style="padding:14px;width:100%;font-size:.78rem">Send Enquiry</button>
+<p class="form-msg" role="status" aria-live="polite"></p>
+</form>
   </div>
   <div class="contact-right reveal-r">
     <div class="eyebrow">Franchise Enquiries</div>
@@ -1964,6 +1967,30 @@ if(mmCloseBtn)mmCloseBtn.addEventListener('click',function(){
       });
     },{threshold:0.5}).observe(container);
   }
+})();
+</script>
+<script>
+(function(){
+  var SUCCESS = 'Thank you — your enquiry has been sent. We’ll be in touch within one working day.';
+  var FAIL = 'Sorry, that didn’t send. Please email <a href="mailto:info@t-shield.co">info@t-shield.co</a> and we’ll come straight back to you.';
+  document.querySelectorAll('form.lead-form').forEach(function(form){
+    var btn = form.querySelector('button[type="submit"]'), msg = form.querySelector('.form-msg'), label = btn ? btn.textContent : '';
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var data = {}; new FormData(form).forEach(function(v, k){ data[k] = v; });
+      data.page = form.getAttribute('data-page');
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+      if (msg) { msg.textContent = ''; msg.className = 'form-msg'; }
+      fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+        .then(function(r){ return r.json().catch(function(){ return { ok: false }; }); })
+        .then(function(j){
+          if (j && j.ok) { form.reset(); if (msg) { msg.textContent = SUCCESS; msg.className = 'form-msg ok'; } if (btn) { btn.textContent = 'Sent'; } }
+          else { throw new Error('send'); }
+        })
+        .catch(function(){ if (msg) { msg.innerHTML = FAIL; msg.className = 'form-msg err'; } if (btn) { btn.disabled = false; btn.textContent = label; } });
+    });
+  });
 })();
 </script>
 </body>

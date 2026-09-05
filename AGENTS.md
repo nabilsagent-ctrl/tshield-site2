@@ -64,3 +64,8 @@ Full no-AI detail in `HUMAN_RUNBOOK.md`. In short:
 - **No layout in inline styles.** An inline `grid-template-columns` (or width/aspect) can never be collapsed by a media query, so it breaks on phones (TOPAZ-965 found four). Use a class (`.g-2`, `.g-3`, `.fig-col`) with its breakpoint in the page's `<style>`.
 - **Anything revealed on `:hover` needs a touch path.** Wrap the always-visible fallback in `@media (hover: none)`; never write copy that says "hover".
 - **One copy of each script.** Two copies of the slider/progress code ran on the Interior page for months (double listeners). Grep for a function name before pasting a block.
+
+## Enquiry forms (added 2026-09-05, TOPAZ-967)
+- All three forms POST JSON to `api/lead.js` (Vercel serverless, Node runtime, no dependencies), which emails each submission via Resend. Env on the Vercel project: `RESEND_API_KEY` (sensitive — set in the Vercel UI, never in the repo), `LEADS_FROM` (a Resend-verified sender), `LEADS_TO` (comma-separated). Changing an env var needs a redeploy.
+- Field names are the contract: `first_name`/`last_name` or `name`, `email`, `phone`, `property_type`, `vehicle`, `coverage`, `location`, `message`, `website` (honeypot — must stay empty and hidden). Adding a field = add it to the `fields` list in `api/lead.js`.
+- Offline test harness pattern: require the handler, mock `global.fetch`, call with `{method, headers, body}` and a fake `res` — see TOPAZ-967 for the cases (method, origin, validation, honeypot, config, send failure).
