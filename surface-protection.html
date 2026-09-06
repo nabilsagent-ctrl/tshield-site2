@@ -1021,6 +1021,17 @@ footer {
   .surfaces-head { flex-direction: column; gap: 16px; }
 }
 
+/* TOPAZ-968 (2026-09-06): warranty section */
+.wty-box{margin-top:28px;border:1px solid rgba(236,29,36,.35);background:rgba(236,29,36,.05);padding:24px 28px}
+.wty-ttl{font-family:'Barlow Condensed',sans-serif;font-size:.65rem;letter-spacing:.24em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.wty-list{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:.85rem;color:var(--charcoal)}
+.wty-list li{display:flex;align-items:center;gap:12px}
+.wty-list li::before{content:'';width:16px;height:2px;background:var(--red);flex-shrink:0}
+.wty-panel{background:var(--charcoal);color:#fff;padding:56px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-top:3px solid var(--red);min-height:360px}
+.wty-big{font-family:'Barlow Condensed',sans-serif;font-size:6rem;font-weight:800;line-height:1;color:var(--red)}
+.wty-label{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-top:8px}
+.wty-rule{width:32px;height:2px;background:rgba(255,255,255,.35);margin:16px auto}
+.wty-sub{font-size:.8rem;color:rgba(255,255,255,.7);max-width:240px;line-height:1.65}
 /* TOPAZ-965 (2026-09-05): audit defects */
 .nav-name{white-space:nowrap}.nav-cta{white-space:nowrap}
 @media (max-width: 420px){.nav-cta{padding:8px 12px;font-size:.62rem;letter-spacing:.08em}}
@@ -1036,7 +1047,9 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
 @media(max-width:768px){.ba-lbl{font-size:.58rem!important;padding:5px 10px!important;gap:6px!important}.ba-lbl-before{bottom:auto!important;top:12px!important;left:12px!important}.ba-lbl-after{bottom:12px!important;right:12px!important}}
 .g-2{display:grid;grid-template-columns:1fr 1fr}
 @media(max-width:768px){.g-2{grid-template-columns:1fr}#baContainer{aspect-ratio:4/3!important}}
+.form-note{margin:12px 0 0;font-size:.78rem;color:var(--gray);line-height:1.5}
 .form-msg{margin:12px 0 0;font-size:.85rem;line-height:1.5;min-height:1em}.form-msg.ok{color:#2E7D32}.form-msg.err{color:var(--red)}.form-msg a{color:inherit}
+@media (max-width: 420px){.cta-x{display:none}}
 </style>
   <!-- HubSpot tracking config (NAB-215) -->
   <script src="/config.js" defer></script>
@@ -1062,12 +1075,12 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
   <div class="mobile-menu-bottom">
     <div class="mobile-menu-accent"></div>
     <div class="mobile-menu-tagline">By Topaz — The World Standard in Protective Film</div>
-    <a href="#contact" class="btn-red" style="align-self:flex-start;margin-top:8px">Get a Free Quote</a>
+    <a href="#contact" class="btn-red" style="align-self:flex-start;margin-top:8px">Contact Our Team</a>
   </div>
 </div>
 
 <!-- TOPBAR -->
-<div class="topbar">By <span>Topaz</span> — 15 Years of World-Class Protective Film Expertise &nbsp;·&nbsp; Homes &nbsp;·&nbsp; Hotels &nbsp;·&nbsp; Commercial Spaces</div>
+<div class="topbar">By <span>Topaz</span> — World-Class Protective Film Expertise Since 2009 &nbsp;·&nbsp; Homes &nbsp;·&nbsp; Hotels &nbsp;·&nbsp; Commercial Spaces</div>
 
 <!-- NAV -->
 <nav id="navbar">
@@ -1085,7 +1098,7 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <a href="#contact" class="nav-cta">Get a Quote</a>
+    <a href="#contact" class="nav-cta">Contact<span class="cta-x"> Our Team</span></a>
     <button class="burger" id="burgerBtn" aria-label="Toggle menu">
       <div class="burger-line"></div>
       <div class="burger-line"></div>
@@ -1106,7 +1119,7 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
     <p class="hero-sub">The most beautiful interiors are defined by the materials that shape them. T-Shield places an invisible shield over those surfaces — allowing them to be used naturally while preserving their beauty for years to come.</p>
     <div class="hero-btns">
       <a href="#about" class="btn-red">Explore Protection</a>
-      <a href="#contact" class="btn-outline-dark">Free Consultation</a>
+      <a href="#contact" class="btn-outline-dark">Contact Our Team</a>
     </div>
     <div class="hero-feats">
       <div class="hero-feat"><div class="hero-feat-dot"></div>Invisible Shield</div>
@@ -1139,7 +1152,7 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
       <div class="tagline">Replaceable Protection. Permanent Surfaces.</div>
       <div class="btn-pair">
         <a href="#technology" class="btn-outline-dark">See the Technology</a>
-        <a href="#contact" class="btn-outline-dark">Book a Consultation</a>
+        <a href="#contact" class="btn-outline-dark">Contact Our Team</a>
       </div>
     </div>
     <div class="img-frame img-frame-45 reveal-r">
@@ -1394,7 +1407,7 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
       </div>
       <div class="tech-img-caption">
         <div class="tic-title">Precision Film Engineering</div>
-        <div class="tic-sub">Developed by Topaz — 15 years of PPF expertise</div>
+        <div class="tic-sub">Developed by Topaz — PPF expertise since 2009</div>
       </div>
     </div>
   </div>
@@ -1435,6 +1448,27 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
   <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#CCC)"></div>
 </div>
 <!-- APPLICATIONS -->
+<!-- WARRANTY (TOPAZ-968, 2026-09-06: five-year warranty for all — Aamir) -->
+<section class="sec sec-off reveal" id="warranty">
+<div class="two-col">
+<div class="reveal-l">
+<div class="eyebrow">Long-Term Confidence</div>
+<h2 class="h2">Five-Year Warranty.<br/><span class="red">Total Peace of Mind.</span></h2>
+<p class="body-text">Surface Protection Film is not simply about immediate results. It is about long-term preservation.</p>
+<p class="body-text">T-Shield is supported by a five-year warranty covering the integrity of the film and its installation. Over time, the film absorbs the wear that would otherwise affect the surface beneath. If required, it can be replaced. The surface remains protected.</p>
+<div class="wty-box">
+<div class="wty-ttl">T-Shield Warranty Covers</div>
+<ul class="wty-list"><li>Film integrity guaranteed</li><li>Installation quality covered</li><li>Film can be replaced if required</li><li>Original surface remains protected</li></ul>
+</div>
+</div>
+<div class="reveal-r wty-panel">
+<div class="wty-big">5</div>
+<div class="wty-label">Year Warranty</div>
+<div class="wty-rule"></div>
+<div class="wty-sub">Covering the integrity of the film and its installation</div>
+</div>
+</div>
+</section>
 <section class="sec sec-white reveal" id="applications">
   <div class="eyebrow">Where We Work</div>
   <h2 class="h2">Applications Across Homes, <br class="br-d"/><span class="red">Hotels and Workspaces</span></h2>
@@ -1548,7 +1582,7 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
       <p class="body-text">The number of interior surfaces in the world dwarfs the number of cars on the road. T-Shield Surface Protection was created to bring the proven concept of protective film to this vastly larger market.</p>
       <p class="body-text">Developed by the team behind Topaz, one of the world's most recognised Paint Protection Film specialists, T-Shield combines proven technology with a new application that has the potential to reshape how surfaces for homes, commercial environments and high-traffic interiors are protected.</p>
       <p class="body-text"><strong>For the right franchise partners, this represents the opportunity to enter an emerging industry at the very beginning of its growth.</strong></p>
-      <div style="margin-top:24px"><a href="#contact" class="btn-w">Enquire About Franchising</a></div>
+      <div style="margin-top:24px"><a href="#contact" class="btn-w">Contact Our Team</a></div>
     </div>
     <div class="imgf imgf-45 reveal-r">
       <img src="/assets/photos/i13-franchise-install.jpg?v=2" alt="T-Shield commercial installation" loading="lazy" decoding="async"/>
@@ -1569,8 +1603,8 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
           <div class="acc-q">How the Idea for T-Shield Began<div class="acc-icon">+</div></div>
           <div class="acc-body">
       <p>T-Shield Surface Protection was not created in a boardroom or as part of a theoretical business plan.</p>
-      <p>The idea emerged naturally from more than fifteen years of experience working at the very forefront of the Paint Protection Film industry.</p>
-      <p>At Topaz, we have spent over a decade protecting some of the world's most valuable vehicles using advanced film technology. Every year thousands of car owners trust us to preserve the appearance of their vehicles by applying Paint Protection Film that shields the paintwork from everyday wear.</p>
+      <p>The idea emerged naturally from Topaz’s experience since 2009 at the very forefront of the Paint Protection Film industry.</p>
+      <p>At Topaz, we have been protecting some of the world's most valuable vehicles with advanced film technology since 2009. Every year thousands of car owners trust us to preserve the appearance of their vehicles by applying Paint Protection Film that shields the paintwork from everyday wear.</p>
       <p>Over the years, a surprising pattern began to emerge. Many of our customers — particularly those who invest heavily in protecting their vehicles — began asking a very similar question.</p>
       <p style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-style:italic;color:var(--charcoal);border-left:3px solid #EC1D24;padding-left:16px;margin:16px 0">"If this film can protect my car so effectively, why isn't there something like this for my home?"</p>
       <p>Customers would point to marble kitchen worktops, dining tables, bathroom surfaces or furniture that had been carefully chosen and often very expensive, yet vulnerable to scratches, marks and daily use.</p>
@@ -1613,7 +1647,7 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
     <div class="acc-item">
           <div class="acc-q">Why Partner With Topaz?<div class="acc-icon">+</div></div>
           <div class="acc-body">
-      <p>T-Shield is not being launched by a startup experimenting with a new idea. It is being introduced by Topaz, one of the most recognised and respected companies in the global Paint Protection Film industry. For more than 15 years, Topaz has been at the forefront of surface protection technology, building an international reputation for innovation, technical excellence and uncompromising standards.</p>
+      <p>T-Shield is not being launched by a startup experimenting with a new idea. It is being introduced by Topaz, one of the most recognised and respected companies in the global Paint Protection Film industry. Since 2009, Topaz has been at the forefront of surface protection technology, building an international reputation for innovation, technical excellence and uncompromising standards.</p>
       <p>By becoming a T-Shield franchise partner, you are not simply starting a business — you are joining a company that has already established itself as a global leader in its field. This partnership provides franchise partners with a powerful advantage from day one.</p>
       <p><strong>People Trust Topaz.</strong> Founded in 2009, the company has grown from a specialist detailing studio into an internationally recognised leader in surface protection technology. The company has built its reputation by working with some of the most valuable and prestigious vehicles in the world. The credibility of Topaz helps open doors, build trust and accelerate the growth of new franchise territories.</p>
       <p><strong>Leadership That Shapes the Industry.</strong> Topaz continues to be led by its founding management team, who remain deeply involved in the development and growth of the business. Rather than simply following industry trends, the company has consistently been responsible for setting them. As a T-Shield franchise partner, you are not joining a company that follows the market — you are partnering with one that helps lead it.</p>
@@ -1709,7 +1743,7 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
       <p>We take great care in selecting franchise partners because the long-term success of the T-Shield network depends on working with individuals who share our commitment to quality and professionalism. The process typically follows several stages:</p>
       <ul><li><strong>Initial Enquiry</strong> — Contact the T-Shield team to express interest. We provide further information about the business model and answer any initial questions</li><li><strong>Introductory Discussion</strong> — This conversation allows both sides to explore whether the opportunity is a good fit. We discuss the territory, the structure of the business and what would be required to launch successfully</li><li><strong>Detailed Opportunity Review</strong> — If there is mutual interest, we provide more detailed information about the franchise model, investment structure and support available from Topaz</li><li><strong>Territory Agreement</strong> — Once both parties are comfortable moving forward, a territory is agreed and the franchise process begins</li><li><strong>Training and Launch</strong> — Franchise partners complete the required training and preparation before launching their T-Shield business. Our team remains closely involved during the early stages to ensure a strong and successful launch</li></ul>
       <p><strong>Next Steps.</strong> If you are interested in exploring the T-Shield franchise opportunity, please contact the Topaz team for further information about territories, the business model and the process of becoming a franchise partner.</p>
-      <div style="margin-top:20px"><a href="#contact" class="btn-r">Contact the Franchise Team</a></div>
+      <div style="margin-top:20px"><a href="#contact" class="btn-r">Contact Our Team</a></div>
     </div>
         </div>
 
@@ -1742,6 +1776,7 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
       </select>
       <textarea class="inp" name="message" rows="4" placeholder="Tell us about your surfaces and what you'd like to protect…" aria-label="Message" style="resize:vertical"></textarea>
 <button type="submit" class="btn-red" style="padding:14px;width:100%;font-size:.78rem">Send Enquiry</button>
+<p class="form-note">We aim to reply to all enquiries within one working day.</p>
 <p class="form-msg" role="status" aria-live="polite"></p>
 </form>
   </div>
@@ -1749,7 +1784,7 @@ div[style*="background:#111111"] a{font-size:.74rem!important;color:rgba(255,255
     <div class="eyebrow">Franchise Enquiries</div>
     <h2 class="h2">Join the<br/><span class="red">T-Shield</span> Network</h2>
     <p class="body-text" style="margin-top:10px">If you are interested in exploring the T-Shield franchise opportunity, please contact the Topaz team for further information about territories, the business model and the process of becoming a franchise partner.</p>
-    <div style="margin-top:24px;margin-bottom:36px"><a href="franchise.html" class="btn-red">Contact Franchise Team</a></div>
+    <div style="margin-top:24px;margin-bottom:36px"><a href="franchise.html" class="btn-red">Contact Our Team</a></div>
     <div class="c-info">
       <div class="c-item"><div class="c-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="6" stroke="#fff" stroke-width="1.3"/><ellipse cx="7" cy="7" rx="2.6" ry="6" stroke="#fff" stroke-width="1.3"/><line x1="1" y1="7" x2="13" y2="7" stroke="#fff" stroke-width="1.3"/></svg></div><div><div class="c-label">Website</div><div class="c-val">www.t-shield.co</div></div></div>
       <div class="c-item"><div class="c-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="1" y="3" width="12" height="8" rx="1" stroke="#fff" stroke-width="1.3"/><path d="M1.5 3.5 7 8l5.5-4.5" stroke="#fff" stroke-width="1.3" stroke-linejoin="round"/></svg></div><div><div class="c-label">Email</div><div class="c-val"><a href="mailto:info@t-shield.co">info@t-shield.co</a></div></div></div>
@@ -1971,7 +2006,7 @@ if(mmCloseBtn)mmCloseBtn.addEventListener('click',function(){
 </script>
 <script>
 (function(){
-  var SUCCESS = 'Thank you — your enquiry has been sent. We’ll be in touch within one working day.';
+  var SUCCESS = 'Thank you — your enquiry has been sent. We aim to reply within one working day.';
   var FAIL = 'Sorry, that didn’t send. Please email <a href="mailto:info@t-shield.co">info@t-shield.co</a> and we’ll come straight back to you.';
   document.querySelectorAll('form.lead-form').forEach(function(form){
     var btn = form.querySelector('button[type="submit"]'), msg = form.querySelector('.form-msg'), label = btn ? btn.textContent : '';
