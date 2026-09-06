@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeScope, TopStrip, Header, Section, TwoColumn, ThreeColumn, SectionHeader, Heading, Lead, Body, Button, Actions, Hero, PhotoCaption, StatBar, FeatureCard, ProcessSteps, WarrantyBlock, Faq, EnquiryForm, Footer, Divider, BeforeAfter, Tag } from '../src/index';
 const P = 'https://www.t-shield.co/assets/photos/';
-const temp = (new URLSearchParams(location.search).get('t') as 'warm' | 'graphite') || 'warm';
+const temp = (new URLSearchParams(location.search).get('t') as 'light' | 'graphite') || 'light';
 const auto = temp === 'graphite';
 function Page() {
   return (

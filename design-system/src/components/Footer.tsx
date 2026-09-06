@@ -11,7 +11,7 @@ export interface FooterProps {
   legal?: React.ReactNode;
   className?: string;
 }
-/** Page footer: brand + description, link columns with red-underlined headings, legal line and the "A Topaz brand" mark. Neutral graphite in the graphite family, warm surface in the warm family. */
+/** Page footer: brand + description, link columns with red-underlined headings, legal line and the "A Topaz brand" mark. Neutral graphite in the graphite family, soft neutral light surface in the light family — never beige or brown. */
 export function Footer({ brand = 'T‑Shield', logoSrc = 'https://www.t-shield.co/assets/logo.png', description, columns = [], legal, className }: FooterProps) {
   return (
     <footer className={['tsd-footer', className].filter(Boolean).join(' ')}>
