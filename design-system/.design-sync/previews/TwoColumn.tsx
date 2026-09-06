@@ -1,0 +1,3 @@
+import React from 'react';
+import { Section, TwoColumn, SectionHeader, Heading, PhotoCaption } from '@tshield/design-system';
+export const TextAndPhoto = () => <Section><TwoColumn><SectionHeader eyebrow="Our Heritage" title={<>How It <Heading.Red>Began</Heading.Red></>} intro="Topaz Detailing started in 2009 with a single mission: create the world's highest-standard protective films." /><PhotoCaption src="https://www.t-shield.co/assets/photos/i02-about-application.jpg" alt="Film applied to a marble worktop" ratio="45" title="Invisible by Design" sub="Zero visual impact — total surface protection" /></TwoColumn></Section>;
