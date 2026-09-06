@@ -11,7 +11,7 @@
   "provider": {
     "component": "ThemeScope",
     "props": {
-      "temperature": "warm"
+      "temperature": "light"
     }
   },
   "overrides": {
