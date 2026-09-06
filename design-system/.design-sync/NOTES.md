@@ -17,3 +17,8 @@
 - Temperature-specific surfaces are tokens (`--tsd-strip-bg`, `--tsd-card-bg`, `--tsd-footer-*`), never `.tsd--warm .x` descendant rules — a graphite block nested inside a warm page would otherwise inherit the warm override (found and fixed 2026-09-06 on Footer/TopStrip).
 - `cfg.overrides.*.viewport` values were tuned for the 1280-wide desktop cards; changing them re-stamps grade keys (full `package-build.mjs`, then re-grade the affected sheets).
 - Fonts are self-hosted copies of Barlow / Barlow Condensed (Google Fonts, OFL) in `fonts/`; re-download only if weights change.
+
+## First upload (2026-09-07)
+- Target: Claude Design project **"T-Shield"** (`78a514b4-a416-4f79-b5eb-f0d346705cef`, https://claude.ai/design/p/78a514b4-a416-4f79-b5eb-f0d346705cef), created by the build chat after Nabil ran `/design-login` on the MacBook Pro. Empty project → incremental path (one plan approval), 146 files: sentinel → vendor → fonts → base (`_ds_bundle.js/.css`, `styles.css`, `README.md`) → 26 previews → 104 component files → sentinel → `_ds_sync.json` last. `list_files` after = exactly the local upload set.
+- `/design-login` is an interactive-terminal-only command: run `claude` from this directory in Terminal.app, then type `/design-login` at Claude's prompt (not at zsh). The native CLI lives at `~/.local/bin/claude` (PATH line in `~/.zshrc`).
+- Other Claude Design projects on the account ("Topaz OS CI", "Topaz Design System", "Design System") are NOT T-Shield — never sync into them.
