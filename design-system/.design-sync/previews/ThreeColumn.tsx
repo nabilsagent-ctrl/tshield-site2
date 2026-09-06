@@ -1,0 +1,3 @@
+import React from 'react';
+import { Section, ThreeColumn, FeatureCard } from '@tshield/design-system';
+export const Cards = () => <Section tone="surface"><ThreeColumn><FeatureCard index="01" title="Proven Technology">Research and refinement since 2009. Millions of surfaces protected.</FeatureCard><FeatureCard index="02" title="Complete Training">We train you and your team comprehensively on application, sales and operations.</FeatureCard><FeatureCard index="03" title="Ongoing Support">Dedicated account management, marketing resources and technical support.</FeatureCard></ThreeColumn></Section>;

@@ -1,0 +1,5 @@
+import React from 'react';
+import { ThemeScope, ProcessSteps } from '@tshield/design-system';
+const steps = [{ title: 'Digital Patterning', description: 'Templates are created using digital patterning technology to ensure accuracy. Every vehicle is measured precisely — the film is cut to fit your exact model.' }, { title: 'Precision Cut', description: 'Each panel is cut precisely before installation. No blades are used on the vehicle. The film arrives pre-cut, ready to apply without any risk to your paintwork.' }, { title: 'Professional Installation', description: 'Applied by trained Topaz technicians using specialist methods developed since 2009.' }, { title: 'Seamless Finish', description: 'The result is a clean, seamless finish that follows the natural lines of the car. Once applied, the film remains virtually invisible.' }];
+export const FourSteps = () => <div style={{ padding: 24, maxWidth: 620 }}><ProcessSteps steps={steps} active={3} /></div>;
+export const GraphiteFirstActive = () => <ThemeScope temperature="graphite"><div style={{ padding: 24, maxWidth: 620 }}><ProcessSteps steps={steps} active={0} interactive={false} /></div></ThemeScope>;

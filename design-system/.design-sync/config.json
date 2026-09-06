@@ -1,0 +1,67 @@
+{
+  "pkg": "@tshield/design-system",
+  "globalName": "TShieldDS",
+  "shape": "package",
+  "buildCmd": "npm run build",
+  "cssEntry": "dist/styles.css",
+  "extraFonts": [
+    "fonts/fonts.css"
+  ],
+  "provider": {
+    "component": "ThemeScope",
+    "props": {
+      "temperature": "warm"
+    }
+  },
+  "overrides": {
+    "Hero": {
+      "cardMode": "column",
+      "viewport": "1280x720"
+    },
+    "Header": {
+      "cardMode": "column",
+      "viewport": "1280x150"
+    },
+    "Footer": {
+      "cardMode": "column",
+      "viewport": "1280x560"
+    },
+    "TopStrip": {
+      "cardMode": "column"
+    },
+    "BeforeAfter": {
+      "cardMode": "column",
+      "viewport": "1100x600"
+    },
+    "StatBar": {
+      "cardMode": "column",
+      "viewport": "1100x260"
+    },
+    "WarrantyBlock": {
+      "cardMode": "column",
+      "viewport": "1200x760"
+    },
+    "EnquiryForm": {
+      "cardMode": "column"
+    },
+    "Section": {
+      "cardMode": "column",
+      "viewport": "1200x520"
+    },
+    "TwoColumn": {
+      "cardMode": "column",
+      "viewport": "1200x940"
+    },
+    "ThreeColumn": {
+      "cardMode": "column",
+      "viewport": "1200x520"
+    },
+    "FeatureCard": {
+      "cardMode": "column"
+    },
+    "Heading": {
+      "cardMode": "column"
+    }
+  },
+  "readmeHeader": ".design-sync/conventions.md"
+}

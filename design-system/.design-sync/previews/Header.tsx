@@ -1,0 +1,5 @@
+import React from 'react';
+import { ThemeScope, Header } from '@tshield/design-system';
+const links = [{ label: 'About', href: '#about' }, { label: 'Surfaces', href: '#surfaces', current: true }, { label: 'Technology', href: '#technology' }, { label: 'Installation', href: '#installation' }, { label: 'Applications', href: '#applications' }, { label: 'Contact', href: '#contact' }];
+export const SurfaceProtection = () => <div style={{ minHeight: 120 }}><Header suffix="/ Surface Protection" links={links} scrolled={false} /></div>;
+export const Automotive = () => <ThemeScope temperature="graphite"><div style={{ minHeight: 120 }}><Header suffix="/ Paint Protection Film" links={[{ label: 'About', href: '#about' }, { label: 'Daily Driving', href: '#daily' }, { label: 'The Film', href: '#film', current: true }, { label: 'Coverage', href: '#coverage' }, { label: 'Process', href: '#process' }, { label: 'Warranty', href: '#warranty' }, { label: 'Contact', href: '#contact' }]} scrolled /></div></ThemeScope>;

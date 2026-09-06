@@ -1,0 +1,74 @@
+/* T-Shield design tokens — one brand, two temperatures.
+   Scope: put .tsd on a root element (ThemeScope does this) and choose .tsd--graphite (Automotive) or .tsd--warm (Surface Protection / Franchise).
+   Every component reads only --tsd-* variables, so the same component renders correctly in either temperature. */
+.tsd, .tsd--graphite, .tsd--warm {
+  --tsd-strip-bg: #EFE7DA;
+  --tsd-strip-ink: #7A6C5E;
+  --tsd-card-bg: #FFFFFF;
+  --tsd-footer-bg: #E7DCCB;
+  --tsd-footer-ink: #2B211B;
+  --tsd-footer-muted: #7A6C5E;
+  --tsd-footer-hairline: rgba(43,33,27,.12);
+  --tsd-red: #EC1D24;
+  --tsd-red-hover: #FF2230;
+  --tsd-font-body: 'Barlow', 'Helvetica Neue', Arial, sans-serif;
+  --tsd-font-display: 'Barlow Condensed', Arial, sans-serif;
+  --tsd-max: 1320px;
+  --tsd-gutter: 60px;
+  --tsd-gutter-sm: 24px;
+  --tsd-section: 96px;
+  --tsd-section-sm: 60px;
+  --tsd-block: 40px;
+  --tsd-radius: 0px;
+  --tsd-ease: cubic-bezier(.22,1,.36,1);
+  --tsd-dur-fast: .2s;
+  --tsd-dur: .45s;
+  --tsd-dur-slow: .8s;
+  --tsd-white-pure: #FFFFFF;
+  /* dark surfaces are ALWAYS neutral graphite, in both temperatures (the warm charcoal reads brown at size) */
+  --tsd-dark: #0F1114;
+  --tsd-dark-2: #16171A;
+  --tsd-on-dark: #FFFFFF;
+  --tsd-on-dark-muted: rgba(255,255,255,.72);
+  --tsd-on-dark-faint: rgba(255,255,255,.45);
+  --tsd-on-dark-hairline: rgba(255,255,255,.12);
+}
+/* Cool graphite — Automotive page, homepage left half */
+.tsd--graphite {
+  --tsd-strip-bg: #0F1114;
+  --tsd-strip-ink: rgba(255,255,255,.45);
+  --tsd-card-bg: #FFFFFF;
+  --tsd-footer-bg: #0F1114;
+  --tsd-footer-ink: #FFFFFF;
+  --tsd-footer-muted: rgba(255,255,255,.45);
+  --tsd-footer-hairline: rgba(255,255,255,.12);
+  --tsd-ground: #FFFFFF;
+  --tsd-surface: #F7F7F7;
+  --tsd-surface-2: #EEEEEE;
+  --tsd-hairline: #EEEEEE;
+  --tsd-mid: #CCCCCC;
+  --tsd-muted: #6B6B6B;
+  --tsd-ink-2: #444444;
+  --tsd-ink: #2A2A2A;
+  --tsd-band: #2A2A2A;            /* caption band */
+  --tsd-on-band: #FFFFFF;
+  --tsd-hero-ground: #0F1114;
+  --tsd-hero-veil: linear-gradient(90deg, rgba(12,14,18,.92) 0%, rgba(12,14,18,.62) 55%, rgba(12,14,18,.35) 100%);
+  --tsd-photo-filter: none;
+}
+/* Warm light ("W5") — Surface Protection page, Franchise page, homepage right half */
+.tsd--warm {
+  --tsd-ground: #FBF6EF;
+  --tsd-surface: #F3EBE0;
+  --tsd-surface-2: #EFE7DA;
+  --tsd-hairline: #E7DDCF;
+  --tsd-mid: #BFB1A0;
+  --tsd-muted: #7A6C5E;
+  --tsd-ink-2: #4A3D33;
+  --tsd-ink: #2B211B;
+  --tsd-band: #2B211B;            /* small caption bands only — never large areas */
+  --tsd-on-band: #FFFFFF;
+  --tsd-hero-ground: #2b241f;
+  --tsd-hero-veil: linear-gradient(90deg, rgba(38,29,22,.86) 0%, rgba(38,29,22,.55) 55%, rgba(38,29,22,.28) 100%);
+  --tsd-photo-filter: sepia(.16) saturate(1.08);
+}
