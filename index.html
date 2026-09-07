@@ -470,26 +470,35 @@ html, body {
 /* ============================================================
    REDUCED MOTION ACCESSIBILITY
    ============================================================ */
-/* ===== Mobile (≤768px): "one screen, one choice" — TOPAZ-972, 2026-09-07.
-   Desktop keeps the hover split untouched. On phones one product fills the screen at a time;
-   the segmented control below the top bar (and a horizontal swipe) switches between them.
-   Both veils are neutral graphite (no brown — standing rule). ===== */
+/* ===== Mobile (≤768px): "one screen, one choice" — TOPAZ-972, 2026-09-07 (v2: cross-fade).
+   Desktop keeps the hover split untouched. On phones both panels sit in the SAME place (absolutely positioned,
+   never stacked in the document flow); the one not chosen is faded + blurred out. The segmented control below the
+   top bar, a horizontal swipe, or #interior switches. Both veils are neutral graphite (no brown — standing rule). ===== */
 .seg { display: none; }
 @media (max-width: 768px) {
-  html, body { overflow: auto; height: auto; }
-  body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
-  .topbar { height: 52px; justify-content: flex-start; padding: 0 20px; }
+  html { overflow-x: hidden; overflow-y: auto; height: auto; }
+  /* body must NOT be a scroll container here, or position:sticky on the top bar and the switch silently stops working */
+  body { overflow: visible; height: auto; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+  .topbar { position: sticky; top: 0; height: 52px; justify-content: flex-start; padding: 0 20px; background: #0d0d0d; backdrop-filter: none; -webkit-backdrop-filter: none; }
   .topbar-sep { margin: 0 12px; }
   .topbar-logo { min-height: 44px; }
-  .seg { display: grid; grid-template-columns: 1fr 1fr; flex: 0 0 auto; margin: 62px 20px 0; border: 1px solid rgba(255,255,255,.22); }
-  .seg button { appearance: none; -webkit-appearance: none; border: 0; border-radius: 0; background: transparent; color: rgba(255,255,255,.72); font-family: 'Barlow', sans-serif; font-weight: 600; font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; min-height: 46px; cursor: pointer; }
-  .seg button[aria-selected="true"] { background: #fff; color: #0F1114; }
+  /* the switch stays put under the top bar while the stage scrolls beneath it on short screens */
+  .seg { display: grid; grid-template-columns: 1fr 1fr; flex: 0 0 auto; position: sticky; top: 52px; z-index: 90; margin: 0; padding: 10px 20px 14px; background: #0d0d0d; }
+  .seg button { appearance: none; -webkit-appearance: none; border: 1px solid rgba(255,255,255,.22); border-radius: 0; background: transparent; color: rgba(255,255,255,.72); font-family: 'Barlow', sans-serif; font-weight: 600; font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; min-height: 46px; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: background .25s, color .25s; }
+  .seg button:first-child { border-right: 0; }
+  .seg button[aria-selected="true"] { background: #fff; color: #0F1114; border-color: #fff; }
   .seg button:focus-visible { outline: 2px solid var(--red); outline-offset: -2px; }
-  .split { flex: 1 1 auto; display: flex; flex-direction: column; height: auto; width: 100%; min-height: 0; padding: 14px 0 0; }
-  .panel, .panel:hover, .split:has(.panel:hover) .panel:not(:hover) { flex: 1 1 auto; display: block; height: auto; min-height: 560px; transition: none; }
-  .panel-right { display: none; margin-top: 0; }
-  .split.show-interior .panel-left { display: none; }
-  .split.show-interior .panel-right { display: block; }
+  /* the stage: fills the rest of the screen; panels are layered inside it, badge pinned to its foot */
+  .split { flex: 1 1 auto; position: relative; display: block; height: auto; width: 100%; min-height: 610px; padding: 0; }
+  .panel, .panel:hover, .split:has(.panel:hover) .panel:not(:hover) {
+    position: absolute; left: 0; right: 0; top: 0; bottom: 64px;
+    flex: none; display: block; height: auto; min-height: 0; overflow: hidden; -webkit-tap-highlight-color: transparent;
+    transition: opacity .45s cubic-bezier(.22,1,.36,1), filter .45s cubic-bezier(.22,1,.36,1), visibility .45s;
+  }
+  .panel-left  { opacity: 1; filter: none; visibility: visible; pointer-events: auto; z-index: 2; margin: 0; }
+  .panel-right { opacity: 0; filter: blur(10px); visibility: hidden; pointer-events: none; z-index: 1; margin: 0; }
+  .split.show-interior .panel-left  { opacity: 0; filter: blur(10px); visibility: hidden; pointer-events: none; z-index: 1; }
+  .split.show-interior .panel-right { opacity: 1; filter: none; visibility: visible; pointer-events: auto; z-index: 2; }
   .panel::before, .panel:hover::before { display: none; }
   .panel-bg, .panel:hover .panel-bg, .panel-active .panel-bg { transform: none; transition: none; }
   .panel-left .panel-bg, .panel-right .panel-bg, .panel-left.panel-active .panel-bg, .panel-right.panel-active .panel-bg, .panel:hover .panel-bg { filter: none; background-position: 60% 40%; }
@@ -506,7 +515,7 @@ html, body {
   .panel-cta, .panel-cta-ghost { display: flex; justify-content: center; gap: 10px; min-height: 54px; padding: 0 26px; margin-top: 4px; background: var(--red); border-color: var(--red); color: #fff; font-size: .8rem; letter-spacing: .2em; }
   .panel-cta:hover, .panel-cta-ghost:hover { transform: none; gap: 10px; background: var(--red-h); border-color: var(--red-h); color: #fff; }
   .divider, .choose-hint { display: none; }
-  .topaz-badge { position: static; left: auto; right: auto; bottom: auto; transform: none; display: flex; align-items: center; justify-content: center; gap: 12px; height: 64px; margin: 0; padding: 0; border: 0; border-top: 1px solid rgba(255,255,255,.12); border-radius: 0; background: #0d0d0d; order: 99; }
+  .topaz-badge { position: absolute; left: 0; right: 0; bottom: 0; top: auto; height: 64px; transform: none; transition: none; z-index: 3; display: flex; align-items: center; justify-content: center; gap: 12px; margin: 0; padding: 0; border: 0; border-top: 1px solid rgba(255,255,255,.12); border-radius: 0; background: #0d0d0d; backdrop-filter: none; -webkit-backdrop-filter: none; }
   .topaz-badge-logo { height: 16px; width: auto; }
 }
 @media (max-width: 380px) {
@@ -671,6 +680,7 @@ const panelRight = document.getElementById('panelRight');
 const badge = document.querySelector('.topaz-badge');
 
 function updateDivider() {
+  if (window.matchMedia("(max-width: 768px)").matches) return; // phones: the chooser owns the layout (TOPAZ-972)
   const leftW = panelLeft.getBoundingClientRect().width;
   const totalW = split.getBoundingClientRect().width;
   const pct = (leftW / totalW * 100).toFixed(2);
