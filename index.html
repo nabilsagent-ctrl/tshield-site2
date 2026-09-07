@@ -476,8 +476,9 @@ html, body {
    top bar, a horizontal swipe, or #interior switches. Both veils are neutral graphite (no brown — standing rule). ===== */
 .seg { display: none; }
 @media (max-width: 768px) {
-  html, body { overflow: auto; height: auto; }
-  body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+  html { overflow-x: hidden; overflow-y: auto; height: auto; }
+  /* body must NOT be a scroll container here, or position:sticky on the top bar and the switch silently stops working */
+  body { overflow: visible; height: auto; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
   .topbar { position: sticky; top: 0; height: 52px; justify-content: flex-start; padding: 0 20px; background: #0d0d0d; backdrop-filter: none; -webkit-backdrop-filter: none; }
   .topbar-sep { margin: 0 12px; }
   .topbar-logo { min-height: 44px; }
