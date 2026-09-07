@@ -141,10 +141,10 @@
   .acc-body ul li{font-size:.82rem;color:var(--dark-gray);display:flex;align-items:center;gap:9px}
   .acc-body ul li::before{content:'';width:14px;height:1px;background:var(--red);flex-shrink:0}
   /* Dark accordion */
-  .acc-dark .acc-item{background:rgba(43,33,27,.04);border-color:rgba(43,33,27,.12)}
+  .acc-dark .acc-item{background:rgba(42,42,42,.04);border-color:rgba(42,42,42,.12)}
   .acc-dark .acc-item.open,.acc-dark .acc-item:hover{border-left-color:var(--red)}
   .acc-dark .acc-q{color:var(--charcoal)}
-  .acc-dark .acc-icon{border-color:rgba(43,33,27,.28);color:var(--red)}
+  .acc-dark .acc-icon{border-color:rgba(42,42,42,.28);color:var(--red)}
   .acc-dark .acc-body p{color:var(--dark-gray)}
   .acc-dark .acc-body ul li{color:var(--dark-gray)}
   /* Franchise full */
@@ -152,7 +152,7 @@
   .franchise-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:64px}
   .franchise-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:56px}
   .fr-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:48px}
-  .fstat{background:rgba(43,33,27,.05);padding:28px 24px;border-top:2px solid var(--red);text-align:center}
+  .fstat{background:rgba(42,42,42,.05);padding:28px 24px;border-top:2px solid var(--red);text-align:center}
   .fstat-num,.fstat-n{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;font-weight:700;color:var(--red);display:block;line-height:1}
   .fstat-label,.fstat-l{font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-top:6px}
   .red-line{width:40px;height:3px;background:var(--red)}
@@ -174,17 +174,17 @@
 
 /* ── CSS VARIABLES ── */
 :root {
-  /* Warm palette (TOPAZ-953, 2026-09-03): cream/linen grounds, espresso darks, beige for former dark blocks */
-  --white:      #FBF6EF;
-  --off-white:  #F3EBE0;
-  --light-gray: #E7DDCF;
-  --mid-gray:   #BFB1A0;
-  --gray:       #857767;
-  --dark-gray:  #4A3D33;
-  --charcoal:   #2B211B;
-  --black:      #1A140F;
-  --beige:      #EFE7DA;
-  --beige-2:    #E7DCCB;
+  /* Neutral light palette (TOPAZ-973, 2026-09-07 — "no brown anywhere", Nabil): soft off-white grounds, graphite darks, neutral greys. Replaced the W5 warm palette (TOPAZ-953). Same scale as the design system. */
+  --white:      #F8F7F4;
+  --off-white:  #EFEDE8;
+  --light-gray: #E3E0DA;
+  --mid-gray:   #B9B7B3;
+  --gray:       #7A7772;
+  --dark-gray:  #3E3C39;
+  --charcoal:   #2A2A2A;
+  --black:      #0F1114;
+  --beige:      #E8E6E1;
+  --beige-2:    #E1DFDA;
   --red:        #EC1D24;
   --red-h:      #FF2230;
   --red-dark:   #A00D24;
@@ -514,7 +514,7 @@ nav.scrolled { box-shadow: 0 2px 30px rgba(0,0,0,.08); }
 }
 .sbar-item {
   padding: 26px 32px;
-  border-right: 1px solid rgba(43,33,27,.1);
+  border-right: 1px solid rgba(42,42,42,.1);
 }
 .sbar-item:last-child { border-right: none; }
 .sbar-num {
@@ -965,7 +965,7 @@ footer {
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 60px;
   padding-bottom: 48px;
-  border-bottom: 1px solid rgba(43,33,27,.12);
+  border-bottom: 1px solid rgba(42,42,42,.12);
   margin-bottom: 32px;
 }
 .foot-brand      { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
