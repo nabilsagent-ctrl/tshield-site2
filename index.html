@@ -465,71 +465,56 @@ html, body {
 }
 
 /* ── MOBILE ── */
-@media (max-width: 768px) {
-  html, body { overflow: auto; }
-  .split { flex-direction: column; height: auto; min-height: 100vh; min-height: 100dvh; padding-top: 52px; padding-bottom: 64px; }
-  .panel { flex: 1 1 auto !important; height: auto; min-height: 0; }
-  /* Add a subtle gap between panels so the stack feels lighter on small screens */
-  .panel-right { margin-top: 4px; }
-  .panel-bg {
-    transform: scale(1.0);
-    transition: transform 0.6s ease, filter 0.6s ease;
-  }
-  .panel-active .panel-bg {
-    transform: scale(1.06) translateY(-6px);
-  }
-  .panel-left.panel-active .panel-bg { filter: brightness(.5) saturate(.7) contrast(1.06); }
-  .panel-right.panel-active .panel-bg { filter: brightness(.82) saturate(1.15) contrast(1.02); }
-  .panel:hover { flex: 1 1 auto !important; }
-  .panel::before { bottom: auto; top: 0; transform: scaleX(1); }
-  .panel-eyebrow, .panel-desc, .panel-features {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  .divider {
-    position: relative;
-    left: 0 !important;
-    width: 100%;
-    height: 2px;
-    top: auto; bottom: auto;
-    transform: none;
-  }
-  .divider-dot { display: none; }
-  .choose-hint { display: none; }
-  .topaz-badge { display: none; }
-  .panel-content {
-    padding: 6px 14px 10px;
-  }
-  /* Slightly tighten feature spacing on small screens so panels feel less tall */
-  .panel-features {
-    margin-bottom: 4px;
-    gap: 2px;
-  }
-  .panel-feature {
-    font-size: .6rem;
-    line-height: 1.35;
-  }
-  .panel-desc {
-    margin-bottom: 4px;
-    line-height: 1.45;
-    font-size: .8rem;
-  }
-  .panel-cta,
-  .panel-cta-ghost {
-    padding: 8px 16px;
-    font-size: .7rem;
-  }
-  /* Make headings and spacing more compact on small screens to reduce perceived panel height */
-  .panel-title {
-    font-size: clamp(1.35rem, 4.2vw, 1.8rem);
-    margin-bottom: 4px;
-  }
-}
 
 
 /* ============================================================
    REDUCED MOTION ACCESSIBILITY
    ============================================================ */
+/* ===== Mobile (≤768px): "one screen, one choice" — TOPAZ-972, 2026-09-07.
+   Desktop keeps the hover split untouched. On phones one product fills the screen at a time;
+   the segmented control below the top bar (and a horizontal swipe) switches between them.
+   Both veils are neutral graphite (no brown — standing rule). ===== */
+.seg { display: none; }
+@media (max-width: 768px) {
+  html, body { overflow: auto; height: auto; }
+  body { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+  .topbar { height: 52px; justify-content: flex-start; padding: 0 20px; }
+  .topbar-sep { margin: 0 12px; }
+  .topbar-logo { min-height: 44px; }
+  .seg { display: grid; grid-template-columns: 1fr 1fr; flex: 0 0 auto; margin: 62px 20px 0; border: 1px solid rgba(255,255,255,.22); }
+  .seg button { appearance: none; -webkit-appearance: none; border: 0; border-radius: 0; background: transparent; color: rgba(255,255,255,.72); font-family: 'Barlow', sans-serif; font-weight: 600; font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; min-height: 46px; cursor: pointer; }
+  .seg button[aria-selected="true"] { background: #fff; color: #0F1114; }
+  .seg button:focus-visible { outline: 2px solid var(--red); outline-offset: -2px; }
+  .split { flex: 1 1 auto; display: flex; flex-direction: column; height: auto; width: 100%; min-height: 0; padding: 14px 0 0; }
+  .panel, .panel:hover, .split:has(.panel:hover) .panel:not(:hover) { flex: 1 1 auto; display: block; height: auto; min-height: 560px; transition: none; }
+  .panel-right { display: none; margin-top: 0; }
+  .split.show-interior .panel-left { display: none; }
+  .split.show-interior .panel-right { display: block; }
+  .panel::before, .panel:hover::before { display: none; }
+  .panel-bg, .panel:hover .panel-bg, .panel-active .panel-bg { transform: none; transition: none; }
+  .panel-left .panel-bg, .panel-right .panel-bg, .panel-left.panel-active .panel-bg, .panel-right.panel-active .panel-bg, .panel:hover .panel-bg { filter: none; background-position: 60% 40%; }
+  .panel-left .panel-grad, .panel-right .panel-grad { opacity: 1; background: linear-gradient(180deg, rgba(15,17,20,.12) 0%, rgba(15,17,20,0) 22%, rgba(15,17,20,.55) 48%, rgba(15,17,20,.96) 72%, #0F1114 100%); }
+  .panel-content { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 0 22px 22px; display: grid; gap: 16px; transition: none; }
+  .panel-eyebrow, .panel-desc, .panel-features, .panel:hover .panel-eyebrow, .panel:hover .panel-desc, .panel:hover .panel-features { opacity: 1; transform: none; transition: none; margin: 0; }
+  .panel-eyebrow { font-size: .7rem; letter-spacing: .26em; }
+  .panel-title { font-size: clamp(2.6rem, 14.5vw, 3.6rem); line-height: .94; margin: 0; transition: none; }
+  .panel-title .outline { -webkit-text-stroke: 1.5px rgba(255,255,255,.88); }
+  .panel-desc { font-size: .98rem; line-height: 1.62; color: rgba(255,255,255,.86); max-width: 34ch; }
+  .panel-features { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 14px; }
+  .panel-feature { display: block; position: relative; padding-left: 14px; font-size: .76rem; letter-spacing: .01em; line-height: 1.35; color: rgba(255,255,255,.9); }
+  .panel-feature::before { position: absolute; left: 0; top: .5em; width: 6px; height: 6px; border-radius: 50%; }
+  .panel-cta, .panel-cta-ghost { display: flex; justify-content: center; gap: 10px; min-height: 54px; padding: 0 26px; margin-top: 4px; background: var(--red); border-color: var(--red); color: #fff; font-size: .8rem; letter-spacing: .2em; }
+  .panel-cta:hover, .panel-cta-ghost:hover { transform: none; gap: 10px; background: var(--red-h); border-color: var(--red-h); color: #fff; }
+  .divider, .choose-hint { display: none; }
+  .topaz-badge { position: static; left: auto; right: auto; bottom: auto; transform: none; display: flex; align-items: center; justify-content: center; gap: 12px; height: 64px; margin: 0; padding: 0; border: 0; border-top: 1px solid rgba(255,255,255,.12); border-radius: 0; background: #0d0d0d; order: 99; }
+  .topaz-badge-logo { height: 16px; width: auto; }
+}
+@media (max-width: 380px) {
+  .seg button { font-size: .66rem; letter-spacing: .14em; }
+  .panel-title { font-size: clamp(2.3rem, 13.5vw, 3rem); }
+  .topbar-tagline { font-size: .56rem; letter-spacing: .16em; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   /* Disable large-scale hover and flex animations for users who prefer less motion */
   .panel,
@@ -576,7 +561,6 @@ html, body {
 .split:has(.panel:hover) .panel:not(:hover) .panel-cta,.split:has(.panel:hover) .panel:not(:hover) .panel-cta-ghost{padding:12px 18px;font-size:.66rem;gap:10px}
 @media (min-width: 769px){.panel-content{padding-bottom:76px}}
 @media (hover: none) and (min-width: 769px){.panel-eyebrow,.panel-desc,.panel-features{opacity:1;transform:none}}
-@media (max-width: 768px){.panel-title .outline{-webkit-text-stroke-width:1px}.panel-cta,.panel-cta-ghost{padding:12px 20px;min-height:44px}.topbar-logo{min-height:44px}.topaz-badge{display:flex;bottom:14px}}
 </style>
   <!-- HubSpot tracking config (NAB-215) -->
   <script src="/config.js" defer></script>
@@ -594,6 +578,12 @@ html, body {
   <div class="topbar-sep"></div>
   <div class="topbar-tagline">Choose Your Protection</div>
 </header>
+
+<!-- MOBILE CHOOSER (≤768px only; hidden on desktop) — TOPAZ-972 -->
+<div class="seg" id="seg" role="tablist" aria-label="Choose your protection">
+  <button type="button" role="tab" data-t="auto" aria-selected="true" aria-controls="panelLeft">Automotive</button>
+  <button type="button" role="tab" data-t="interior" aria-selected="false" aria-controls="panelRight" tabindex="-1">Interior</button>
+</div>
 
 <!-- SPLIT -->
 <main class="split" id="split">
@@ -768,6 +758,38 @@ window.addEventListener('load', () => {
     window.requestAnimationFrame(updateActivePanel);
   });
   window.addEventListener('resize', updateActivePanel);
+})();
+
+// Mobile chooser (≤768px): one screen, one choice — TOPAZ-972 (2026-09-07)
+(function () {
+  const seg = document.getElementById('seg');
+  if (!seg) return;
+  const mq = window.matchMedia('(max-width: 768px)');
+  function pick(t, fromHash) {
+    split.classList.toggle('show-interior', t === 'interior');
+    seg.querySelectorAll('button').forEach(b => {
+      const on = b.dataset.t === t;
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+    });
+    if (!fromHash) { try { history.replaceState(null, '', t === 'interior' ? '#interior' : location.pathname + location.search); } catch (e) {} }
+  }
+  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (b) pick(b.dataset.t); });
+  seg.addEventListener('keydown', e => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    e.stopPropagation(); e.preventDefault();
+    pick(e.key === 'ArrowRight' ? 'interior' : 'auto');
+    const on = seg.querySelector('[aria-selected="true"]'); if (on) on.focus();
+  });
+  if (location.hash === '#interior') pick('interior', true);
+  // A horizontal swipe on the photo switches too (touch screens only)
+  let x0 = null, y0 = null;
+  split.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  split.addEventListener('touchend', e => {
+    if (x0 === null || !mq.matches) { x0 = y0 = null; return; }
+    const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = y0 = null;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) pick(dx < 0 ? 'interior' : 'auto');
+  }, { passive: true });
 })();
 </script>
 </body>
