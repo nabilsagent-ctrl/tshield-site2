@@ -518,6 +518,12 @@
             outline-offset: 2px;
         }
 
+        /* TOPAZ-969: two actions side by side in the red band; white outline variant for the download */
+        .cta-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .btn-outline-white { background: transparent; border: 1.5px solid var(--white); color: var(--white); padding: 13px 38px; font-size: 0.76rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; text-decoration: none; display: inline-block; transition: all 0.2s; font-family: 'Barlow', sans-serif; cursor: pointer; }
+        .btn-outline-white:hover { background: var(--white); color: var(--red); }
+        .btn-outline-white:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+
         /* Sections */
         section {
             padding: 80px 0;
@@ -1404,7 +1410,10 @@ section.stats-bar { padding: 0; }
                 <div class="reveal">
                     <h2 class="h2" style="color: var(--white);">Ready to Start the <span class="red" style="color: var(--off-white);">Conversation</span>?</h2>
                     <p style="font-size: 1.05rem; margin: 24px 0 36px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.8;">The franchise opportunity for T&#8209;Shield is limited. We're selective with our partners. Let's have a conversation about whether this is the right move for you.</p>
-                    <a href="#contact" class="btn-red" style="background: var(--white); color: var(--red);">Contact Our Team</a>
+                    <div class="cta-btns">
+                        <a href="#contact" class="btn-red" style="background: var(--white); color: var(--red);">Contact Our Team</a>
+                        <a href="/downloads/T-Shield-Franchise-Guide.pdf" class="btn-outline-white" target="_blank" rel="noopener">Download the Franchise Guide</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1464,7 +1473,7 @@ section.stats-bar { padding: 0; }
                             </svg>
                             <div class="contact-item-content">
                                 <h4>Email</h4>
-                                <p>franchise@topazdetailing.com</p>
+                                <p>info@t-shield.co</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -1474,11 +1483,11 @@ section.stats-bar { padding: 0; }
                             </svg>
                             <div class="contact-item-content">
                                 <h4>Location</h4>
-                                <p>London, United Kingdom</p>
+                                <p>Unit 13 Premier Park, Premier Park Road<br>London NW10 7NZ</p>
                             </div>
                         </div>
                         <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--light-gray);">
-                            <p style="font-size: 0.85rem; color: var(--gray); line-height: 1.7;">We aim to reply to all enquiries within one working day. Shortlisted candidates will be invited for a discovery call with our franchise team.</p>
+                            <p style="font-size: 0.85rem; color: var(--gray); line-height: 1.7;">We aim to reply to all enquiries within one working day. Shortlisted candidates will be invited for a discovery call with our franchise team. Prefer to read first? <a href="/downloads/T-Shield-Franchise-Guide.pdf" target="_blank" rel="noopener" style="color: var(--red); font-weight: 500;">Download the Franchise Guide (PDF, 1.5 MB)</a>.</p>
                         </div>
                     </div>
                 </div>
