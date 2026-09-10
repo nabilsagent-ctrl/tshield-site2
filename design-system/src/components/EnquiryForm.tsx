@@ -16,7 +16,7 @@ export interface EnquiryFormProps {
 }
 
 const SUCCESS = 'Thank you — your enquiry has been sent. We aim to reply within one working day.';
-const FAIL = 'Sorry, that didn’t send. Please email info@t-shield.co and we’ll come straight back to you.';
+const FAIL = 'Sorry, that didn’t send. Please email enquiries@t-shield.co and we’ll come straight back to you.';
 
 /**
  * The enquiry form used on all three pages: named fields, browser validation, a hidden honeypot, the reply promise
